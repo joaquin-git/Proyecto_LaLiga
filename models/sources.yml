@@ -1,0 +1,146 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Capa RAW: copia fiel de las 6 fuentes, todo VARCHAR + metadatos de carga."
+    database: LALIGA_DB
+    schema: BRONZE
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: RAW_PARTIDOS
+        description: "API de LaLiga. Una fila = un partido. Desnormalizada: estadio, ciudad y aforo se repiten."
+        columns:
+          - name: ID_PARTIDO
+            data_tests: [not_null]
+          - name: TEMPORADA
+          - name: JORNADA
+          - name: FECHA_PARTIDO
+          - name: HORA
+          - name: EQUIPO_LOCAL
+          - name: EQUIPO_VISITANTE
+          - name: ESTADIO
+          - name: CIUDAD_ESTADIO
+          - name: AFORO_ESTADIO
+          - name: GOLES_LOCAL
+          - name: GOLES_VISITANTE
+          - name: RESULTADO
+          - name: ESPECTADORES
+          - name: ARBITRO
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA
+      - name: RAW_ESTADISTICAS_JUGADOR_PARTIDO
+        description: "Proveedor externo. Una fila = un jugador en un partido. Contiene duplicados."
+        columns:
+          - name: ID_PARTIDO
+          - name: TEMPORADA
+          - name: FECHA_PARTIDO
+          - name: ID_JUGADOR_PROVEEDOR
+          - name: JUGADOR
+          - name: FECHA_NACIMIENTO
+          - name: NACIONALIDAD
+          - name: EQUIPO
+          - name: RIVAL
+          - name: CONDICION
+          - name: POSICION
+          - name: TITULAR
+          - name: MINUTOS
+          - name: GOLES
+          - name: ASISTENCIAS
+          - name: TIROS
+          - name: TIROS_A_PUERTA
+          - name: PASES_INTENTADOS
+          - name: PASES_COMPLETADOS
+          - name: RECUPERACIONES
+          - name: TARJETAS_AMARILLAS
+          - name: TARJETAS_ROJAS
+          - name: VALORACION
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA
+      - name: RAW_CONTRATOS
+        description: "RRHH. Una fila = un contrato o renovación. Base del histórico salarial (SCD2)."
+        columns:
+          - name: ID_CONTRATO
+            data_tests: [not_null]
+          - name: CODIGO_LICENCIA
+          - name: JUGADOR
+          - name: FECHA_NACIMIENTO
+          - name: NACIONALIDADES
+          - name: POSICION
+          - name: EQUIPO
+          - name: CIUDAD_EQUIPO
+          - name: TIPO_CONTRATO
+          - name: CLUB_PROPIETARIO
+          - name: FECHA_INICIO
+          - name: FECHA_FIN_PREVISTA
+          - name: FECHA_BAJA
+          - name: ESTADO_CONTRATO
+          - name: SALARIO_BRUTO_ANUAL_EUR
+          - name: CLAUSULA_RESCISION_EUR
+          - name: AGENTE
+          - name: AGENCIA_REPRESENTACION
+          - name: EMAIL_AGENCIA
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA
+      - name: RAW_TRASPASOS
+        description: "Mercado. Una fila = una operación (traspaso, cesión, libre, fin de cesión)."
+        columns:
+          - name: ID_OPERACION
+            data_tests: [not_null]
+          - name: FECHA_OPERACION
+          - name: VENTANA
+          - name: JUGADOR
+          - name: NACIONALIDAD
+          - name: POSICION
+          - name: CLUB_ORIGEN
+          - name: LIGA_ORIGEN
+          - name: PAIS_ORIGEN
+          - name: CLUB_DESTINO
+          - name: LIGA_DESTINO
+          - name: PAIS_DESTINO
+          - name: TIPO_OPERACION
+          - name: IMPORTE
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA
+      - name: RAW_LESIONES
+        description: "Servicios médicos. Una fila = una lesión. PARTE_MEDICO es texto libre (AI_FILTER)."
+        columns:
+          - name: ID_LESION
+            data_tests: [not_null]
+          - name: CODIGO_LICENCIA
+          - name: JUGADOR
+          - name: EQUIPO
+          - name: TEMPORADA
+          - name: FECHA_LESION
+          - name: FECHA_ALTA
+          - name: TIPO_LESION
+          - name: ZONA_CORPORAL
+          - name: DIAS_BAJA
+          - name: PARTIDOS_PERDIDOS
+          - name: MEDICO_RESPONSABLE
+          - name: PARTE_MEDICO
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA
+      - name: RAW_INFORMES_SCOUTING
+        description: "App de scouting. Una fila = un informe. INFORME es texto libre (AI_CLASSIFY / AI_COMPLETE)."
+        columns:
+          - name: ID_INFORME
+            data_tests: [not_null]
+          - name: FECHA_INFORME
+          - name: OJEADOR
+          - name: EMAIL_OJEADOR
+          - name: ZONA_OJEADOR
+          - name: JUGADOR
+          - name: EQUIPO_JUGADOR
+          - name: PARTIDO_OBSERVADO
+          - name: FECHA_PARTIDO
+          - name: POSICIONES_OBSERVADAS
+          - name: NOTA_GLOBAL
+          - name: INFORME
+          - name: _FECHA_EXTRACCION
+          - name: _FICHERO_ORIGEN
+          - name: _FECHA_CARGA

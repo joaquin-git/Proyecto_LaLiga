@@ -1,0 +1,127 @@
+ID_OPERACION,FECHA_OPERACION,VENTANA,JUGADOR,NACIONALIDAD,POSICION,CLUB_ORIGEN,LIGA_ORIGEN,PAIS_ORIGEN,CLUB_DESTINO,LIGA_DESTINO,PAIS_DESTINO,TIPO_OPERACION,IMPORTE,_FECHA_EXTRACCION
+TR-0001,01/07/2024,Verano 2024,Kylian Mbappé,Francia,Delantero,Paris Saint-Germain,Ligue 1,Francia,Real Madrid CF,LaLiga EA Sports,España,Libre,Libre,2026-07-02 06:00:00
+TR-0002,01/07/2024,Verano 2024,Luka Sučić,Croacia,Centrocampista,Red Bull Salzburg,Bundesliga austriaca,Austria,Real Sociedad de Fútbol,LaLiga EA Sports,España,Traspaso,10000000,2026-07-02 06:00:00
+TR-0003,04/07/2024,Verano 2024,Thierno Barry,Francia,Delantero,FC Basel,Superliga suiza,Suiza,Villarreal CF,LaLiga EA Sports,España,Traspaso,14M,2026-07-02 06:00:00
+TR-0004,15/07/2024,Verano 2024,Abel Ruiz,España,Delantero,SC Braga,Liga Portugal,Portugal,Girona FC,LaLiga EA Sports,España,Traspaso,8000000,2026-07-02 06:00:00
+TR-0005,21/07/2024,Verano 2024,Endrick,Brasil,Delantero,SE Palmeiras,Brasileirão,Brasil,Real Madrid CF,LaLiga EA Sports,España,Traspaso,47500000,2026-07-02 06:00:00
+TR-0006,23/07/2024,Verano 2024,Robin Le Normand,España,Defensa,Real Sociedad de Fútbol,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,34.500.000 €,2026-07-02 06:00:00
+TR-0007,01/08/2024,Verano 2024,Bojan Miovski,Macedonia del Norte,Delantero,Aberdeen FC,Premiership escocesa,Escocia,Girona FC,LaLiga EA Sports,España,Traspaso,8M,2026-07-02 06:00:00
+TR-0008,09/08/2024,Verano 2024,Dani Olmo,España,Centrocampista,RB Leipzig,Bundesliga,Alemania,FC Barcelona,LaLiga EA Sports,España,Traspaso,55000000,2026-07-02 06:00:00
+TR-0009,12/08/2024,Verano 2024,Julián Álvarez,Argentina,Delantero,Manchester City,Premier League,Inglaterra,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,75000000,2026-07-02 06:00:00
+TR-0010,15/08/2024,Verano 2024,Oli McBurnie,Escocia,Delantero,Sheffield United,Championship,Inglaterra,UD Las Palmas,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0011,19/08/2024,Verano 2024,Alexander Sørloth,Noruega,Delantero,Villarreal CF,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,32.000.000 €,2026-07-02 06:00:00
+TR-0012,21/08/2024,Verano 2024,Conor Gallagher,Inglaterra,Centrocampista,Chelsea FC,Premier League,Inglaterra,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,42.000.000 €,2026-07-02 06:00:00
+TR-0013,28/08/2024,Verano 2024,Giovani Lo Celso,Argentina,Centrocampista,Tottenham Hotspur,Premier League,Inglaterra,Real Betis Balompié,LaLiga EA Sports,España,Traspaso,3M,2026-07-02 06:00:00
+TR-0014,29/08/2024,Verano 2024,Arnaut Danjuma,Países Bajos,Delantero,Villarreal CF,LaLiga EA Sports,España,Girona FC,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0015,30/08/2024,Verano 2024,Orri Óskarsson,Islandia,Delantero,FC Copenhague,Superliga danesa,Dinamarca,Real Sociedad de Fútbol,LaLiga EA Sports,España,Traspaso,20000000,2026-07-02 06:00:00
+TR-0016,30/08/2024,Verano 2024,Oriol Romeu,España,Centrocampista,FC Barcelona,LaLiga EA Sports,España,Girona FC,LaLiga EA Sports,España,Cesión,0,2026-07-02 06:00:00
+TR-0017,30/08/2024,Verano 2024,Sébastien Haller,Costa de Marfil,Delantero,Borussia Dortmund,Bundesliga,Alemania,CD Leganés,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0018,30/08/2024,Verano 2024,Clément Lenglet,Francia,Defensa,FC Barcelona,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0019,15/01/2025,Invierno 2025,Sébastien Haller,Costa de Marfil,Delantero,CD Leganés,LaLiga EA Sports,España,FC Utrecht,Eredivisie,Países Bajos,Cesión,N/D,2026-07-02 06:00:00
+TR-0020,24/01/2025,Invierno 2025,Rui Silva,Portugal,Portero,Real Betis Balompié,LaLiga EA Sports,España,Sporting CP,Liga Portugal,Portugal,Traspaso,2000000,2026-07-02 06:00:00
+TR-0021,30/01/2025,Invierno 2025,Cucho Hernández,Colombia,Delantero,Columbus Crew,MLS,Estados Unidos,Real Betis Balompié,LaLiga EA Sports,España,Traspaso,12000000,2026-07-02 06:00:00
+TR-0022,31/01/2025,Invierno 2025,Antony,Brasil,Delantero,Manchester United,Premier League,Inglaterra,Real Betis Balompié,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0023,31/01/2025,Invierno 2025,Vitor Roque,Brasil,Delantero,Real Betis Balompié,LaLiga EA Sports,España,SE Palmeiras,Brasileirão,Brasil,Traspaso,25.500.000 €,2026-07-02 06:00:00
+TR-0024,31/01/2025,Invierno 2025,Rubén Vargas,Suiza,Delantero,FC Augsburg,Bundesliga,Alemania,Sevilla FC,LaLiga EA Sports,España,Traspaso,4M,2026-07-02 06:00:00
+TR-0025,31/01/2025,Invierno 2025,Lucas Boyé,Argentina,Delantero,Granada CF,LaLiga Hypermotion,España,Deportivo Alavés,LaLiga EA Sports,España,Traspaso,5000000,2026-07-02 06:00:00
+TR-0026,03/02/2025,Invierno 2025,Cyle Larin,Canadá,Delantero,RCD Mallorca,LaLiga EA Sports,España,Southampton FC,Premier League,Inglaterra,Cesión,0,2026-07-02 06:00:00
+TR-0027,01/06/2025,Verano 2025,Trent Alexander-Arnold,Inglaterra,Defensa,Liverpool FC,Premier League,Inglaterra,Real Madrid CF,LaLiga EA Sports,España,Traspaso,10000000,2026-07-02 06:00:00
+TR-0028,01/06/2025,Verano 2025,Dean Huijsen,España,Defensa,AFC Bournemouth,Premier League,Inglaterra,Real Madrid CF,LaLiga EA Sports,España,Traspaso,62500000,2026-07-02 06:00:00
+TR-0029,30/06/2025,Verano 2025,Rafa Mir,España,Delantero,Valencia CF,LaLiga EA Sports,España,Sevilla FC,LaLiga EA Sports,España,Fin de cesión,Cesión,2026-07-02 06:00:00
+TR-0030,30/06/2025,Verano 2025,Albert Sambi Lokonga,Bélgica,Centrocampista,Sevilla FC,LaLiga EA Sports,España,Arsenal FC,Premier League,Inglaterra,Fin de cesión,0,2026-07-02 06:00:00
+TR-0031,30/06/2025,Verano 2025,Enzo Barrenechea,Argentina,Centrocampista,Valencia CF,LaLiga EA Sports,España,Aston Villa,Premier League,Inglaterra,Fin de cesión,N/D,2026-07-02 06:00:00
+TR-0032,30/06/2025,Verano 2025,Bryan Zaragoza,España,Delantero,CA Osasuna,LaLiga EA Sports,España,FC Bayern Múnich,Bundesliga,Alemania,Fin de cesión,,2026-07-02 06:00:00
+TR-0033,30/06/2025,Verano 2025,Arnaut Danjuma,Países Bajos,Delantero,Girona FC,LaLiga EA Sports,España,Villarreal CF,LaLiga EA Sports,España,Fin de cesión,,2026-07-02 06:00:00
+TR-0034,30/06/2025,Verano 2025,Antony,Brasil,Delantero,Real Betis Balompié,LaLiga EA Sports,España,Manchester United,Premier League,Inglaterra,Fin de cesión,,2026-07-02 06:00:00
+TR-0035,30/06/2025,Verano 2025,Manu Sánchez,España,Defensa,Deportivo Alavés,LaLiga EA Sports,España,RC Celta de Vigo,LaLiga EA Sports,España,Fin de cesión,N/D,2026-07-02 06:00:00
+TR-0036,30/06/2025,Verano 2025,Eray Cömert,Suiza,Defensa,Real Valladolid CF,LaLiga EA Sports,España,Valencia CF,LaLiga EA Sports,España,Fin de cesión,,2026-07-02 06:00:00
+TR-0037,30/06/2025,Verano 2025,Mario Martín,España,Centrocampista,Real Valladolid CF,LaLiga EA Sports,España,Real Madrid CF,LaLiga EA Sports,España,Fin de cesión,,2026-07-02 06:00:00
+TR-0038,30/06/2025,Verano 2025,Marash Kumbulla,Albania,Defensa,RCD Espanyol de Barcelona,LaLiga EA Sports,España,AS Roma,Serie A,Italia,Fin de cesión,0,2026-07-02 06:00:00
+TR-0039,01/07/2025,Verano 2025,Clément Lenglet,Francia,Defensa,FC Barcelona,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0040,01/07/2025,Verano 2025,Álvaro Carreras,España,Defensa,SL Benfica,Liga Portugal,Portugal,Real Madrid CF,LaLiga EA Sports,España,Traspaso,50000000,2026-07-02 06:00:00
+TR-0041,01/07/2025,Verano 2025,Luka Modrić,Croacia,Centrocampista,Real Madrid CF,LaLiga EA Sports,España,AC Milan,Serie A,Italia,Libre,Libre,2026-07-02 06:00:00
+TR-0042,01/07/2025,Verano 2025,Lucas Vázquez,España,Defensa,Real Madrid CF,LaLiga EA Sports,España,Bayer Leverkusen,Bundesliga,Alemania,Libre,,2026-07-02 06:00:00
+TR-0043,01/07/2025,Verano 2025,Joan García,España,Portero,RCD Espanyol de Barcelona,LaLiga EA Sports,España,FC Barcelona,LaLiga EA Sports,España,Traspaso,25.000.000 €,2026-07-02 06:00:00
+TR-0044,01/07/2025,Verano 2025,Iñigo Martínez,España,Defensa,FC Barcelona,LaLiga EA Sports,España,Al-Nassr,Saudi Pro League,Arabia Saudí,Libre,0,2026-07-02 06:00:00
+TR-0045,01/07/2025,Verano 2025,Reinildo Mandava,Mozambique,Defensa,Atlético de Madrid,LaLiga EA Sports,España,Sunderland AFC,Premier League,Inglaterra,Libre,Libre,2026-07-02 06:00:00
+TR-0046,01/07/2025,Verano 2025,César Azpilicueta,España,Defensa,Atlético de Madrid,LaLiga EA Sports,España,Sevilla FC,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0047,01/07/2025,Verano 2025,Ángel Correa,Argentina,Delantero,Atlético de Madrid,LaLiga EA Sports,España,Tigres UANL,Liga MX,México,Traspaso,10000000,2026-07-02 06:00:00
+TR-0048,01/07/2025,Verano 2025,Samuel Lino,Brasil,Centrocampista,Atlético de Madrid,LaLiga EA Sports,España,CR Flamengo,Brasileirão,Brasil,Traspaso,22.000.000 €,2026-07-02 06:00:00
+TR-0049,01/07/2025,Verano 2025,Johnny Cardoso,Estados Unidos,Centrocampista,Real Betis Balompié,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,25000000,2026-07-02 06:00:00
+TR-0050,01/07/2025,Verano 2025,Thiago Almada,Argentina,Centrocampista,Botafogo,Brasileirão,Brasil,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,21.000.000 €,2026-07-02 06:00:00
+TR-0051,01/07/2025,Verano 2025,Dávid Hancko,Eslovaquia,Defensa,Feyenoord,Eredivisie,Países Bajos,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,26.000.000 €,2026-07-02 06:00:00
+TR-0052,01/07/2025,Verano 2025,Marc Pubill,España,Defensa,UD Almería,LaLiga Hypermotion,España,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,16M€,2026-07-02 06:00:00
+TR-0053,01/07/2025,Verano 2025,Jesús Areso,España,Defensa,CA Osasuna,LaLiga EA Sports,España,Athletic Club,LaLiga EA Sports,España,Traspaso,12000000,2026-07-02 06:00:00
+TR-0054,01/07/2025,Verano 2025,Julen Agirrezabala,España,Portero,Athletic Club,LaLiga EA Sports,España,Valencia CF,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0055,01/07/2025,Verano 2025,Martín Zubimendi,España,Centrocampista,Real Sociedad de Fútbol,LaLiga EA Sports,España,Arsenal FC,Premier League,Inglaterra,Traspaso,70000000,2026-07-02 06:00:00
+TR-0056,01/07/2025,Verano 2025,Nayef Aguerd,Marruecos,Defensa,Real Sociedad de Fútbol,LaLiga EA Sports,España,Olympique de Marsella,Ligue 1,Francia,Traspaso,23M€,2026-07-02 06:00:00
+TR-0057,01/07/2025,Verano 2025,Thierno Barry,Francia,Delantero,Villarreal CF,LaLiga EA Sports,España,Everton FC,Premier League,Inglaterra,Traspaso,30000000,2026-07-02 06:00:00
+TR-0058,01/07/2025,Verano 2025,Georges Mikautadze,Georgia,Delantero,Olympique de Lyon,Ligue 1,Francia,Villarreal CF,LaLiga EA Sports,España,Traspaso,31000000,2026-07-02 06:00:00
+TR-0059,01/07/2025,Verano 2025,Tajon Buchanan,Canadá,Centrocampista,Inter de Milán,Serie A,Italia,Villarreal CF,LaLiga EA Sports,España,Traspaso,12000000,2026-07-02 06:00:00
+TR-0060,01/07/2025,Verano 2025,Alberto Moleiro,España,Centrocampista,UD Las Palmas,LaLiga EA Sports,España,Villarreal CF,LaLiga EA Sports,España,Traspaso,16000000,2026-07-02 06:00:00
+TR-0061,01/07/2025,Verano 2025,Santiago Mouriño,Uruguay,Defensa,Deportivo Alavés,LaLiga EA Sports,España,Villarreal CF,LaLiga EA Sports,España,Traspaso,10000000,2026-07-02 06:00:00
+TR-0062,01/07/2025,Verano 2025,Eric Bailly,Costa de Marfil,Defensa,Villarreal CF,LaLiga EA Sports,España,Real Oviedo,LaLiga EA Sports,España,Libre,Libre,2026-07-02 06:00:00
+TR-0063,01/07/2025,Verano 2025,Álvaro Valles,España,Portero,UD Las Palmas,LaLiga EA Sports,España,Real Betis Balompié,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0064,01/07/2025,Verano 2025,Junior Firpo,República Dominicana,Defensa,Leeds United,Premier League,Inglaterra,Real Betis Balompié,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0065,01/07/2025,Verano 2025,Jesús Rodríguez,España,Delantero,Real Betis Balompié,LaLiga EA Sports,España,Como 1907,Serie A,Italia,Traspaso,22000000,2026-07-02 06:00:00
+TR-0066,01/07/2025,Verano 2025,Dodi Lukébakio,Bélgica,Delantero,Sevilla FC,LaLiga EA Sports,España,SL Benfica,Liga Portugal,Portugal,Traspaso,20M€,2026-07-02 06:00:00
+TR-0067,01/07/2025,Verano 2025,Saúl Ñíguez,España,Centrocampista,Atlético de Madrid,LaLiga EA Sports,España,CR Flamengo,Brasileirão,Brasil,Libre,,2026-07-02 06:00:00
+TR-0068,01/07/2025,Verano 2025,Alfon González,España,Delantero,RC Celta de Vigo,LaLiga EA Sports,España,Sevilla FC,LaLiga EA Sports,España,Libre,,2026-07-02 06:00:00
+TR-0069,01/07/2025,Verano 2025,Giorgi Mamardashvili,Georgia,Portero,Valencia CF,LaLiga EA Sports,España,Liverpool FC,Premier League,Inglaterra,Traspaso,30000000,2026-07-02 06:00:00
+TR-0070,01/07/2025,Verano 2025,Cristhian Mosquera,España,Defensa,Valencia CF,LaLiga EA Sports,España,Arsenal FC,Premier League,Inglaterra,Traspaso,15.000.000 €,2026-07-02 06:00:00
+TR-0071,01/07/2025,Verano 2025,Borja Iglesias,España,Delantero,Real Betis Balompié,LaLiga EA Sports,España,RC Celta de Vigo,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0072,01/07/2025,Verano 2025,Ladislav Krejčí,República Checa,Defensa,Girona FC,LaLiga EA Sports,España,Wolverhampton Wanderers,Premier League,Inglaterra,Traspaso,25000000,2026-07-02 06:00:00
+TR-0073,01/07/2025,Verano 2025,Miguel Gutiérrez,España,Defensa,Girona FC,LaLiga EA Sports,España,SSC Napoli,Serie A,Italia,Traspaso,18000000,2026-07-02 06:00:00
+TR-0074,01/07/2025,Verano 2025,Yangel Herrera,Venezuela,Centrocampista,Girona FC,LaLiga EA Sports,España,Real Sociedad de Fútbol,LaLiga EA Sports,España,Traspaso,5000000,2026-07-02 06:00:00
+TR-0075,01/07/2025,Verano 2025,Axel Witsel,Bélgica,Centrocampista,Atlético de Madrid,LaLiga EA Sports,España,Girona FC,LaLiga EA Sports,España,Libre,,2026-07-02 06:00:00
+TR-0076,01/07/2025,Verano 2025,Omar Alderete,Paraguay,Defensa,Getafe CF,LaLiga EA Sports,España,Sunderland AFC,Premier League,Inglaterra,Traspaso,12000000,2026-07-02 06:00:00
+TR-0077,01/07/2025,Verano 2025,Álvaro Rodríguez,Uruguay,Delantero,Getafe CF,LaLiga EA Sports,España,Elche CF,LaLiga EA Sports,España,Traspaso,6000000,2026-07-02 06:00:00
+TR-0078,01/07/2025,Verano 2025,Abdel Abqar,Marruecos,Defensa,Deportivo Alavés,LaLiga EA Sports,España,Getafe CF,LaLiga EA Sports,España,Traspaso,8000000,2026-07-02 06:00:00
+TR-0079,01/07/2025,Verano 2025,Kike García,España,Delantero,Deportivo Alavés,LaLiga EA Sports,España,RCD Espanyol de Barcelona,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0080,01/07/2025,Verano 2025,Marko Dmitrović,Serbia,Portero,CD Leganés,LaLiga EA Sports,España,RCD Espanyol de Barcelona,LaLiga EA Sports,España,Libre,Libre,2026-07-02 06:00:00
+TR-0081,01/07/2025,Verano 2025,Valentin Rosier,Francia,Defensa,CD Leganés,LaLiga EA Sports,España,CA Osasuna,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0082,01/07/2025,Verano 2025,Robert Navarro,España,Delantero,RCD Mallorca,LaLiga EA Sports,España,Athletic Club,LaLiga EA Sports,España,Traspaso,2500000,2026-07-02 06:00:00
+TR-0083,01/07/2025,Verano 2025,Salomón Rondón,Venezuela,Delantero,CF Pachuca,Liga MX,México,Real Oviedo,LaLiga EA Sports,España,Libre,Libre,2026-07-02 06:00:00
+TR-0084,01/07/2025,Verano 2025,Víctor Muñoz,España,Delantero,Real Madrid Castilla,Primera Federación,España,CA Osasuna,LaLiga EA Sports,España,Traspaso,3500000,2026-07-02 06:00:00
+TR-0085,01/07/2025,Verano 2025,Adrián Liso,España,Delantero,Real Zaragoza,LaLiga Hypermotion,España,Getafe CF,LaLiga EA Sports,España,Traspaso,5.000.000 €,2026-07-02 06:00:00
+TR-0086,01/07/2025,Verano 2025,Jan Virgili,España,Delantero,FC Barcelona Atlètic,Primera Federación,España,RCD Mallorca,LaLiga EA Sports,España,Traspaso,3000000,2026-07-02 06:00:00
+TR-0087,01/07/2025,Verano 2025,Tyrhys Dolan,Inglaterra,Delantero,Blackburn Rovers,Championship,Inglaterra,RCD Espanyol de Barcelona,LaLiga EA Sports,España,Libre,,2026-07-02 06:00:00
+TR-0088,01/07/2025,Verano 2025,Alexis Sánchez,Chile,Delantero,Udinese Calcio,Serie A,Italia,Sevilla FC,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0089,08/07/2025,Verano 2025,Pau Víctor,España,Delantero,FC Barcelona,LaLiga EA Sports,España,SC Braga,Liga Portugal,Portugal,Traspaso,12.000.000 €,2026-07-02 06:00:00
+TR-0090,10/07/2025,Verano 2025,Roony Bardghji,Suecia,Delantero,FC Copenhague,Superliga danesa,Dinamarca,FC Barcelona,LaLiga EA Sports,España,Traspaso,2.500.000 €,2026-07-02 06:00:00
+TR-0091,12/07/2025,Verano 2025,Álex Baena,España,Centrocampista,Villarreal CF,LaLiga EA Sports,España,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,42000000,2026-07-02 06:00:00
+TR-0092,15/07/2025,Verano 2025,Iñaki Peña,España,Portero,FC Barcelona,LaLiga EA Sports,España,Elche CF,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0093,15/07/2025,Verano 2025,Adrià Pedrosa,España,Defensa,Sevilla FC,LaLiga EA Sports,España,Elche CF,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0094,15/07/2025,Verano 2025,Ramón Terrats,España,Centrocampista,Villarreal CF,LaLiga EA Sports,España,RCD Espanyol de Barcelona,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0095,20/07/2025,Verano 2025,Akor Adams,Nigeria,Delantero,Montpellier HSC,Ligue 1,Francia,Sevilla FC,LaLiga EA Sports,España,Traspaso,10000000,2026-07-02 06:00:00
+TR-0096,20/07/2025,Verano 2025,Batista Mendy,Francia,Centrocampista,Trabzonspor,Süper Lig,Turquía,Sevilla FC,LaLiga EA Sports,España,Traspaso,3M,2026-07-02 06:00:00
+TR-0097,23/07/2025,Verano 2025,Marcus Rashford,Inglaterra,Delantero,Manchester United,Premier League,Inglaterra,FC Barcelona,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0098,25/07/2025,Verano 2025,Duje Ćaleta-Car,Croacia,Defensa,Olympique de Lyon,Ligue 1,Francia,Real Sociedad de Fútbol,LaLiga EA Sports,España,Traspaso,4000000,2026-07-02 06:00:00
+TR-0099,25/07/2025,Verano 2025,Filip Ugrinic,Serbia,Centrocampista,BSC Young Boys,Superliga suiza,Suiza,Valencia CF,LaLiga EA Sports,España,Traspaso,3.000.000 €,2026-07-02 06:00:00
+TR-0100,28/07/2025,Verano 2025,Matteo Ruggeri,Italia,Defensa,Atalanta BC,Serie A,Italia,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,17000000,2026-07-02 06:00:00
+TR-0101,30/07/2025,Verano 2025,Ionuț Radu,Rumanía,Portero,Venezia FC,Serie A,Italia,RC Celta de Vigo,LaLiga EA Sports,España,Traspaso,5000000,2026-07-02 06:00:00
+TR-0102,30/07/2025,Verano 2025,Ferran Jutglà,España,Delantero,Club Brujas,Pro League,Bélgica,RC Celta de Vigo,LaLiga EA Sports,España,Traspaso,6.000.000 €,2026-07-02 06:00:00
+TR-0103,01/08/2025,Verano 2025,Rafa Mir,España,Delantero,Sevilla FC,LaLiga EA Sports,España,Elche CF,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0104,01/08/2025,Verano 2025,Arnaut Danjuma,Países Bajos,Delantero,Villarreal CF,LaLiga EA Sports,España,Valencia CF,LaLiga EA Sports,España,Libre,Libre,2026-07-02 06:00:00
+TR-0105,01/08/2025,Verano 2025,Renato Veiga,Portugal,Defensa,Chelsea FC,Premier League,Inglaterra,Villarreal CF,LaLiga EA Sports,España,Traspaso,24.000.000 €,2026-07-02 06:00:00
+TR-0106,01/08/2025,Verano 2025,Mario Martín,España,Centrocampista,Real Madrid CF,LaLiga EA Sports,España,Getafe CF,LaLiga EA Sports,España,Cesión,0,2026-07-02 06:00:00
+TR-0107,05/08/2025,Verano 2025,Largie Ramazani,Bélgica,Delantero,Leeds United,Premier League,Inglaterra,Valencia CF,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0108,05/08/2025,Verano 2025,Lucas Beltrán,Argentina,Delantero,ACF Fiorentina,Serie A,Italia,Valencia CF,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0109,08/08/2025,Verano 2025,Vitor Reis,Brasil,Defensa,Manchester City,Premier League,Inglaterra,Girona FC,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0110,08/08/2025,Verano 2025,Claudio Echeverri,Argentina,Centrocampista,Manchester City,Premier League,Inglaterra,Girona FC,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0111,10/08/2025,Verano 2025,Vladyslav Vanat,Ucrania,Delantero,Dinamo de Kiev,Premier League ucraniana,Ucrania,Girona FC,LaLiga EA Sports,España,Traspaso,13000000,2026-07-02 06:00:00
+TR-0112,10/08/2025,Verano 2025,Dominik Livaković,Croacia,Portero,Fenerbahçe,Süper Lig,Turquía,Girona FC,LaLiga EA Sports,España,Cesión,N/D,2026-07-02 06:00:00
+TR-0113,10/08/2025,Verano 2025,Thomas Lemar,Francia,Centrocampista,Atlético de Madrid,LaLiga EA Sports,España,Girona FC,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0114,12/08/2025,Verano 2025,Yéremy Pino,España,Centrocampista,Villarreal CF,LaLiga EA Sports,España,Crystal Palace,Premier League,Inglaterra,Traspaso,30M€,2026-07-02 06:00:00
+TR-0115,12/08/2025,Verano 2025,Carlos Soler,España,Centrocampista,Paris Saint-Germain,Ligue 1,Francia,Real Sociedad de Fútbol,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0116,14/08/2025,Verano 2025,Franco Mastantuono,Argentina,Centrocampista,River Plate,Liga Profesional,Argentina,Real Madrid CF,LaLiga EA Sports,España,Traspaso,45000000,2026-07-02 06:00:00
+TR-0117,15/08/2025,Verano 2025,Bryan Zaragoza,España,Delantero,FC Bayern Múnich,Bundesliga,Alemania,RC Celta de Vigo,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0118,15/08/2025,Verano 2025,Christantus Uche,Nigeria,Centrocampista,Getafe CF,LaLiga EA Sports,España,Crystal Palace,Premier League,Inglaterra,Cesión,0,2026-07-02 06:00:00
+TR-0119,18/08/2025,Verano 2025,Luiz Felipe,Italia,Defensa,Olympique de Marsella,Ligue 1,Francia,Rayo Vallecano de Madrid,LaLiga EA Sports,España,Libre,0,2026-07-02 06:00:00
+TR-0120,18/08/2025,Verano 2025,Alemão,Brasil,Delantero,CF Pachuca,Liga MX,México,Rayo Vallecano de Madrid,LaLiga EA Sports,España,Traspaso,6000000,2026-07-02 06:00:00
+TR-0121,18/08/2025,Verano 2025,Fran Pérez,España,Delantero,Valencia CF,LaLiga EA Sports,España,Rayo Vallecano de Madrid,LaLiga EA Sports,España,Cesión,,2026-07-02 06:00:00
+TR-0122,20/08/2025,Verano 2025,Giacomo Raspadori,Italia,Delantero,SSC Napoli,Serie A,Italia,Atlético de Madrid,LaLiga EA Sports,España,Traspaso,22M,2026-07-02 06:00:00
+TR-0123,25/08/2025,Verano 2025,Mateo Joseph,España,Delantero,Leeds United,Premier League,Inglaterra,RCD Mallorca,LaLiga EA Sports,España,Cesión,Cesión,2026-07-02 06:00:00
+TR-0124,25/08/2025,Verano 2025,Clemens Riedel,Alemania,Defensa,SV Darmstadt 98,2. Bundesliga,Alemania,RCD Espanyol de Barcelona,LaLiga EA Sports,España,Traspaso,3000000,2026-07-02 06:00:00
+TR-0125,01/09/2025,Verano 2025,Antony,Brasil,Delantero,Manchester United,Premier League,Inglaterra,Real Betis Balompié,LaLiga EA Sports,España,Traspaso,22000000,2026-07-02 06:00:00
+TR-0126,02/01/2026,Invierno 2026,Endrick,Brasil,Delantero,Real Madrid CF,LaLiga EA Sports,España,Olympique de Lyon,Ligue 1,Francia,Cesión,0,2026-07-02 06:00:00

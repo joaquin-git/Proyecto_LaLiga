@@ -1,0 +1,768 @@
+ID_PARTIDO,TEMPORADA,JORNADA,FECHA_PARTIDO,HORA,EQUIPO_LOCAL,EQUIPO_VISITANTE,ESTADIO,CIUDAD_ESTADIO,AFORO_ESTADIO,GOLES_LOCAL,GOLES_VISITANTE,RESULTADO,ESPECTADORES,ARBITRO,_FECHA_EXTRACCION
+LL-00001,2024/25,1,2024-08-18,16:15,Athletic Club,Sevilla FC,San Mamés,Bilbao,53289,2,1,1,48584,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00002,2024/25,1,2024-08-16,21:00,Atlético de Madrid,CA Osasuna,Riyadh Air Metropolitano,Madrid,70460,1,1,X,55032,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00003,2024/25,1,2024-08-16,14:00,FC Barcelona,Real Sociedad de Fútbol,Estadi Olímpic Lluís Companys,Barcelona,55926,1,1,X,55349,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00004,2024/25,1,2024-08-16,21:00,Getafe CF,RCD Mallorca,Coliseum,Getafe,16500,0,1,2,11546,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00005,2024/25,1,2024-08-17,21:00,Real Valladolid CF,RCD Espanyol de Barcelona,Estadio José Zorrilla,Valladolid,27618,1,2,2,22638,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00006,2024/25,1,2024-08-17,16:15,Villarreal CF,UD Las Palmas,Estadio de la Cerámica,Villarreal,23008,3,1,1,21373,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00007,2024/25,1,2024-08-17,21:00,Alavés,Rayo Vallecano,Mendizorroza,Vitoria-Gasteiz,19840,0,1,2,17465,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00008,2024/25,1,2024-08-19,16:15,CD Leganés,Real Betis Balompié,Estadio Municipal de Butarque,Leganés,12454,2,0,1,8473,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00009,2024/25,1,2024-08-17,18:30,Girona FC,RC Celta de Vigo,Estadi Municipal de Montilivi,Girona,14624,2,0,1,11607,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00010,2024/25,1,2024-08-17,16:15,Real Madrid CF,Valencia CF,Santiago Bernabéu,Madrid,83.186,2,0,1,,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00011,2024/25,2,2024-08-23,18:30,Atlético de Madrid,Athletic Club,Riyadh Air Metropolitano,Madrid,70460,3,0,1,61224,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00012,2024/25,2,2024-08-24,16:15,Sevilla FC,Real Sociedad de Fútbol,Ramón Sánchez-Pizjuán,Sevilla,43883,0,0,X,35545,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00013,2024/25,2,2024-08-25,21:00,Getafe CF,CA Osasuna,Coliseum,Getafe,16500,1,0,1,12584,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00014,2024/25,2,2024-08-24,18:30,FC Barcelona,RCD Espanyol de Barcelona,Estadi Olímpic Lluís Companys,Barcelona,55926,1,1,X,46063,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00015,2024/25,2,2024-08-26,16:15,Villarreal CF,RCD Mallorca,Estadio de la Cerámica,Villarreal,23008,1,0,1,18872,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00016,2024/25,2,2024-08-24,18:30,Real Valladolid CF,Rayo Vallecano de Madrid,Estadio José Zorrilla,Valladolid,27618,0,2,2,25809,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00017,2024/25,2,2024-08-24,18:30,CD Leganés,UD Las Palmas,Estadio Municipal de Butarque,Leganés,12454,0,1,2,10075,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00018,2024/25,2,2024-08-25,18:30,Deportivo Alavés,RC Celta de Vigo,Mendizorroza,Vitoria-Gasteiz,19840,2,1,1,18066,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00019,2024/25,2,2024-08-26,14:00,Real Madrid CF,Real Betis Balompié,Santiago Bernabéu,Madrid,83186,1,0,1,66551,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00020,2024/25,2,2024-08-26,18:30,Girona FC,Valencia CF,Estadi Municipal de Montilivi,Girona,14624,0,1,2,10568,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00021,2024/25,3,2024-09-02,21:00,Athletic Club,Real Sociedad de Fútbol,San Mamés,Bilbao,53289,2,3,2,46562,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00022,2024/25,3,2024-09-01,21:00,Getafe CF,Atlético de Madrid,Coliseum,Getafe,16500,2,1,1,14504,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00023,2024/25,3,2024-08-30,16:15,Sevilla FC,RCD Espanyol de Barcelona,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,32401,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00024,2024/25,3,2024-09-01,14:00,Villarreal CF,CA Osasuna,Estadio de la Cerámica,Villarreal,23008,2,0,1,19765,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00025,2024/25,3,2024-08-31,14:00,Barça,Rayo Vallecano,Estadi Olímpic Lluís Companys,Barcelona,55926,3,2,1,50809,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00026,2024/25,3,2024-08-31,21:00,CD Leganés,RCD Mallorca,Estadio Municipal de Butarque,Leganés,12454,0,1,2,9736,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00027,2024/25,3,2024-08-31,18:30,Real Valladolid CF,RC Celta de Vigo,Estadio José Zorrilla,Valladolid,27618,1,1,X,22238,César Soto Grado,2026-07-02 06:00:00
+LL-00028,2024/25,3,2024-09-01,21:00,Real Madrid CF,UD Las Palmas,Santiago Bernabéu,Madrid,83186,2,0,1,74774,Mario Melero López,2026-07-02 06:00:00
+LL-00029,2024/25,3,2024-08-30,18:30,Deportivo Alavés,Valencia CF,Mendizorroza,Vitoria-Gasteiz,19840,4,1,1,15716,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00030,2024/25,3,2024-08-31,18:30,Girona FC,Real Betis Balompié,Estadi Municipal de Montilivi,Girona,14624,0,0,X,12375,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00031,2024/25,4,2024-09-08,21:00,Getafe CF,Athletic Club,Coliseum,Getafe,16500,1,2,2,15395,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00032,2024/25,4,2024-09-07,16:15,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,Reale Arena,San Sebastián,39313,2,0,1,36920,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00033,2024/25,4,2024-09-08,21:00,Villarreal CF,Atlético de Madrid,Estadio de la Cerámica,Villarreal,23008,2,3,2,21230,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00034,2024/25,4,2024-09-08,21:00,Sevilla FC,Rayo Vallecano de Madrid,Ramón Sánchez-Pizjuán,Sevilla,43883,1,2,2,41736,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00035,2024/25,4,2024-09-06,21:00,CD Leganés,CA Osasuna,Estadio Municipal de Butarque,Leganés,12454,0,0,X,10285,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00036,2024/25,4,2024-09-07,18:30,FC Barcelona,RC Celta de Vigo,Estadi Olímpic Lluís Companys,Barcelona,55926,1,2,2,52582,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00037,2024/25,4,2024-09-07,18:30,Real Madrid CF,RCD Mallorca,Santiago Bernabéu,Madrid,83186,1,0,1,80054,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00038,2024/25,4,2024-09-07,16:15,Real Valladolid CF,Valencia CF,Estadio José Zorrilla,Valladolid,27618,3,1,1,23905,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00039,2024/25,4,2024-09-07,18:30,Girona FC,UD Las Palmas,Estadi Municipal de Montilivi,Girona,14624,0,1,2,10883,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00040,2024/25,4,2024-09-07,18:30,Deportivo Alavés,Real Betis Balompié,Mendizorroza,Vitoria-Gasteiz,19840,2,0,1,16679,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00041,2024-2025,5,2024-09-15,21:00,Athletic Club,RCD Espanyol de Barcelona,San Mamés,Bilbao,53289,3,1,1,42502,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00042,2024/25,5,2024-09-14,14:00,Villarreal CF,Getafe CF,Estadio de la Cerámica,Villarreal,23008,1,0,1,19420,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00043,2024/25,5,2024-09-15,21:00,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,Reale Arena,San Sebastián,39313,1,0,1,30733,Mario Melero López,2026-07-02 06:00:00
+LL-00044,2024/25,5,2024-09-14,18:30,CD Leganés,Atlético de Madrid,Estadio Municipal de Butarque,Leganés,12454,1,5,2,11403,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00045,2024/25,5,2024-09-15,21:00,Sevilla FC,RC Celta de Vigo,Ramón Sánchez-Pizjuán,Sevilla,43883,1,4,2,35408,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00046,2024/25,5,2024-09-14,14:00,Real Madrid CF,CA Osasuna,Santiago Bernabéu,Madrid,83186,3,1,1,69762,Mario Melero López,2026-07-02 06:00:00
+LL-00047,2024/25,5,2024-09-16,18:30,FC Barcelona,Valencia CF,Estadi Olímpic Lluís Companys,Barcelona,55926,3,4,2,47228,Víctor García Verdura,2026-07-02 06:00:00
+LL-00048,2024/25,5,2024-09-15,18:30,Girona FC,RCD Mallorca,Estadi Municipal de Montilivi,Girona,14624,0,1,2,13057,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00049,2024/25,5,2024-09-14,21:00,Real Valladolid CF,Real Betis Balompié,Estadio José Zorrilla,Valladolid,27618,0,0,X,23164,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00050,2024/25,5,2024-09-15,14:00,Deportivo Alavés,UD Las Palmas,Mendizorroza,Vitoria-Gasteiz,19840,0,0,X,17793,César Soto Grado,2026-07-02 06:00:00
+LL-00051,2024/25,6,2024-09-22,16:15,Villarreal CF,Athletic Club,Estadio de la Cerámica,Villarreal,23008,4,1,1,22777,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00052,2024/25,6,2024-09-22,21:00,RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,Stage Front Stadium,Cornellà de Llobregat,40000,4,3,1,33772,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00053,2024/25,6,2024-09-21,18:30,Leganés,Getafe,Estadio Municipal de Butarque,Leganés,12454,0,1,2,10110,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00054,2024/25,6,2024-09-23,18:30,Real Sociedad de Fútbol,RC Celta de Vigo,Reale Arena,San Sebastián,39.313,4,0,1,36640,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00055,2024/25,6,2024-09-23,21:00,Real Madrid,Atlético,Santiago Bernabéu,Madrid,83186,1,2,2,69607,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00056,2024/25,6,2024-09-21,18:30,Sevilla FC,Valencia CF,Ramón Sánchez-Pizjuán,Sevilla,43883,0,2,2,40491,Mario Melero López,2026-07-02 06:00:00
+LL-00057,2024/25,6,2024-09-22,18:30,Girona FC,CA Osasuna,Estadi Municipal de Montilivi,Girona,14624,1,0,1,12193,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00058,2024/25,6,2024-09-22,21:00,FC Barcelona,Real Betis Balompié,Estadi Olímpic Lluís Companys,Barcelona,55926,1,0,1,53534,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00059,2024/25,6,2024-09-21,16:15,Deportivo Alavés,RCD Mallorca,Mendizorroza,Vitoria-Gasteiz,19840,1,1,X,18003,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00060,2024/25,6,2024-09-21,21:00,Real Valladolid CF,UD Las Palmas,Estadio José Zorrilla,Valladolid,27618,4,0,1,20683,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00061,2024-2025,7,2024-09-28,18:30,Athletic Club,Rayo Vallecano de Madrid,San Mamés,Bilbao,53289,3,1,1,45714,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00062,2024/25,7,2024-09-27,18:30,CD Leganés,Villarreal CF,Estadio Municipal de Butarque,Leganés,12454,1,3,2,9653,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00063,2024/25,7,2024-09-28,18:30,RCD Espanyol de Barcelona,RC Celta de Vigo,Stage Front Stadium,Cornellà de Llobregat,40000,2,1,1,28721,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00064,2024/25,7,2024-09-29,21:00,Real Madrid CF,Getafe CF,Santiago Bernabéu,Madrid,83186,4,1,1,73309,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00065,2024/25,7,2024-09-29,14:00,Real Sociedad de Fútbol,Valencia CF,Reale Arena,San Sebastián,39313,4,0,1,32822,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00066,2024/25,7,2024-09-28,21:00,Girona FC,Atlético de Madrid,Estadi Municipal de Montilivi,Girona,14624,1,1,X,14468,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00067,2024/25,7,2024-09-28,16:15,Sevilla FC,Real Betis Balompié,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,40788,Víctor García Verdura,2026-07-02 06:00:00
+LL-00068,2024/25,7,2024-09-28,16:15,Deportivo Alavés,CA Osasuna,Mendizorroza,Vitoria-Gasteiz,19840,0,0,X,18523,César Soto Grado,2026-07-02 06:00:00
+LL-00069,2024/25,7,2024-09-27,21:00,FC Barcelona,UD Las Palmas,Estadi Olímpic Lluís Companys,Barcelona,55926,1,1,X,47401,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00070,2024/25,7,2024-09-28,18:30,Real Valladolid CF,RCD Mallorca,Estadio José Zorrilla,Valladolid,27618,0,0,X,21749,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00071,2024/25,8,05/10/2024,16:15,CD Leganés,Athletic Club,Estadio Municipal de Butarque,Leganés,12454,0,0,X,11111,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00072,2024/25,8,2024-10-06,18:30,Rayo Vallecano de Madrid,RC Celta de Vigo,Estadio de Vallecas,Madrid,14708,1,1,X,11569,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00073,2024/25,8,2024-10-06,18:30,Real Madrid CF,Villarreal CF,Santiago Bernabéu,Madrid,83186,3,0,1,74275,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00074,2024/25,8,2024-10-05,18:30,RCD Espanyol de Barcelona,Valencia CF,Stage Front Stadium,Cornellà de Llobregat,40000,1,1,X,33760,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00075,2024/25,8,2024-10-05,14:00,Girona FC,Getafe CF,Estadi Municipal de Montilivi,Girona,14624,2,0,1,11844,Mario Melero López,2026-07-02 06:00:00
+LL-00076,2024/25,8,2024-10-06,14:00,Real Sociedad de Fútbol,Real Betis Balompié,Reale Arena,San Sebastián,39313,2,1,1,36887,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00077,2024/25,8,2024-10-04,21:00,Deportivo Alavés,Atlético de Madrid,Mendizorroza,Vitoria-Gasteiz,19840,1,2,2,16014,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00078,2024/25,8,2024-10-06,18:30,Sevilla FC,UD Las Palmas,Ramón Sánchez-Pizjuán,Sevilla,43883,1,2,2,38280,César Soto Grado,2026-07-02 06:00:00
+LL-00079,2024/25,8,2024-10-05,18:30,Real Valladolid CF,CA Osasuna,Estadio José Zorrilla,Valladolid,27618,0,1,2,,César Soto Grado,2026-07-02 06:00:00
+LL-00080,2024/25,8,2024-10-06,21:00,FC Barcelona,RCD Mallorca,Estadi Olímpic Lluís Companys,Barcelona,55926,0,1,2,53953,Víctor García Verdura,2026-07-02 06:00:00
+LL-00081,2024/25,9,2024-10-13,18:30,Athletic Club,RC Celta de Vigo,San Mamés,Bilbao,53289,0,0,X,46303,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00082,2024/25,9,2024-10-12,16:15,Real Madrid CF,CD Leganés,Santiago Bernabéu,Madrid,83186,2,1,1,79206,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00083,2024/25,9,2024-10-13,14:00,Rayo Vallecano de Madrid,Valencia CF,Estadio de Vallecas,Madrid,14708,0,1,2,13749,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00084,2024-2025,9,2024-10-13,21:00,Girona FC,Villarreal CF,Estadi Municipal de Montilivi,Girona,14624,3,1,1,11608,César Soto Grado,2026-07-02 06:00:00
+LL-00085,2024/25,9,2024-10-13,18:30,RCD Espanyol de Barcelona,Real Betis Balompié,Stage Front Stadium,Cornellà de Llobregat,40000,0,1,2,35631,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00086,2024/25,9,2024-10-11,16:15,Deportivo Alavés,Getafe CF,Mendizorroza,Vitoria-Gasteiz,19840,2,1,1,14924,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00087,2024/25,9,2024-10-11,21:00,Real Sociedad de Fútbol,UD Las Palmas,Reale Arena,San Sebastián,39313,0,0,X,29997,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00088,2024/25,9,12/10/2024,21:00,Real Valladolid CF,Atlético de Madrid,Estadio José Zorrilla,Valladolid,27618,1,0,1,24528,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00089,2024/25,9,2024-10-13,21:00,Sevilla FC,RCD Mallorca,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,39677,Víctor García Verdura,2026-07-02 06:00:00
+LL-00090,2024/25,9,2024-10-11,21:00,FC Barcelona,CA Osasuna,Estadi Olímpic Lluís Companys,Barcelona,55926,2,0,1,52098,César Soto Grado,2026-07-02 06:00:00
+LL-00091,2024/25,10,2024-10-19,18:30,Real Madrid CF,Athletic Club,Santiago Bernabéu,Madrid,83186,1,1,X,80773,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00092,2024/25,10,2024-10-18,18:30,RC Celta de Vigo,Valencia CF,Abanca-Balaídos,Vigo,24870,3,1,1,17183,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00093,2024/25,10,2024-10-19,16:15,Girona,Leganés,Estadi Municipal de Montilivi,Girona,14624,1,4,2,13166,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00094,2024/25,10,2024-10-20,14:00,Rayo Vallecano de Madrid,Real Betis Balompié,Estadio de Vallecas,Madrid,14.708,2,1,1,14390,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00095,2024/25,10,2024-10-21,18:30,Deportivo Alavés,Villarreal CF,Mendizorroza,Vitoria-Gasteiz,19840,2,2,X,16659,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00096,2024/25,10,2024-10-18,14:00,RCD Espanyol de Barcelona,UD Las Palmas,Stage Front Stadium,Cornellà de Llobregat,40000,3,1,1,33009,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00097,2024/25,10,20/10/2024,18:30,Real Valladolid CF,Getafe CF,Estadio José Zorrilla,Valladolid,27618,0,0,X,23262,Víctor García Verdura,2026-07-02 06:00:00
+LL-00098,2024/25,10,2024-10-19,21:00,Real Sociedad de Fútbol,RCD Mallorca,Reale Arena,San Sebastián,39313,1,0,1,36277,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00099,2024/25,10,2024-10-21,21:00,FC Barcelona,Atlético de Madrid,Estadi Olímpic Lluís Companys,Barcelona,55926,1,2,2,49226,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00100,2024/25,10,2024-10-20,18:30,Sevilla FC,CA Osasuna,Ramón Sánchez-Pizjuán,Sevilla,43883,1,0,1,34773,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00101,2024/25,11,2024-10-25,18:30,Athletic Club,Valencia CF,San Mamés,Bilbao,53289,0,1,2,40879,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00102,2024/25,11,2024-10-25,18:30,Girona FC,Real Madrid CF,Estadi Municipal de Montilivi,Girona,14624,0,1,2,13440,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00103,2024/25,11,2024-10-25,18:30,RC Celta de Vigo,Real Betis Balompié,Abanca-Balaídos,Vigo,24870,3,1,1,19883,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00104,2024/25,11,2024-10-25,16:15,Deportivo Alavés,CD Leganés,Mendizorroza,Vitoria-Gasteiz,19840,1,1,X,15136,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00105,2024/25,11,2024-10-26,18:30,Rayo Vallecano de Madrid,UD Las Palmas,Estadio de Vallecas,Madrid,14708,1,0,1,11598,Mario Melero López,2026-07-02 06:00:00
+LL-00106,2024/25,11,2024-10-26,14:00,Real Valladolid CF,Villarreal CF,Estadio José Zorrilla,Valladolid,27618,0,2,2,18181,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00107,2024/25,11,2024-10-27,18:30,RCD Espanyol de Barcelona,RCD Mallorca,Stage Front Stadium,Cornellà de Llobregat,40000,0,4,2,37502,Mario Melero López,2026-07-02 06:00:00
+LL-00108,2024/25,11,2024-10-26,18:30,FC Barcelona,Getafe CF,Estadi Olímpic Lluís Companys,Barcelona,55926,1,0,1,55259,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00109,2024/25,11,2024-10-26,18:30,Real Sociedad de Fútbol,CA Osasuna,Reale Arena,San Sebastián,39313,3,0,1,31211,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00110,2024/25,11,2024-10-27,18:30,Sevilla FC,Atlético de Madrid,Ramón Sánchez-Pizjuán,Sevilla,43883,0,0,X,43250,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00111,2024/25,12,2024-11-03,21:00,Girona FC,Athletic Club,Estadi Municipal de Montilivi,Girona,14624,1,3,2,11730,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00112,2024/25,12,2024-11-02,21:00,Valencia CF,Real Betis Balompié,Mestalla,Valencia,49430,1,1,X,42026,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00113,2024/25,12,2024-11-02,16:15,Deportivo Alavés,Real Madrid CF,Mendizorroza,Vitoria-Gasteiz,19840,1,2,2,17706,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00114,2024/25,12,2024-11-02,21:00,RC Celta de Vigo,UD Las Palmas,Abanca-Balaídos,Vigo,24870,2,2,X,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00115,2024/25,12,2024-11-01,16:15,Real Valladolid CF,CD Leganés,Estadio José Zorrilla,Valladolid,27618,4,0,1,19658,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00116,2024/25,12,2024-11-03,18:30,Rayo Vallecano de Madrid,RCD Mallorca,Estadio de Vallecas,Madrid,14708,0,3,2,12584,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00117,2024/25,12,2024-11-01,18:30,Barça,Villarreal,Estadi Olímpic Lluís Companys,Barcelona,55926,2,1,1,42581,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00118,2024/25,12,2024-11-03,18:30,RCD Espanyol de Barcelona,CA Osasuna,Stage Front Stadium,Cornellà de Llobregat,40000,2,2,X,32750,César Soto Grado,2026-07-02 06:00:00
+LL-00119,2024/25,12,2024-11-04,21:00,Sevilla FC,Getafe CF,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,40480,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00120,2024/25,12,2024-11-04,16:15,Real Sociedad de Fútbol,Atlético de Madrid,Reale Arena,San Sebastián,39313,1,1,X,33445,Víctor García Verdura,2026-07-02 06:00:00
+LL-00121,2024/25,13,2024-11-09,14:00,Athletic Club,Real Betis Balompié,San Mamés,Bilbao,53289,0,1,2,43897,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00122,2024/25,13,08/11/2024,18:30,Deportivo Alavés,Girona FC,Mendizorroza,Vitoria-Gasteiz,19840,0,2,2,14927,Víctor García Verdura,2026-07-02 06:00:00
+LL-00123,2024/25,13,2024-11-09,21:00,Valencia,Las Palmas,Mestalla,Valencia,49430,2,1,1,42673,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00124,2024/25,13,2024-11-09,18:30,Real Valladolid CF,Real Madrid CF,Estadio José Zorrilla,Valladolid,27618,2,2,X,24191,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00125,2024/25,13,2024-11-09,14:00,RC Celta de Vigo,RCD Mallorca,Abanca-Balaídos,Vigo,24870,0,0,X,21668,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00126,2024/25,13,2024-11-10,16:15,FC Barcelona,CD Leganés,Estadi Olímpic Lluís Companys,Barcelona,55926,2,1,1,51610,Víctor García Verdura,2026-07-02 06:00:00
+LL-00127,2024/25,13,2024-11-10,14:00,Rayo Vallecano de Madrid,CA Osasuna,Estadio de Vallecas,Madrid,14708,0,2,2,11728,Mario Melero López,2026-07-02 06:00:00
+LL-00128,2024/25,13,2024-11-08,18:30,Sevilla FC,Villarreal CF,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,36888,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00129,2024/25,13,2024-11-09,21:00,RCD Espanyol de Barcelona,Atlético de Madrid,Stage Front Stadium,Cornellà de Llobregat,40000,1,0,1,31390,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00130,2024/25,13,2024-11-09,14:00,Real Sociedad de Fútbol,Getafe CF,Reale Arena,San Sebastián,39313,0,1,2,36910,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00131,2024/25,14,2024-11-16,21:00,Deportivo Alavés,Athletic Club,Mendizorroza,Vitoria-Gasteiz,19840,0,1,2,17073,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00132,2024/25,14,2024-11-17,16:15,Real Betis Balompié,UD Las Palmas,Benito Villamarín,Sevilla,60721,1,1,X,54173,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00133,2024/25,14,2024-11-17,21:00,Real Valladolid CF,Girona FC,Estadio José Zorrilla,Valladolid,27.618,0,3,2,22068,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00134,2024/25,14,2024-11-15,16:15,Valencia CF,RCD Mallorca,Mestalla,Valencia,49430,0,1,2,40534,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00135,2024/25,14,2024-11-16,21:00,FC Barcelona,Real Madrid CF,Estadi Olímpic Lluís Companys,Barcelona,55926,3,3,X,51583,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00136,2024/25,14,2024-11-16,21:00,RC Celta de Vigo,CA Osasuna,Abanca-Balaídos,Vigo,24870,1,2,2,21374,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00137,2024/25,14,2024-11-18,18:30,Sevilla FC,CD Leganés,Ramón Sánchez-Pizjuán,Sevilla,43883,3,0,1,33095,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00138,2024/25,14,2024-11-16,18:30,Rayo Vallecano de Madrid,Atlético de Madrid,Estadio de Vallecas,Madrid,14708,0,2,2,14274,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00139,2024/25,14,2024-11-18,18:30,Real Sociedad de Fútbol,Villarreal CF,Reale Arena,San Sebastián,39.313,2,1,1,28778,Víctor García Verdura,2026-07-02 06:00:00
+LL-00140,2024/25,14,2024-11-18,18:30,RCD Espanyol de Barcelona,Getafe CF,Stage Front Stadium,Cornellà de Llobregat,40000,2,1,1,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00141,2024/25,15,2024-11-23,21:00,Athletic Club,UD Las Palmas,San Mamés,Bilbao,53289,2,0,1,41975,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00142,2024/25,15,2024-11-23,16:15,Real Valladolid CF,Deportivo Alavés,Estadio José Zorrilla,Valladolid,27618,3,1,1,23505,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00143,2024/25,15,2024-11-23,18:30,Real Betis Balompié,RCD Mallorca,Benito Villamarín,Sevilla,60721,2,1,1,55843,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00144,2024/25,15,2024-11-23,14:00,FC Barcelona,Girona FC,Estadi Olímpic Lluís Companys,Barcelona,55.926,0,1,2,51664,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00144,2024/25,15,2024-11-23,14:00,FC Barcelona,Girona FC,Estadi Olímpic Lluís Companys,Barcelona,55.926,0,1,2,51664,Jesús Gil Manzano,2026-07-03 06:00:00
+LL-00145,2024/25,15,2024-11-24,21:00,Valencia CF,CA Osasuna,Mestalla,Valencia,49430,1,0,1,37764,Mario Melero López,2026-07-02 06:00:00
+LL-00146,2024/25,15,2024-11-24,21:00,Sevilla FC,Real Madrid CF,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,38929,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00147,2024/25,15,2024-11-22,18:30,RC Celta de Vigo,Atlético de Madrid,Abanca-Balaídos,Vigo,24870,1,0,1,20879,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00148,2024/25,15,2024-11-23,18:30,Real Sociedad de Fútbol,CD Leganés,Reale Arena,San Sebastián,39313,3,1,1,36518,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00149,2024/25,15,2024-11-24,21:00,Rayo Vallecano de Madrid,Getafe CF,Estadio de Vallecas,Madrid,14708,1,1,X,12482,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00150,2024/25,15,2024-11-23,21:00,RCD Espanyol de Barcelona,Villarreal CF,Stage Front Stadium,Cornellà de Llobregat,40000,1,0,1,33010,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00151,2024/25,16,2024-11-30,21:00,Real Valladolid CF,Athletic Club,Estadio José Zorrilla,Valladolid,27618,0,1,2,24500,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00152,2024/25,16,2024-11-30,14:00,UD Las Palmas,RCD Mallorca,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,2,0,1,25587,César Soto Grado,2026-07-02 06:00:00
+LL-00153,2024/25,16,2024-12-01,14:00,FC Barcelona,Deportivo Alavés,Estadi Olímpic Lluís Companys,Barcelona,55926,2,1,1,50371,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00154,2024/25,16,2024-12-01,14:00,Real Betis Balompié,CA Osasuna,Benito Villamarín,Sevilla,60721,1,2,2,55295,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00155,2024/25,16,2024-11-30,21:00,Sevilla FC,Girona FC,Ramón Sánchez-Pizjuán,Sevilla,43883,4,3,1,35933,César Soto Grado,2026-07-02 06:00:00
+LL-00156,2024/25,16,2024-11-30,16:15,Valencia CF,Atlético de Madrid,Mestalla,Valencia,49430,0,1,2,42520,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00157,2024/25,16,2024-12-02,18:30,Real Sociedad de Fútbol,Real Madrid CF,Reale Arena,San Sebastián,39313,0,2,2,33254,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00158,2024/25,16,2024-11-30,16:15,RC Celta de Vigo,Getafe CF,Abanca-Balaídos,Vigo,24870,0,0,X,17525,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00159,2024/25,16,2024-11-30,21:00,RCD Espanyol de Barcelona,CD Leganés,Stage Front Stadium,Cornellà de Llobregat,40000,0,0,X,32607,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00160,2024/25,16,2024-11-30,14:00,Rayo Vallecano de Madrid,Villarreal CF,Estadio de Vallecas,Madrid,14708,0,3,2,13051,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00161,2024/25,17,2024-12-08,21:00,Athletic Club,RCD Mallorca,San Mamés,Bilbao,53289,4,0,1,44574,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00162,2024/25,17,2024-12-08,21:00,FC Barcelona,Real Valladolid CF,Estadi Olímpic Lluís Companys,Barcelona,55926,2,0,1,43200,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00163,2024/25,17,2024-12-07,21:00,UD Las Palmas,CA Osasuna,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,3,1,1,26186,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00164,2024/25,17,2024-12-08,21:00,Sevilla FC,Deportivo Alavés,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,38419,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00165,2024/25,17,2024-12-08,16:15,Real Betis Balompié,Atlético de Madrid,Benito Villamarín,Sevilla,60721,1,0,1,54021,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00166,2024/25,17,2024-12-08,18:30,Real Sociedad de Fútbol,Girona FC,Reale Arena,San Sebastián,39313,2,1,1,33489,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00167,2024/25,17,2024-12-08,14:00,Valencia CF,Getafe CF,Mestalla,Valencia,49430,2,0,1,40534,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00168,2024/25,17,2024-12-08,18:30,RCD Espanyol de Barcelona,Real Madrid CF,Stage Front Stadium,Cornellà de Llobregat,40.000,0,3,2,38693,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00169,2024/25,17,2024-12-07,21:00,RC Celta de Vigo,Villarreal CF,Abanca-Balaídos,Vigo,24870,2,1,1,,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00170,2024/25,17,2024-12-08,21:00,Rayo Vallecano de Madrid,CD Leganés,Estadio de Vallecas,Madrid,14708,2,2,X,12679,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00171,2024/25,18,2024-12-16,16:15,FC Barcelona,Athletic Club,Estadi Olímpic Lluís Companys,Barcelona,55926,3,1,1,44056,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00172,2024/25,18,2024-12-14,18:30,RCD Mallorca,CA Osasuna,Estadi Mallorca Son Moix,Palma,26020,1,2,2,24266,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00173,2024/25,18,2024-12-14,16:15,Sevilla FC,Real Valladolid CF,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00174,2024/25,18,2024-12-15,18:30,UD Las Palmas,Atlético de Madrid,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,2,2,28843,Mario Melero López,2026-07-02 06:00:00
+LL-00175,2024/25,18,2024-12-15,16:15,Real Sociedad de Fútbol,Deportivo Alavés,Reale Arena,San Sebastián,39313,1,2,2,32430,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00176,2024/25,18,2024-12-15,21:00,Real Betis Balompié,Getafe CF,Benito Villamarín,Sevilla,60721,1,1,X,51978,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00177,2024/25,18,2024-12-16,14:00,RCD Espanyol de Barcelona,Girona FC,Stage Front Stadium,Cornellà de Llobregat,40000,3,0,1,32159,Víctor García Verdura,2026-07-02 06:00:00
+LL-00178,2024/25,18,2024-12-15,21:00,Valencia CF,Villarreal CF,Mestalla,Valencia,49430,0,1,2,44092,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00179,2024/25,18,2024-12-14,18:30,Rayo Vallecano de Madrid,Real Madrid CF,Estadio de Vallecas,Madrid,14708,0,1,2,13019,César Soto Grado,2026-07-02 06:00:00
+LL-00180,2024/25,18,2024-12-14,18:30,RC Celta de Vigo,CD Leganés,Abanca-Balaídos,Vigo,24870,2,1,1,21560,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00181,2024/25,19,2024-12-28,18:30,Athletic,Osasuna,San Mamés,Bilbao,53289,0,0,X,46329,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00182,2024/25,19,2024-12-30,21:00,Sevilla FC,FC Barcelona,Ramón Sánchez-Pizjuán,Sevilla,43883,0,0,X,37641,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00183,2024/25,19,2024-12-29,21:00,RCD Mallorca,Atlético de Madrid,Estadi Mallorca Son Moix,Palma,26020,1,2,2,19981,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00184,2024/25,19,2024-12-28,18:30,Real Sociedad de Fútbol,Real Valladolid CF,Reale Arena,San Sebastián,39313,1,1,X,30384,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00185,2024/25,19,2024-12-29,18:30,UD Las Palmas,Getafe CF,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,1,X,27094,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00186,2024/25,19,2024-12-28,14:00,RCD Espanyol de Barcelona,Deportivo Alavés,Stage Front Stadium,Cornellà de Llobregat,40000,3,1,1,33046,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00187,2024/25,19,2024-12-29,16:15,Real Betis Balompié,Villarreal CF,Benito Villamarín,Sevilla,60721,0,2,2,54983,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00188,2024/25,19,2024-12-27,18:30,Rayo Vallecano de Madrid,Girona FC,Estadio de Vallecas,Madrid,14708,4,1,1,11758,Víctor García Verdura,2026-07-02 06:00:00
+LL-00189,2024/25,19,2024-12-29,18:30,Valencia CF,CD Leganés,Mestalla,Valencia,49430,2,3,2,38996,César Soto Grado,2026-07-02 06:00:00
+LL-00190,2024/25,19,2024-12-27,14:00,RC Celta de Vigo,Real Madrid CF,Abanca-Balaídos,Vigo,24870,0,1,2,21442,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00191,2024/25,20,2025-01-04,21:00,Sevilla FC,Athletic Club,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,39706,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00192,2024/25,20,2025-01-04,18:30,CA Osasuna,Atlético de Madrid,El Sadar,Pamplona,23576,0,1,2,21485,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00193,2024/25,20,2025-01-03,18:30,Real Sociedad de Fútbol,FC Barcelona,Reale Arena,San Sebastián,39313,2,2,X,,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00194,2024/25,20,2025-01-04,18:30,RCD Mallorca,Getafe CF,Estadi Mallorca Son Moix,Palma,26020,1,0,1,,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00195,2024-2025,20,2025-01-03,21:00,RCD Espanyol de Barcelona,Real Valladolid CF,Stage Front Stadium,Cornellà de Llobregat,40000,1,1,X,33024,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00196,2024/25,20,2025-01-05,21:00,UD Las Palmas,Villarreal CF,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32.400,0,1,2,28847,Mario Melero López,2026-07-02 06:00:00
+LL-00197,2024/25,20,2025-01-06,14:00,Rayo Vallecano de Madrid,Deportivo Alavés,Estadio de Vallecas,Madrid,14708,1,2,2,11510,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00198,2024/25,20,2025-01-04,14:00,Real Betis Balompié,CD Leganés,Benito Villamarín,Sevilla,60721,1,0,1,57609,Mario Melero López,2026-07-02 06:00:00
+LL-00199,2024/25,20,2025-01-06,21:00,RC Celta de Vigo,Girona FC,Abanca-Balaídos,Vigo,24870,5,2,1,18228,César Soto Grado,2026-07-02 06:00:00
+LL-00200,2024/25,20,2025-01-05,14:00,Valencia CF,Real Madrid CF,Mestalla,Valencia,49430,2,3,2,43897,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00201,2024/25,21,2025-01-12,21:00,Athletic Club,Atlético de Madrid,San Mamés,Bilbao,53289,2,0,1,51207,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00202,2024/25,21,2025-01-12,21:00,Real Sociedad de Fútbol,Sevilla FC,Reale Arena,San Sebastián,39313,1,2,2,31763,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00203,2024/25,21,2025-01-12,18:30,CA Osasuna,Getafe CF,El Sadar,Pamplona,23576,1,2,2,19624,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00204,2024/25,21,2025-01-10,21:00,Espanyol,Barça,Stage Front Stadium,Cornellà de Llobregat,40000,1,1,X,34873,Mario Melero López,2026-07-02 06:00:00
+LL-00205,2024/25,21,2025-01-11,14:00,RCD Mallorca,Villarreal CF,Estadi Mallorca Son Moix,Palma,26020,1,0,1,22399,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00206,2024/25,21,2025-01-11,18:30,Rayo Vallecano de Madrid,Real Valladolid CF,Estadio de Vallecas,Madrid,14708,1,3,2,13472,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00207,2024/25,21,2025-01-10,14:00,UD Las Palmas,CD Leganés,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,0,1,2,23546,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00208,2024/25,21,2025-01-13,16:15,RC Celta de Vigo,Deportivo Alavés,Abanca-Balaídos,Vigo,24870,2,1,1,19756,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00209,2024/25,21,2025-01-11,21:00,Real Betis Balompié,Real Madrid CF,Benito Villamarín,Sevilla,60721,1,3,2,60113,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00210,2024/25,21,2025-01-11,21:00,Valencia CF,Girona FC,Mestalla,Valencia,49430,6,3,1,38873,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00211,2024/25,22,2025-01-19,21:00,Real Sociedad de Fútbol,Athletic Club,Reale Arena,San Sebastián,39313,0,0,X,36413,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00212,2024/25,22,2025-01-19,14:00,Atlético de Madrid,Getafe CF,Riyadh Air Metropolitano,Madrid,70460,0,0,X,61778,César Soto Grado,2026-07-02 06:00:00
+LL-00213,2024/25,22,2025-01-18,16:15,RCD Espanyol de Barcelona,Sevilla FC,Stage Front Stadium,Cornellà de Llobregat,40000,4,1,1,36158,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00214,2024/25,22,2025-01-18,18:30,CA Osasuna,Villarreal CF,El Sadar,Pamplona,23576,1,4,2,20045,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00215,2024/25,22,2025-01-17,18:30,Rayo Vallecano de Madrid,FC Barcelona,Estadio de Vallecas,Madrid,14708,1,2,2,14083,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00216,2024/25,22,2025-01-19,18:30,RCD Mallorca,CD Leganés,Estadi Mallorca Son Moix,Palma,26020,0,1,2,19024,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00217,2024/25,22,2025-01-18,18:30,RC Celta de Vigo,Real Valladolid CF,Abanca-Balaídos,Vigo,24870,2,0,1,22148,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00218,2024/25,22,2025-01-18,14:00,UD Las Palmas,Real Madrid CF,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,2,1,1,30794,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00219,2024/25,22,2025-01-20,18:30,Valencia CF,Deportivo Alavés,Mestalla,Valencia,49430,2,0,1,34192,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00220,2024/25,22,2025-01-17,21:00,Real Betis Balompié,Girona FC,Benito Villamarín,Sevilla,60721,0,1,2,49283,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00221,2024/25,23,2025-01-25,16:15,Athletic Club,Getafe CF,San Mamés,Bilbao,53289,3,0,1,50455,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00222,2024/25,23,2025-01-26,21:00,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,Stage Front Stadium,Cornellà de Llobregat,40.000,2,0,1,27194,Mario Melero López,2026-07-02 06:00:00
+LL-00223,2024/25,23,2025-01-24,16:15,Atlético de Madrid,Villarreal CF,Riyadh Air Metropolitano,Madrid,70460,1,2,2,58246,Víctor García Verdura,2026-07-02 06:00:00
+LL-00224,2024/25,23,2025-01-26,21:00,Rayo Vallecano de Madrid,Sevilla FC,Estadio de Vallecas,Madrid,14708,1,1,X,11527,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00225,2024/25,23,2025-01-25,21:00,CA Osasuna,CD Leganés,El Sadar,Pamplona,23576,3,0,1,18970,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00226,2024/25,23,2025-01-26,18:30,Celta,Barça,Abanca-Balaídos,Vigo,24870,2,5,2,22737,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00227,2024/25,23,2025-01-24,18:30,RCD Mallorca,Real Madrid CF,Estadi Mallorca Son Moix,Palma,26020,3,1,1,24058,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00228,2024/25,23,2025-01-27,21:00,Valencia CF,Real Valladolid CF,Mestalla,Valencia,49430,0,4,2,36320,Víctor García Verdura,2026-07-02 06:00:00
+LL-00229,2024/25,23,2025-01-26,16:15,UD Las Palmas,Girona FC,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,3,1,1,28029,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00230,2024/25,23,2025-01-25,21:00,Real Betis Balompié,Deportivo Alavés,Benito Villamarín,Sevilla,60721,1,1,X,49529,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00231,2024-2025,24,02/02/2025,18:30,RCD Espanyol de Barcelona,Athletic Club,Stage Front Stadium,Cornellà de Llobregat,40.000,2,0,1,37585,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00232,2024/25,24,2025-02-02,16:15,Getafe CF,Villarreal CF,Coliseum,Getafe,16500,0,2,2,15049,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00233,2024/25,24,2025-02-02,16:15,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,Estadio de Vallecas,Madrid,14708,1,3,2,13898,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00234,2024/25,24,2025-02-02,21:00,Atlético de Madrid,CD Leganés,Riyadh Air Metropolitano,Madrid,70460,0,1,2,58892,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00235,2024/25,24,2025-02-02,21:00,RC Celta de Vigo,Sevilla FC,Abanca-Balaídos,Vigo,24870,1,0,1,22803,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00236,2024/25,24,2025-02-02,18:30,CA Osasuna,Real Madrid CF,El Sadar,Pamplona,23576,0,4,2,23080,Víctor García Verdura,2026-07-02 06:00:00
+LL-00237,2024/25,24,2025-01-31,14:00,Valencia CF,FC Barcelona,Mestalla,Valencia,49430,1,2,2,46305,Mario Melero López,2026-07-02 06:00:00
+LL-00238,2024/25,24,2025-01-31,14:00,RCD Mallorca,Girona FC,Estadi Mallorca Son Moix,Palma,26020,2,2,X,21950,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00239,2024/25,24,02/02/2025,18:30,Real Betis Balompié,Real Valladolid CF,Benito Villamarín,Sevilla,60721,2,0,1,46517,Mario Melero López,2026-07-02 06:00:00
+LL-00240,2024/25,24,2025-02-03,18:30,UD Las Palmas,Deportivo Alavés,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,0,1,2,27091,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00241,2024/25,25,2025-02-08,18:30,Athletic Club,Villarreal CF,San Mamés,Bilbao,53289,3,1,1,47775,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00242,2024/25,25,2025-02-07,21:00,Rayo Vallecano de Madrid,RCD Espanyol de Barcelona,Estadio de Vallecas,Madrid,14708,0,2,2,10906,Víctor García Verdura,2026-07-02 06:00:00
+LL-00243,2024/25,25,2025-02-08,14:00,Getafe CF,CD Leganés,Coliseum,Getafe,16500,2,1,1,13682,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00244,2024/25,25,2025-02-08,14:00,RC Celta de Vigo,Real Sociedad de Fútbol,Abanca-Balaídos,Vigo,24870,1,1,X,19567,Mario Melero López,2026-07-02 06:00:00
+LL-00245,2024/25,25,2025-02-10,16:15,Atlético de Madrid,Real Madrid CF,Riyadh Air Metropolitano,Madrid,70460,2,0,1,67936,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00246,2024/25,25,2025-02-07,21:00,Valencia CF,Sevilla FC,Mestalla,Valencia,49430,0,1,2,38377,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00247,2024/25,25,2025-02-10,14:00,CA Osasuna,Girona FC,El Sadar,Pamplona,23576,2,2,X,19485,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00248,2024/25,25,2025-02-09,21:00,Real Betis Balompié,FC Barcelona,Benito Villamarín,Sevilla,60721,2,1,1,56866,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00249,2024/25,25,2025-02-09,21:00,RCD Mallorca,Deportivo Alavés,Estadi Mallorca Son Moix,Palma,26020,2,1,1,22681,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00250,2024/25,25,2025-02-07,16:15,UD Las Palmas,Real Valladolid CF,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,0,2,2,23937,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00251,2024/25,26,2025-02-15,21:00,Rayo Vallecano de Madrid,Athletic Club,Estadio de Vallecas,Madrid,14708,0,2,2,12874,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00252,2024/25,26,2025-02-17,16:15,Villarreal CF,CD Leganés,Estadio de la Cerámica,Villarreal,23008,3,0,1,18689,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00253,2024/25,26,2025-02-15,14:00,RC Celta de Vigo,RCD Espanyol de Barcelona,Abanca-Balaídos,Vigo,24870,2,1,1,19426,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00254,2024/25,26,2025-02-16,18:30,Getafe CF,Real Madrid CF,Coliseum,Getafe,16500,0,5,2,15303,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00255,2024/25,26,2025-02-17,16:15,Valencia CF,Real Sociedad de Fútbol,Mestalla,Valencia,49430,1,1,X,43218,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00256,2024/25,26,2025-02-15,16:15,Atlético de Madrid,Girona FC,Riyadh Air Metropolitano,Madrid,70460,1,0,1,59990,Mario Melero López,2026-07-02 06:00:00
+LL-00257,2024/25,26,2025-02-15,18:30,Real Betis Balompié,Sevilla FC,Benito Villamarín,Sevilla,60721,0,1,2,55451,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00258,2024/25,26,2025-02-17,18:30,CA Osasuna,Deportivo Alavés,El Sadar,Pamplona,23.576,2,0,1,20119,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00259,2024/25,26,2025-02-16,21:00,UD Las Palmas,FC Barcelona,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,0,3,2,31659,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00260,2024/25,26,2025-02-15,21:00,RCD Mallorca,Real Valladolid CF,Estadi Mallorca Son Moix,Palma,26020,2,1,1,22054,Víctor García Verdura,2026-07-02 06:00:00
+LL-00261,2024/25,27,2025-02-23,21:00,Athletic Club,CD Leganés,San Mamés,Bilbao,53289,0,2,2,47260,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00262,2024/25,27,2025-02-22,18:30,RC Celta de Vigo,Rayo Vallecano de Madrid,Abanca-Balaídos,Vigo,24870,1,1,X,22866,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00263,2024/25,27,2025-02-22,21:00,Villarreal CF,Real Madrid CF,Estadio de la Cerámica,Villarreal,23008,1,1,X,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00264,2024/25,27,2025-02-23,18:30,Valencia CF,RCD Espanyol de Barcelona,Mestalla,Valencia,49430,1,1,X,38879,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00265,2024/25,27,2025-02-22,16:15,Getafe CF,Girona FC,Coliseum,Getafe,16500,1,1,X,14975,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00266,2024/25,27,2025-02-22,21:00,Real Betis Balompié,Real Sociedad de Fútbol,Benito Villamarín,Sevilla,60721,0,1,2,49742,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00267,2024/25,27,2025-02-23,16:15,Atlético de Madrid,Deportivo Alavés,Riyadh Air Metropolitano,Madrid,70460,3,1,1,68550,César Soto Grado,2026-07-02 06:00:00
+LL-00268,2024/25,27,2025-02-22,18:30,UD Las Palmas,Sevilla FC,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,1,X,28656,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00269,2024/25,27,2025-02-22,21:00,CA Osasuna,Real Valladolid CF,El Sadar,Pamplona,23576,0,1,2,18983,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00270,2024/25,27,2025-02-23,21:00,RCD Mallorca,FC Barcelona,Estadi Mallorca Son Moix,Palma,26020,1,3,2,23237,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00271,2024/25,28,2025-03-01,18:30,RC Celta de Vigo,Athletic Club,Abanca-Balaídos,Vigo,24870,0,1,2,22762,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00272,2024/25,28,2025-02-28,21:00,CD Leganés,Real Madrid CF,Estadio Municipal de Butarque,Leganés,12454,1,5,2,10091,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00273,2024/25,28,2025-03-01,18:30,Valencia,Rayo Vallecano,Mestalla,Valencia,49430,1,1,X,38441,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00274,2024/25,28,2025-03-01,18:30,Villarreal CF,Girona FC,Estadio de la Cerámica,Villarreal,23008,0,1,2,20651,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00275,2024/25,28,2025-02-28,16:15,Real Betis Balompié,RCD Espanyol de Barcelona,Benito Villamarín,Sevilla,60721,1,1,X,48306,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00276,2024/25,28,2025-03-01,21:00,Getafe CF,Deportivo Alavés,Coliseum,Getafe,16500,1,2,2,14189,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00277,2024/25,28,2025-03-03,21:00,UD Las Palmas,Real Sociedad de Fútbol,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,2,2,26074,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00278,2024/25,28,2025-03-03,21:00,Atlético de Madrid,Real Valladolid CF,Riyadh Air Metropolitano,Madrid,70460,2,0,1,56466,César Soto Grado,2026-07-02 06:00:00
+LL-00279,2024/25,28,2025-03-02,14:00,RCD Mallorca,Sevilla FC,Estadi Mallorca Son Moix,Palma,26.020,1,3,2,22034,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00280,2024/25,28,2025-03-02,21:00,CA Osasuna,FC Barcelona,El Sadar,Pamplona,23576,0,4,2,20412,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00281,2024/25,29,2025-03-16,14:00,Athletic Club,Real Madrid CF,San Mamés,Bilbao,53289,3,2,1,50058,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00282,2024/25,29,2025-03-16,21:00,Valencia CF,RC Celta de Vigo,Mestalla,Valencia,49430,0,1,2,42854,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00283,2024/25,29,2025-03-16,16:15,CD Leganés,Girona FC,Estadio Municipal de Butarque,Leganés,12454,1,2,2,10860,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00284,2024/25,29,2025-03-16,18:30,Real Betis Balompié,Rayo Vallecano de Madrid,Benito Villamarín,Sevilla,60721,2,0,1,52583,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00285,2024/25,29,2025-03-16,18:30,Villarreal CF,Deportivo Alavés,Estadio de la Cerámica,Villarreal,23008,0,1,2,18244,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00286,2024/25,29,2025-03-16,14:00,UD Las Palmas,RCD Espanyol de Barcelona,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,2,0,1,25491,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00287,2024/25,29,2025-03-16,21:00,Getafe CF,Real Valladolid CF,Coliseum,Getafe,16500,0,0,X,14289,Víctor García Verdura,2026-07-02 06:00:00
+LL-00288,2024/25,29,2025-03-15,14:00,RCD Mallorca,Real Sociedad de Fútbol,Estadi Mallorca Son Moix,Palma,26020,0,1,2,19303,César Soto Grado,2026-07-02 06:00:00
+LL-00289,2024/25,29,2025-03-16,21:00,Atlético de Madrid,FC Barcelona,Riyadh Air Metropolitano,Madrid,70460,1,3,2,58013,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00290,2024/25,29,2025-03-15,18:30,Osasuna,Sevilla,El Sadar,Pamplona,23576,0,2,2,20442,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00291,2024/25,30,2025-03-23,18:30,Valencia CF,Athletic Club,Mestalla,Valencia,49430,1,1,X,48935,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00292,2024/25,30,2025-03-23,21:00,Real Madrid CF,Girona FC,Santiago Bernabéu,Madrid,83186,2,1,1,66467,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00293,2024/25,30,2025-03-23,21:00,Real Betis Balompié,RC Celta de Vigo,Benito Villamarín,Sevilla,60721,1,1,X,48388,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00294,2024/25,30,2025-03-23,16:15,CD Leganés,Deportivo Alavés,Estadio Municipal de Butarque,Leganés,12454,1,1,X,11559,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00295,2024/25,30,2025-03-22,21:00,UD Las Palmas,Rayo Vallecano de Madrid,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,2,0,1,28714,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00296,2024/25,30,2025-03-22,18:30,Villarreal CF,Real Valladolid CF,Estadio de la Cerámica,Villarreal,23008,1,1,X,18515,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00297,2024/25,30,2025-03-22,21:00,RCD Mallorca,RCD Espanyol de Barcelona,Estadi Mallorca Son Moix,Palma,26020,2,1,1,21502,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00298,2024/25,30,2025-03-21,14:00,Getafe CF,FC Barcelona,Coliseum,Getafe,16500,2,4,2,14685,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00299,2024/25,30,2025-03-23,16:15,CA Osasuna,Real Sociedad de Fútbol,El Sadar,Pamplona,23576,1,0,1,22278,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00300,2024/25,30,2025-03-22,18:30,Atlético de Madrid,Sevilla FC,Riyadh Air Metropolitano,Madrid,70460,2,0,1,61672,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00301,2024/25,31,2025-03-29,21:00,Athletic Club,Girona FC,San Mamés,Bilbao,53289,2,1,1,43367,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00302,2024/25,31,2025-03-29,16:15,Real Betis Balompié,Valencia CF,Benito Villamarín,Sevilla,60.721,1,3,2,55338,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00303,2024/25,31,2025-03-29,21:00,Real Madrid CF,Deportivo Alavés,Santiago Bernabéu,Madrid,83186,0,0,X,75280,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00304,2024/25,31,2025-03-30,14:00,UD Las Palmas,RC Celta de Vigo,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,3,2,28716,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00305,2024/25,31,2025-03-31,21:00,CD Leganés,Real Valladolid CF,Estadio Municipal de Butarque,Leganés,12454,0,0,X,8225,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00306,2024/25,31,2025-03-30,18:30,RCD Mallorca,Rayo Vallecano de Madrid,Estadi Mallorca Son Moix,Palma,26020,3,0,1,23412,César Soto Grado,2026-07-02 06:00:00
+LL-00307,2024/25,31,2025-03-29,14:00,Villarreal CF,FC Barcelona,Estadio de la Cerámica,Villarreal,23008,1,2,2,21610,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00308,2024/25,31,2025-03-29,21:00,CA Osasuna,RCD Espanyol de Barcelona,El Sadar,Pamplona,23576,0,0,X,23340,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00309,2024/25,31,2025-03-29,16:15,Getafe CF,Sevilla FC,Coliseum,Getafe,16500,2,1,1,14068,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00310,2024/25,31,2025-03-29,21:00,Atlético de Madrid,Real Sociedad de Fútbol,Riyadh Air Metropolitano,Madrid,70460,2,2,X,68357,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00311,2024/25,32,2025-04-06,21:00,Real Betis Balompié,Athletic Club,Benito Villamarín,Sevilla,60721,0,1,2,47619,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00312,2024-2025,32,2025-04-07,18:30,Girona FC,Deportivo Alavés,Estadi Municipal de Montilivi,Girona,14624,2,0,1,12669,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00313,2024/25,32,2025-04-07,16:15,UD Las Palmas,Valencia CF,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,4,2,25548,César Soto Grado,2026-07-02 06:00:00
+LL-00314,2024/25,32,06/04/2025,18:30,Real Madrid CF,Real Valladolid CF,Santiago Bernabéu,Madrid,83186,2,0,1,71027,Víctor García Verdura,2026-07-02 06:00:00
+LL-00315,2024/25,32,2025-04-06,16:15,RCD Mallorca,RC Celta de Vigo,Estadi Mallorca Son Moix,Palma,26020,4,3,1,24270,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00316,2024-2025,32,2025-04-07,18:30,CD Leganés,FC Barcelona,Estadio Municipal de Butarque,Leganés,12454,0,6,2,11413,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00317,2024/25,32,2025-04-06,21:00,CA Osasuna,Rayo Vallecano de Madrid,El Sadar,Pamplona,23576,2,0,1,21560,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00318,2024/25,32,2025-04-06,18:30,Villarreal CF,Sevilla FC,Estadio de la Cerámica,Villarreal,23008,2,0,1,20055,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00319,2024/25,32,2025-04-06,14:00,Atlético de Madrid,RCD Espanyol de Barcelona,Riyadh Air Metropolitano,Madrid,70460,2,0,1,52048,Víctor García Verdura,2026-07-02 06:00:00
+LL-00320,2024/25,32,2025-04-05,21:00,Getafe CF,Real Sociedad de Fútbol,Coliseum,Getafe,16500,0,2,2,15428,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00321,2024/25,33,2025-04-12,21:00,Athletic Club,Deportivo Alavés,San Mamés,Bilbao,53289,1,2,2,50330,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00322,2024/25,33,2025-04-12,21:00,UD Las Palmas,Real Betis Balompié,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,2,2,24993,César Soto Grado,2026-07-02 06:00:00
+LL-00323,2024/25,33,2025-04-14,14:00,Girona FC,Real Valladolid CF,Estadi Municipal de Montilivi,Girona,14624,0,0,X,10712,César Soto Grado,2026-07-02 06:00:00
+LL-00324,2024/25,33,2025-04-13,21:00,RCD Mallorca,Valencia CF,Estadi Mallorca Son Moix,Palma,26020,0,2,2,19895,Víctor García Verdura,2026-07-02 06:00:00
+LL-00325,2024/25,33,2025-04-12,21:00,Real Madrid CF,FC Barcelona,Santiago Bernabéu,Madrid,83186,1,2,2,82354,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00326,2024/25,33,2025-04-12,21:00,CA Osasuna,RC Celta de Vigo,El Sadar,Pamplona,23576,2,2,X,20594,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00327,2024/25,33,2025-04-13,16:15,CD Leganés,Sevilla FC,Estadio Municipal de Butarque,Leganés,12454,4,3,1,10801,Víctor García Verdura,2026-07-02 06:00:00
+LL-00328,2024/25,33,2025-04-11,21:00,Atlético de Madrid,Rayo Vallecano de Madrid,Riyadh Air Metropolitano,Madrid,70460,1,0,1,60274,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00329,2024/25,33,2025-04-13,16:15,Villarreal CF,Real Sociedad de Fútbol,Estadio de la Cerámica,Villarreal,23008,4,1,1,19299,Víctor García Verdura,2026-07-02 06:00:00
+LL-00330,2024/25,33,2025-04-14,18:30,Getafe CF,RCD Espanyol de Barcelona,Coliseum,Getafe,16500,3,1,1,13101,Víctor García Verdura,2026-07-02 06:00:00
+LL-00331,2024/25,34,2025-04-19,21:00,UD Las Palmas,Athletic Club,Estadio de Gran Canaria,Las Palmas de Gran Canaria,32400,1,0,1,26590,César Soto Grado,2026-07-02 06:00:00
+LL-00332,2024/25,34,2025-04-20,18:30,Deportivo Alavés,Real Valladolid CF,Mendizorroza,Vitoria-Gasteiz,19840,2,0,1,16876,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00333,2024/25,34,2025-04-21,18:30,RCD Mallorca,Real Betis Balompié,Estadi Mallorca Son Moix,Palma,26020,2,2,X,21673,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00334,2024/25,34,2025-04-20,16:15,Girona FC,FC Barcelona,Estadi Municipal de Montilivi,Girona,14624,0,5,2,13833,Mario Melero López,2026-07-02 06:00:00
+LL-00335,2024/25,34,2025-04-21,18:30,CA Osasuna,Valencia CF,El Sadar,Pamplona,23576,2,1,1,18885,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00336,2024/25,34,2025-04-20,14:00,Real Madrid CF,Sevilla FC,Santiago Bernabéu,Madrid,83186,1,2,2,75566,César Soto Grado,2026-07-02 06:00:00
+LL-00337,2024/25,34,2025-04-20,21:00,Atlético de Madrid,RC Celta de Vigo,Riyadh Air Metropolitano,Madrid,70460,1,0,1,65759,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00338,2024/25,34,2025-04-19,21:00,CD Leganés,Real Sociedad de Fútbol,Estadio Municipal de Butarque,Leganés,12454,2,0,1,11250,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00339,2024/25,34,2025-04-19,18:30,Getafe CF,Rayo Vallecano de Madrid,Coliseum,Getafe,16500,3,2,1,13910,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00340,2024/25,34,2025-04-19,14:00,Villarreal CF,RCD Espanyol de Barcelona,Estadio de la Cerámica,Villarreal,23008,0,0,X,20936,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00341,2024/25,35,2025-04-27,14:00,Athletic Club,Real Valladolid CF,San Mamés,Bilbao,53289,4,0,1,47135,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00342,2024/25,35,2025-04-27,21:00,RCD Mallorca,UD Las Palmas,Estadi Mallorca Son Moix,Palma,26020,1,0,1,24651,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00343,2024/25,35,2025-04-27,16:15,Deportivo Alavés,FC Barcelona,Mendizorroza,Vitoria-Gasteiz,19840,0,1,2,15908,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00344,2024/25,35,2025-04-27,21:00,Osasuna,Betis,El Sadar,Pamplona,23576,0,1,2,21931,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00345,2024/25,35,2025-04-26,14:00,Girona FC,Sevilla FC,Estadi Municipal de Montilivi,Girona,14624,2,1,1,11684,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00346,2024/25,35,2025-04-26,21:00,Atlético de Madrid,Valencia CF,Riyadh Air Metropolitano,Madrid,70460,0,1,2,63308,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00347,2024/25,35,2025-04-27,18:30,Real Madrid CF,Real Sociedad de Fútbol,Santiago Bernabéu,Madrid,83186,4,1,1,75177,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00348,2024/25,35,2025-04-25,18:30,Getafe CF,RC Celta de Vigo,Coliseum,Getafe,16500,0,3,2,12777,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00349,2024/25,35,2025-04-27,21:00,CD Leganés,RCD Espanyol de Barcelona,Estadio Municipal de Butarque,Leganés,12454,0,5,2,9824,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00350,2024/25,35,2025-04-26,18:30,Villarreal CF,Rayo Vallecano de Madrid,Estadio de la Cerámica,Villarreal,23008,1,3,2,19365,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00351,2024/25,36,2025-05-04,21:00,RCD Mallorca,Athletic Club,Estadi Mallorca Son Moix,Palma,26020,0,0,X,23424,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00352,2024/25,36,2025-05-03,21:00,Real Valladolid CF,FC Barcelona,Estadio José Zorrilla,Valladolid,27618,0,1,2,22967,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00353,2024/25,36,2025-05-04,18:30,CA Osasuna,UD Las Palmas,El Sadar,Pamplona,23576,1,0,1,19180,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00354,2024/25,36,2025-05-03,14:00,Deportivo Alavés,Sevilla FC,Mendizorroza,Vitoria-Gasteiz,19840,0,0,X,15605,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00355,2024/25,36,2025-05-04,18:30,Atlético de Madrid,Real Betis Balompié,Riyadh Air Metropolitano,Madrid,70460,3,1,1,57391,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00356,2024/25,36,2025-05-04,14:00,Girona FC,Real Sociedad de Fútbol,Estadi Municipal de Montilivi,Girona,14624,1,1,X,12051,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00357,2024/25,36,2025-05-04,14:00,Getafe CF,Valencia CF,Coliseum,Getafe,16500,0,1,2,14508,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00358,2024/25,36,2025-05-05,14:00,Real Madrid CF,RCD Espanyol de Barcelona,Santiago Bernabéu,Madrid,83186,5,2,1,64025,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00359,2024/25,36,2025-05-03,21:00,Villarreal CF,RC Celta de Vigo,Estadio de la Cerámica,Villarreal,23008,2,2,X,19840,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00360,2024/25,36,2025-05-04,21:00,CD Leganés,Rayo Vallecano de Madrid,Estadio Municipal de Butarque,Leganés,12454,1,2,2,11474,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00361,2024/25,37,2025-05-10,21:00,Athletic Club,FC Barcelona,San Mamés,Bilbao,53289,2,3,2,48649,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00362,2024/25,37,2025-05-11,21:00,CA Osasuna,RCD Mallorca,El Sadar,Pamplona,23576,2,0,1,18432,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00363,2024/25,37,2025-05-11,21:00,Real Valladolid CF,Sevilla FC,Estadio José Zorrilla,Valladolid,27618,0,1,2,23412,Mario Melero López,2026-07-02 06:00:00
+LL-00364,2024/25,37,2025-05-10,16:15,Atlético de Madrid,UD Las Palmas,Riyadh Air Metropolitano,Madrid,70460,3,0,1,62930,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00365,2024/25,37,2025-05-10,16:15,Deportivo Alavés,Real Sociedad de Fútbol,Mendizorroza,Vitoria-Gasteiz,19840,0,3,2,15241,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00366,2024/25,37,2025-05-10,21:00,Getafe CF,Real Betis Balompié,Coliseum,Getafe,16500,2,0,1,11859,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00367,2024/25,37,2025-05-11,21:00,Girona FC,RCD Espanyol de Barcelona,Estadi Municipal de Montilivi,Girona,14624,2,2,X,12558,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00368,2024/25,37,2025-05-12,21:00,Villarreal CF,Valencia CF,Estadio de la Cerámica,Villarreal,23008,2,0,1,21441,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00369,2024/25,37,2025-05-10,14:00,Real Madrid CF,Rayo Vallecano de Madrid,Santiago Bernabéu,Madrid,83186,1,0,1,79485,Víctor García Verdura,2026-07-02 06:00:00
+LL-00370,2024/25,37,2025-05-10,21:00,CD Leganés,RC Celta de Vigo,Estadio Municipal de Butarque,Leganés,12454,3,2,1,11048,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00371,2024/25,38,2025-05-17,18:30,CA Osasuna,Athletic Club,El Sadar,Pamplona,23576,1,2,2,18373,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00372,2024/25,38,2025-05-18,14:00,FC Barcelona,Sevilla FC,Estadi Olímpic Lluís Companys,Barcelona,55926,3,0,1,46035,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00373,2024/25,38,2025-05-18,21:00,Atlético de Madrid,RCD Mallorca,Riyadh Air Metropolitano,Madrid,70460,3,0,1,64352,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00374,2024/25,38,2025-05-19,21:00,Real Valladolid CF,Real Sociedad de Fútbol,Estadio José Zorrilla,Valladolid,27618,2,3,2,20463,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00375,2024/25,38,2025-05-16,18:30,Getafe CF,UD Las Palmas,Coliseum,Getafe,16500,2,0,1,12152,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00376,2024/25,38,2025-05-18,21:00,Deportivo Alavés,RCD Espanyol de Barcelona,Mendizorroza,Vitoria-Gasteiz,19840,1,1,X,15953,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00377,2024/25,38,2025-05-17,16:15,Villarreal,Betis,Estadio de la Cerámica,Villarreal,23008,0,1,2,19505,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00378,2024/25,38,2025-05-18,21:00,Girona FC,Rayo Vallecano de Madrid,Estadi Municipal de Montilivi,Girona,14624,0,2,2,12996,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00379,2024/25,38,2025-05-18,18:30,CD Leganés,Valencia CF,Estadio Municipal de Butarque,Leganés,12454,2,2,X,10956,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00380,2024-2025,38,2025-05-19,18:30,Real Madrid CF,RC Celta de Vigo,Santiago Bernabéu,Madrid,83186,2,1,1,67417,Mario Melero López,2026-07-02 06:00:00
+LL-00381,2025/26,1,2025-08-15,21:00,CA Osasuna,Valencia CF,El Sadar,Pamplona,23576,1,2,2,16959,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00382,2025/26,1,2025-08-18,21:00,Real Betis Balompié,RCD Espanyol de Barcelona,Benito Villamarín,Sevilla,60721,2,0,1,46854,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00383,2025/26,1,2025-08-16,21:00,Levante UD,FC Barcelona,Estadi Ciutat de València,Valencia,26354,1,0,1,25405,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00384,2025/26,1,2025-08-16,18:30,Getafe CF,RCD Mallorca,Coliseum,Getafe,16500,3,2,1,14458,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00385,2025/26,1,2025-08-17,18:30,Deportivo Alavés,Athletic Club,Mendizorroza,Vitoria-Gasteiz,19840,4,1,1,17007,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00386,2025/26,1,2025-08-18,21:00,Villarreal CF,Real Madrid CF,Estadio de la Cerámica,Villarreal,23008,0,0,X,19160,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00387,2025/26,1,2025-08-17,21:00,Atlético de Madrid,Real Sociedad de Fútbol,Riyadh Air Metropolitano,Madrid,70460,1,3,2,63987,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00388,2025/26,1,2025-08-16,16:15,Real Oviedo,Sevilla FC,Estadio Carlos Tartiere,Oviedo,30500,2,2,X,27239,Mario Melero López,2026-07-02 06:00:00
+LL-00389,2025/26,1,2025-08-16,21:00,Rayo Vallecano de Madrid,Girona FC,Estadio de Vallecas,Madrid,14708,1,0,1,12546,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00390,2025/26,1,2025-08-17,21:00,Elche CF,RC Celta de Vigo,Estadio Manuel Martínez Valero,Elche,31388,0,1,2,29338,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00391,2025/26,2,2025-08-23,14:00,Real Betis Balompié,CA Osasuna,Benito Villamarín,Sevilla,60721,4,1,1,,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00392,2025/26,2,2025-08-24,21:00,Valencia CF,FC Barcelona,Mestalla,Valencia,49430,2,2,X,47415,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00393,2025/26,2,2025-08-23,18:30,Getafe CF,RCD Espanyol de Barcelona,Coliseum,Getafe,16500,2,1,1,15918,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00394,2025/26,2,2025-08-23,16:15,Levante UD,Athletic Club,Estadi Ciutat de València,Valencia,26354,0,2,2,24611,César Soto Grado,2026-07-02 06:00:00
+LL-00395,2025/26,2,2025-08-22,14:00,Villarreal CF,RCD Mallorca,Estadio de la Cerámica,Villarreal,23008,1,2,2,18800,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00396,2025/26,2,2025-08-25,18:30,Deportivo Alavés,Real Sociedad de Fútbol,Mendizorroza,Vitoria-Gasteiz,19840,0,1,2,15636,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00397,2025/26,2,2025-08-25,14:00,Real Oviedo,Real Madrid CF,Estadio Carlos Tartiere,Oviedo,30500,0,3,2,27832,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00398,2025/26,2,2025-08-23,18:30,Atlético de Madrid,Girona FC,Riyadh Air Metropolitano,Madrid,70460,2,0,1,54860,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00399,2025/26,2,2025-08-23,21:00,Elche CF,Sevilla FC,Estadio Manuel Martínez Valero,Elche,31388,5,2,1,28327,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00400,2025/26,2,2025-08-22,14:00,Rayo Vallecano de Madrid,RC Celta de Vigo,Estadio de Vallecas,Madrid,14708,0,2,2,11549,Víctor García Verdura,2026-07-02 06:00:00
+LL-00401,2025/26,3,2025-08-31,21:00,CA Osasuna,FC Barcelona,El Sadar,Pamplona,23576,1,1,X,20271,César Soto Grado,2026-07-02 06:00:00
+LL-00402,2025/26,3,2025-08-29,18:30,Getafe CF,Real Betis Balompié,Coliseum,Getafe,16500,2,0,1,,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00403,2025/26,3,2025-08-29,21:00,Valencia CF,Athletic Club,Mestalla,Valencia,49.430,1,1,X,46345,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00404,2025/26,3,2025-08-31,21:00,Villarreal CF,RCD Espanyol de Barcelona,Estadio de la Cerámica,Villarreal,23008,3,1,1,17725,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00405,2025/26,3,2025-08-30,16:15,Levante UD,Real Sociedad de Fútbol,Estadi Ciutat de València,Valencia,26354,0,0,X,23495,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00406,2025/26,3,2025-08-31,16:15,Oviedo,Mallorca,Estadio Carlos Tartiere,Oviedo,30500,2,0,1,23349,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00407,2025/26,3,2025-09-01,14:00,Deportivo Alavés,Girona FC,Mendizorroza,Vitoria-Gasteiz,19840,2,0,1,15844,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00408,2025/26,3,2025-08-30,18:30,Elche CF,Real Madrid CF,Estadio Manuel Martínez Valero,Elche,31388,0,5,2,30923,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00409,2025-2026,3,2025-08-31,18:30,Atlético,Celta,Riyadh Air Metropolitano,Madrid,70460,1,1,X,66112,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00410,2025/26,3,2025-08-30,14:00,Rayo Vallecano de Madrid,Sevilla FC,Estadio de Vallecas,Madrid,14708,1,1,X,14560,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00411,2025-2026,4,2025-09-08,21:00,Getafe,Osasuna,Coliseum,Getafe,16500,4,1,1,13827,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00412,2025/26,4,2025-09-07,18:30,FC Barcelona,Athletic Club,Estadi Johan Cruyff,Sant Joan Despí,6000,1,1,X,5192,Víctor García Verdura,2026-07-02 06:00:00
+LL-00413,2025/26,4,2025-09-07,14:00,Villarreal CF,Real Betis Balompié,Estadio de la Cerámica,Villarreal,23008,3,0,1,20221,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00414,2025/26,4,2025-09-08,18:30,Valencia CF,Real Sociedad de Fútbol,Mestalla,Valencia,49430,1,3,2,39285,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00415,2025/26,4,2025-09-06,16:15,Real Oviedo,RCD Espanyol de Barcelona,Estadio Carlos Tartiere,Oviedo,30500,2,2,X,23274,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00416,2025/26,4,2025-09-07,21:00,Levante UD,Girona FC,Estadi Ciutat de València,Valencia,26354,3,0,1,20593,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00417,2025/26,4,2025-09-08,21:00,Elche CF,RCD Mallorca,Estadio Manuel Martínez Valero,Elche,31388,0,1,2,24568,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00418,2025/26,4,2025-09-08,14:00,Deportivo Alavés,RC Celta de Vigo,Mendizorroza,Vitoria-Gasteiz,19840,2,1,1,16807,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00419,2025/26,4,2025-09-06,16:15,Rayo Vallecano de Madrid,Real Madrid CF,Estadio de Vallecas,Madrid,14708,0,2,2,14518,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00420,2025/26,4,06/09/2025,16:15,Atlético de Madrid,Sevilla FC,Riyadh Air Metropolitano,Madrid,70460,2,0,1,56803,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00421,2025/26,5,2025-09-12,18:30,CA Osasuna,Athletic Club,El Sadar,Pamplona,23576,1,2,2,21270,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00422,2025/26,5,2025-09-14,21:00,Villarreal CF,Getafe CF,Estadio de la Cerámica,Villarreal,23008,0,1,2,19137,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00423,2025/26,5,2025-09-15,21:00,FC Barcelona,Real Sociedad de Fútbol,Estadi Johan Cruyff,Sant Joan Despí,6000,1,1,X,5232,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00423,2025/26,5,2025-09-15,21:00,FC Barcelona,Real Sociedad de Fútbol,Estadi Johan Cruyff,Sant Joan Despí,6000,1,1,X,5232,José Luis Munuera Montero,2026-07-03 06:00:00
+LL-00424,2025/26,5,2025-09-13,21:00,Real Oviedo,Real Betis Balompié,Estadio Carlos Tartiere,Oviedo,30500,0,1,2,27005,Víctor García Verdura,2026-07-02 06:00:00
+LL-00425,2025/26,5,2025-09-14,14:00,Valencia CF,Girona FC,Mestalla,Valencia,49430,3,1,1,36153,César Soto Grado,2026-07-02 06:00:00
+LL-00426,2025/26,5,2025-09-14,14:00,Elche CF,RCD Espanyol de Barcelona,Estadio Manuel Martínez Valero,Elche,31388,2,1,1,29065,Víctor García Verdura,2026-07-02 06:00:00
+LL-00427,2025/26,5,2025-09-14,18:30,Levante UD,RC Celta de Vigo,Estadi Ciutat de València,Valencia,26354,1,2,2,21886,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00428,2025/26,5,2025-09-13,16:15,Rayo Vallecano,Mallorca,Estadio de Vallecas,Madrid,14708,1,2,2,12657,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00429,2025/26,5,2025-09-12,18:30,Deportivo Alavés,Sevilla FC,Mendizorroza,Vitoria-Gasteiz,19840,4,0,1,18169,Víctor García Verdura,2026-07-02 06:00:00
+LL-00430,2025/26,5,2025-09-14,18:30,Atlético de Madrid,Real Madrid CF,Riyadh Air Metropolitano,Madrid,70460,2,2,X,69755,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00431,2025/26,6,2025-09-21,21:00,Villarreal CF,CA Osasuna,Estadio de la Cerámica,Villarreal,23008,1,2,2,19765,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00432,2025/26,6,2025-09-21,14:00,Athletic Club,Real Sociedad de Fútbol,San Mamés,Bilbao,53289,3,2,1,42039,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00433,2025/26,6,2025-09-20,16:15,Real Oviedo,Getafe CF,Estadio Carlos Tartiere,Oviedo,30.500,1,1,X,25245,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00434,2025/26,6,2025-09-21,16:15,FC Barcelona,Girona FC,Estadi Johan Cruyff,Sant Joan Despí,6000,3,0,1,4896,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00435,2025/26,6,2025-09-20,14:00,Elche CF,Real Betis Balompié,Estadio Manuel Martínez Valero,Elche,31388,1,2,2,31029,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00436,2025/26,6,2025-09-20,21:00,Valencia CF,RC Celta de Vigo,Mestalla,Valencia,49430,0,0,X,39567,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00437,2025/26,6,2025-09-21,21:00,Rayo Vallecano de Madrid,RCD Espanyol de Barcelona,Estadio de Vallecas,Madrid,14708,2,0,1,12015,César Soto Grado,2026-07-02 06:00:00
+LL-00438,2025/26,6,2025-09-22,21:00,Levante UD,Sevilla FC,Estadi Ciutat de València,Valencia,26354,1,1,X,25883,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00439,2025/26,6,2025-09-20,18:30,Atlético de Madrid,RCD Mallorca,Riyadh Air Metropolitano,Madrid,70460,0,0,X,60016,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00440,2025/26,6,2025-09-20,18:30,Deportivo Alavés,Real Madrid CF,Mendizorroza,Vitoria-Gasteiz,19840,0,0,X,16417,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00441,2025/26,7,2025-09-26,21:00,CA Osasuna,Real Sociedad de Fútbol,El Sadar,Pamplona,23576,1,2,2,18270,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00442,2025/26,7,2025-09-27,21:00,Real Oviedo,Villarreal CF,Estadio Carlos Tartiere,Oviedo,30500,2,1,1,23816,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00443,2025/26,7,2025-09-29,18:30,Athletic Club,Girona FC,San Mamés,Bilbao,53289,0,0,X,45645,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00444,2025/26,7,2025-09-26,18:30,Elche CF,Getafe CF,Estadio Manuel Martínez Valero,Elche,31388,4,1,1,28411,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00445,2025/26,7,2025-09-27,16:15,FC Barcelona,RC Celta de Vigo,Estadi Johan Cruyff,Sant Joan Despí,6000,0,2,2,5930,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00446,2025/26,7,2025-09-28,18:30,Rayo Vallecano de Madrid,Real Betis Balompié,Estadio de Vallecas,Madrid,14708,3,2,1,12928,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00447,2025/26,7,2025-09-28,18:30,Valencia,Sevilla,Mestalla,Valencia,49430,3,0,1,45185,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00448,2025/26,7,2025-09-28,21:00,Atlético de Madrid,RCD Espanyol de Barcelona,Riyadh Air Metropolitano,Madrid,70460,5,1,1,60959,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00449,2025/26,7,2025-09-28,18:30,Levante UD,Real Madrid CF,Estadi Ciutat de València,Valencia,26.354,0,3,2,25903,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00450,2025/26,7,2025-09-27,18:30,Deportivo Alavés,RCD Mallorca,Mendizorroza,Vitoria-Gasteiz,19840,1,2,2,16435,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00451,2025/26,8,2025-10-05,18:30,Real Oviedo,CA Osasuna,Estadio Carlos Tartiere,Oviedo,30500,1,0,1,27329,César Soto Grado,2026-07-02 06:00:00
+LL-00452,2025/26,8,2025-10-05,16:15,Real Sociedad de Fútbol,Girona FC,Reale Arena,San Sebastián,39313,1,0,1,34870,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00453,2025/26,8,2025-10-05,18:30,Elche CF,Villarreal CF,Estadio Manuel Martínez Valero,Elche,31388,2,4,2,28230,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00454,2025/26,8,2025-10-04,18:30,Athletic Club,RC Celta de Vigo,San Mamés,Bilbao,53289,1,1,X,48283,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00455,2025/26,8,2025-10-04,16:15,Rayo Vallecano de Madrid,Getafe CF,Estadio de Vallecas,Madrid,14708,0,1,2,12618,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00456,2025/26,8,2025-10-04,16:15,FC Barcelona,Sevilla FC,Estadi Johan Cruyff,Sant Joan Despí,6000,3,5,2,5043,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00457,2025/26,8,2025-10-04,21:00,Atlético de Madrid,Real Betis Balompié,Riyadh Air Metropolitano,Madrid,70460,1,1,X,67590,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00458,2025/26,8,2025-10-05,18:30,Valencia CF,Real Madrid CF,Mestalla,Valencia,49430,1,0,1,43513,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00459,2025/26,8,2025-10-05,21:00,Deportivo Alavés,RCD Espanyol de Barcelona,Mendizorroza,Vitoria-Gasteiz,19840,1,1,X,15775,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00460,2025/26,8,2025-10-03,21:00,Levante,Mallorca,Estadi Ciutat de València,Valencia,26354,2,0,1,21158,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00461,2025/26,9,2025-10-11,21:00,CA Osasuna,Girona FC,El Sadar,Pamplona,23576,1,3,2,18552,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00462,2025/26,9,2025-10-12,18:30,Elche CF,Real Oviedo,Estadio Manuel Martínez Valero,Elche,31388,0,1,2,27989,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00463,2025/26,9,2025-10-11,16:15,Real Sociedad de Fútbol,RC Celta de Vigo,Reale Arena,San Sebastián,39313,4,0,1,35709,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00464,2025/26,9,2025-10-12,21:00,Rayo Vallecano de Madrid,Villarreal CF,Estadio de Vallecas,Madrid,14708,5,2,1,12193,Víctor García Verdura,2026-07-02 06:00:00
+LL-00465,2025/26,9,2025-10-13,16:15,Athletic Club,Sevilla FC,San Mamés,Bilbao,53289,0,2,2,38723,Víctor García Verdura,2026-07-02 06:00:00
+LL-00466,2025/26,9,2025-10-11,16:15,Atlético de Madrid,Getafe CF,Riyadh Air Metropolitano,Madrid,70460,4,0,1,56638,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00467,2025/26,9,2025-10-10,18:30,FC Barcelona,Real Madrid CF,Estadi Johan Cruyff,Sant Joan Despí,6000,2,1,1,5802,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00468,2025/26,9,2025-10-13,16:15,Deportivo Alavés,Real Betis Balompié,Mendizorroza,Vitoria-Gasteiz,19840,1,0,1,16357,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00469,2025/26,9,2025-10-13,16:15,Valencia,Mallorca,Mestalla,Valencia,49430,1,0,1,40778,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00470,2025/26,9,2025-10-12,21:00,Levante UD,RCD Espanyol de Barcelona,Estadi Ciutat de València,Valencia,26354,0,1,2,20602,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00471,2025/26,10,2025-10-19,18:30,Elche CF,CA Osasuna,Estadio Manuel Martínez Valero,Elche,31.388,2,1,1,28273,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00472,2025/26,10,2025-10-19,18:30,Girona FC,RC Celta de Vigo,Estadi Municipal de Montilivi,Girona,14624,3,1,1,12247,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00473,2025/26,10,2025-10-18,16:15,Rayo Vallecano de Madrid,Real Oviedo,Estadio de Vallecas,Madrid,14708,4,0,1,13246,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00474,2025/26,10,2025-10-18,14:00,Real Sociedad de Fútbol,Sevilla FC,Reale Arena,San Sebastián,39.313,2,1,1,34395,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00475,2025/26,10,2025-10-18,18:30,Atlético de Madrid,Villarreal CF,Riyadh Air Metropolitano,Madrid,70460,1,0,1,64361,Mario Melero López,2026-07-02 06:00:00
+LL-00476,2025/26,10,2025-10-20,21:00,Athletic Club,Real Madrid CF,San Mamés,Bilbao,53289,1,1,X,46140,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00477,2025/26,10,2025-10-19,16:15,Deportivo Alavés,Getafe CF,Mendizorroza,Vitoria-Gasteiz,19840,0,2,2,16395,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00478,2025/26,10,2025-10-18,18:30,FC Barcelona,RCD Mallorca,Estadi Johan Cruyff,Sant Joan Despí,6.000,2,1,1,5503,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00479,2025/26,10,2025-10-18,18:30,Levante UD,Real Betis Balompié,Estadi Ciutat de València,Valencia,26354,2,1,1,,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00480,2025/26,10,18/10/2025,14:00,Valencia CF,RCD Espanyol de Barcelona,Mestalla,Valencia,49.430,3,1,1,39454,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00481,2025/26,11,2025-10-26,16:15,CA Osasuna,RC Celta de Vigo,El Sadar,Pamplona,23576,3,0,1,20831,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00482,2025/26,11,2025-10-27,21:00,Rayo Vallecano de Madrid,Elche CF,Estadio de Vallecas,Madrid,14708,2,1,1,11586,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00483,2025/26,11,2025-10-27,14:00,Girona FC,Sevilla FC,Estadi Municipal de Montilivi,Girona,14624,0,0,X,11013,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00484,2025/26,11,2025-10-26,21:00,Atlético de Madrid,Real Oviedo,Riyadh Air Metropolitano,Madrid,70460,0,0,X,63116,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00485,2025/26,11,2025-10-26,18:30,Real Sociedad de Fútbol,Real Madrid CF,Reale Arena,San Sebastián,39313,1,2,2,38919,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00486,2025/26,11,2025-10-26,18:30,Deportivo Alavés,Villarreal CF,Mendizorroza,Vitoria-Gasteiz,19840,0,1,2,18507,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00487,2025/26,11,2025-10-25,18:30,Athletic Club,RCD Mallorca,San Mamés,Bilbao,53289,2,0,1,45002,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00488,2025/26,11,2025-10-26,18:30,Levante UD,Getafe CF,Estadi Ciutat de València,Valencia,26354,1,1,X,23580,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00489,2025/26,11,2025-10-27,18:30,FC Barcelona,RCD Espanyol de Barcelona,Estadi Johan Cruyff,Sant Joan Despí,6000,6,1,1,5102,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00490,2025/26,11,2025-10-27,18:30,Valencia CF,Real Betis Balompié,Mestalla,Valencia,49430,1,1,X,40005,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00491,2025/26,12,2025-11-01,21:00,Rayo Vallecano de Madrid,CA Osasuna,Estadio de Vallecas,Madrid,14708,0,1,2,14266,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00492,2025/26,12,2025-11-03,18:30,RC Celta de Vigo,Sevilla FC,Abanca-Balaídos,Vigo,24870,2,0,1,17616,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00493,2025/26,12,2025-11-01,21:00,Atlético de Madrid,Elche CF,Riyadh Air Metropolitano,Madrid,70460,2,0,1,57920,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00494,2025/26,12,02/11/2025,21:00,Girona FC,Real Madrid CF,Estadi Municipal de Montilivi,Girona,14624,0,2,2,12613,Víctor García Verdura,2026-07-02 06:00:00
+LL-00495,2025/26,12,03/11/2025,21:00,Deportivo Alavés,Real Oviedo,Mendizorroza,Vitoria-Gasteiz,19840,1,1,X,15019,Mario Melero López,2026-07-02 06:00:00
+LL-00496,2025/26,12,2025-10-31,18:30,Real Sociedad de Fútbol,RCD Mallorca,Reale Arena,San Sebastián,39313,2,2,X,34156,Mario Melero López,2026-07-02 06:00:00
+LL-00497,2025/26,12,2025-11-01,21:00,Levante UD,Villarreal CF,Estadi Ciutat de València,Valencia,26354,3,0,1,23000,César Soto Grado,2026-07-02 06:00:00
+LL-00498,2025/26,12,2025-11-01,14:00,Athletic Club,RCD Espanyol de Barcelona,San Mamés,Bilbao,53289,2,0,1,47507,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00499,2025/26,12,2025-10-31,18:30,Valencia CF,Getafe CF,Mestalla,Valencia,49430,1,0,1,35824,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00500,2025/26,12,2025-11-03,21:00,FC Barcelona,Real Betis Balompié,Estadi Johan Cruyff,Sant Joan Despí,6000,3,1,1,5940,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00501,2025/26,13,2025-11-08,21:00,CA Osasuna,Sevilla FC,El Sadar,Pamplona,23576,3,1,1,18131,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00502,2025/26,13,2025-11-09,14:00,Atlético de Madrid,Rayo Vallecano de Madrid,Riyadh Air Metropolitano,Madrid,70460,4,1,1,56878,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00503,2025/26,13,2025-11-09,18:30,RC Celta de Vigo,Real Madrid CF,Abanca-Balaídos,Vigo,24870,1,0,1,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00504,2025/26,13,2025-11-09,14:00,Deportivo Alavés,Elche CF,Mendizorroza,Vitoria-Gasteiz,19840,4,2,1,14721,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00505,2025/26,13,2025-11-07,14:00,Girona FC,RCD Mallorca,Estadi Municipal de Montilivi,Girona,14624,0,0,X,13322,César Soto Grado,2026-07-02 06:00:00
+LL-00506,2025/26,13,2025-11-09,21:00,Levante UD,Real Oviedo,Estadi Ciutat de València,Valencia,26354,3,1,1,21093,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00507,2025/26,13,2025-11-07,14:00,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,Reale Arena,San Sebastián,39313,0,3,2,32869,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00508,2025/26,13,2025-11-08,21:00,Valencia CF,Villarreal CF,Mestalla,Valencia,49430,0,1,2,44660,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00509,2025/26,13,2025-11-09,16:15,Athletic Club,Real Betis Balompié,San Mamés,Bilbao,53.289,3,1,1,49793,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00510,2025/26,13,2025-11-09,14:00,FC Barcelona,Getafe CF,Estadi Johan Cruyff,Sant Joan Despí,6000,4,1,1,5559,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00511,2025/26,14,2025-11-15,21:00,Atlético de Madrid,CA Osasuna,Riyadh Air Metropolitano,Madrid,70460,3,1,1,61453,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00512,2025/26,14,2025-11-15,18:30,Sevilla FC,Real Madrid CF,Ramón Sánchez-Pizjuán,Sevilla,43883,1,2,2,40249,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00513,2025/26,14,2025-11-14,18:30,Deportivo Alavés,Rayo Vallecano de Madrid,Mendizorroza,Vitoria-Gasteiz,19840,2,3,2,14269,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00514,2025/26,14,2025-11-16,14:00,RC Celta de Vigo,RCD Mallorca,Abanca-Balaídos,Vigo,24870,0,1,2,22314,Víctor García Verdura,2026-07-02 06:00:00
+LL-00515,2025/26,14,2025-11-14,21:00,Levante UD,Elche CF,Estadi Ciutat de València,Valencia,26354,2,2,X,19256,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00516,2025/26,14,2025-11-16,21:00,Girona FC,RCD Espanyol de Barcelona,Estadi Municipal de Montilivi,Girona,14624,2,0,1,10862,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00517,2025/26,14,2025-11-14,16:15,Valencia CF,Real Oviedo,Mestalla,Valencia,49430,2,0,1,41148,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00518,2025/26,14,2025-11-16,18:30,Real Sociedad de Fútbol,Real Betis Balompié,Reale Arena,San Sebastián,39313,1,0,1,34883,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00519,2025/26,14,2025-11-15,14:00,FC Barcelona,Villarreal CF,Estadi Johan Cruyff,Sant Joan Despí,6000,3,1,1,5442,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00520,2025/26,14,2025-11-16,18:30,Athletic Club,Getafe CF,San Mamés,Bilbao,53289,2,1,1,48152,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00521,2025/26,15,2025-11-23,21:00,CA Osasuna,Real Madrid CF,El Sadar,Pamplona,23576,0,5,2,19440,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00522,2025/26,15,2025-11-23,16:15,Deportivo Alavés,Atlético de Madrid,Mendizorroza,Vitoria-Gasteiz,19840,1,3,2,19028,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00523,2025/26,15,22/11/2025,21:00,Sevilla FC,RCD Mallorca,Ramón Sánchez-Pizjuán,Sevilla,43883,0,3,2,30688,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00524,2025/26,15,2025-11-24,16:15,Levante UD,Rayo Vallecano de Madrid,Estadi Ciutat de València,Valencia,26354,2,6,2,18362,Mario Melero López,2026-07-02 06:00:00
+LL-00525,2025/26,15,2025-11-23,18:30,RC Celta de Vigo,RCD Espanyol de Barcelona,Abanca-Balaídos,Vigo,24870,1,0,1,19504,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00526,2025/26,15,2025-11-23,14:00,Valencia CF,Elche CF,Mestalla,Valencia,49430,3,0,1,37399,César Soto Grado,2026-07-02 06:00:00
+LL-00527,2025/26,15,2025-11-24,18:30,Girona FC,Real Betis Balompié,Estadi Municipal de Montilivi,Girona,14624,1,0,1,12258,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00528,2025/26,15,2025-11-23,21:00,FC Barcelona,Real Oviedo,Spotify Camp Nou,Barcelona,45.401,1,0,1,40826,Mario Melero López,2026-07-02 06:00:00
+LL-00529,2025/26,15,2025-11-24,21:00,Real Sociedad de Fútbol,Getafe CF,Reale Arena,San Sebastián,39313,5,1,1,32050,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00530,2025/26,15,2025-11-22,21:00,Athletic Club,Villarreal CF,San Mamés,Bilbao,53289,0,4,2,47708,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00531,2025/26,16,2025-11-30,21:00,Deportivo Alavés,CA Osasuna,Mendizorroza,Vitoria-Gasteiz,19840,0,3,2,,Mario Melero López,2026-07-02 06:00:00
+LL-00532,2025/26,16,2025-11-28,21:00,Real Madrid CF,RCD Mallorca,Santiago Bernabéu,Madrid,83.186,5,1,1,64013,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00533,2025/26,16,2025-11-30,21:00,Levante UD,Atlético de Madrid,Estadi Ciutat de València,Valencia,26354,1,4,2,25719,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00534,2025/26,16,2025-11-29,18:30,Sevilla FC,RCD Espanyol de Barcelona,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,37888,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00535,2025/26,16,2025-11-29,21:00,Valencia CF,Rayo Vallecano de Madrid,Mestalla,Valencia,49430,0,0,X,43299,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00536,2025/26,16,2025-11-29,21:00,RC Celta de Vigo,Real Betis Balompié,Abanca-Balaídos,Vigo,24870,3,0,1,22207,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00537,2025/26,16,2025-11-30,21:00,FC Barcelona,Elche CF,Spotify Camp Nou,Barcelona,45401,1,1,X,43165,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00538,2025/26,16,2025-12-01,14:00,Girona FC,Getafe CF,Estadi Municipal de Montilivi,Girona,14624,2,1,1,11214,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00539,2025/26,16,2025-11-29,21:00,Athletic Club,Real Oviedo,San Mamés,Bilbao,53289,0,2,2,42408,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00540,2025/26,16,2025-11-28,18:30,Real Sociedad de Fútbol,Villarreal CF,Reale Arena,San Sebastián,39313,2,2,X,30437,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00541,2025/26,17,2025-12-07,16:15,CA Osasuna,RCD Mallorca,El Sadar,Pamplona,23576,2,1,1,18770,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00542,2025/26,17,2025-12-05,21:00,Levante UD,Deportivo Alavés,Estadi Ciutat de València,Valencia,26354,2,3,2,18920,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00543,2025/26,17,2025-12-06,14:00,Real Madrid CF,RCD Espanyol de Barcelona,Santiago Bernabéu,Madrid,83186,4,0,1,73044,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00544,2025/26,17,2025-12-07,18:30,Valencia CF,Atlético de Madrid,Mestalla,Valencia,49430,2,1,1,47464,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00545,2025/26,17,2025-12-07,21:00,Sevilla FC,Real Betis Balompié,Ramón Sánchez-Pizjuán,Sevilla,43883,3,2,1,41911,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00546,2025/26,17,2025-12-08,16:15,FC Barcelona,Rayo Vallecano de Madrid,Spotify Camp Nou,Barcelona,45401,1,0,1,37622,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00547,2025/26,17,2025-12-08,16:15,RC Celta de Vigo,Getafe CF,Abanca-Balaídos,Vigo,24870,2,3,2,22314,Víctor García Verdura,2026-07-02 06:00:00
+LL-00548,2025/26,17,2025-12-06,16:15,Athletic Club,Elche CF,San Mamés,Bilbao,53289,1,0,1,40046,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00549,2025/26,17,2025-12-07,14:00,Girona FC,Villarreal CF,Estadi Municipal de Montilivi,Girona,14624,2,1,1,12514,César Soto Grado,2026-07-02 06:00:00
+LL-00550,2025/26,17,2025-12-05,18:30,Real Sociedad de Fútbol,Real Oviedo,Reale Arena,San Sebastián,39313,0,0,X,26144,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00551,2025/26,18,2025-12-14,21:00,Levante,Osasuna,Estadi Ciutat de València,Valencia,26354,1,1,X,23455,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00552,2025/26,18,2025-12-15,18:30,Mallorca,Espanyol,Estadi Mallorca Son Moix,Palma,26.020,2,0,1,21414,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00553,2025/26,18,2025-12-15,21:00,Valencia CF,Deportivo Alavés,Mestalla,Valencia,49430,2,3,2,36346,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00554,2025/26,18,2025-12-14,21:00,Real Madrid CF,Real Betis Balompié,Santiago Bernabéu,Madrid,83186,3,2,1,79729,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00555,2025/26,18,2025-12-15,18:30,FC Barcelona,Atlético de Madrid,Spotify Camp Nou,Barcelona,45401,3,1,1,44946,Mario Melero López,2026-07-02 06:00:00
+LL-00556,2025/26,18,2025-12-12,21:00,Sevilla FC,Getafe CF,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,38742,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00557,2025/26,18,2025-12-14,21:00,Athletic Club,Rayo Vallecano de Madrid,San Mamés,Bilbao,53289,0,0,X,47776,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00558,2025/26,18,2025-12-13,16:15,RC Celta de Vigo,Villarreal CF,Abanca-Balaídos,Vigo,24870,1,2,2,22015,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00559,2025/26,18,2025-12-14,18:30,Real Sociedad de Fútbol,Elche CF,Reale Arena,San Sebastián,39313,3,1,1,35400,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00560,2025/26,18,2025-12-15,21:00,Girona FC,Real Oviedo,Estadi Municipal de Montilivi,Girona,14624,2,0,1,10672,César Soto Grado,2026-07-02 06:00:00
+LL-00561,2025/26,19,2025-12-28,21:00,CA Osasuna,RCD Espanyol de Barcelona,El Sadar,Pamplona,23576,2,1,1,19742,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00562,2025/26,19,2025-12-28,21:00,Valencia CF,Levante UD,Mestalla,Valencia,49430,1,3,2,42454,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00563,2025/26,19,2025-12-28,18:30,RCD Mallorca,Real Betis Balompié,Estadi Mallorca Son Moix,Palma,26020,2,0,1,25316,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00564,2025/26,19,2025-12-27,18:30,FC Barcelona,Deportivo Alavés,Spotify Camp Nou,Barcelona,45401,2,1,1,41975,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00565,2025/26,19,2025-12-27,18:30,Real Madrid CF,Getafe CF,Santiago Bernabéu,Madrid,83186,2,1,1,68885,César Soto Grado,2026-07-02 06:00:00
+LL-00566,2025/26,19,2025-12-27,14:00,Athletic Club,Atlético de Madrid,San Mamés,Bilbao,53289,0,1,2,52756,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00567,2025/26,19,2025-12-27,18:30,Sevilla FC,Villarreal CF,Ramón Sánchez-Pizjuán,Sevilla,43883,1,1,X,38078,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00568,2025/26,19,2025-12-27,18:30,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,Reale Arena,San Sebastián,39313,1,1,X,31201,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00569,2025/26,19,2025-12-28,14:00,RC Celta de Vigo,Real Oviedo,Abanca-Balaídos,Vigo,24870,3,2,1,19584,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00570,2025-2026,19,2025-12-27,18:30,Girona FC,Elche CF,Estadi Municipal de Montilivi,Girona,14624,2,1,1,12362,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00571,2025/26,20,2026-01-02,16:15,Valencia CF,CA Osasuna,Mestalla,Valencia,49430,2,2,X,45231,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00572,2025/26,20,2026-01-04,18:30,RCD Espanyol de Barcelona,Real Betis Balompié,Stage Front Stadium,Cornellà de Llobregat,40000,2,0,1,33863,César Soto Grado,2026-07-02 06:00:00
+LL-00573,2025/26,20,2026-01-05,21:00,FC Barcelona,Levante UD,Spotify Camp Nou,Barcelona,45401,4,0,1,38425,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00574,2025/26,20,2026-01-03,21:00,RCD Mallorca,Getafe CF,Estadi Mallorca Son Moix,Palma,26020,0,1,2,21547,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00575,2025/26,20,2026-01-03,14:00,Athletic Club,Deportivo Alavés,San Mamés,Bilbao,53289,0,2,2,41279,Víctor García Verdura,2026-07-02 06:00:00
+LL-00576,2025/26,20,02/01/2026,21:00,Real Madrid CF,Villarreal CF,Santiago Bernabéu,Madrid,83186,0,1,2,64306,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00577,2025/26,20,04/01/2026,18:30,Real Sociedad de Fútbol,Atlético de Madrid,Reale Arena,San Sebastián,39313,0,5,2,37033,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00578,2025/26,20,2026-01-03,16:15,Sevilla FC,Real Oviedo,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,35622,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00579,2025/26,20,2026-01-04,18:30,Girona FC,Rayo Vallecano de Madrid,Estadi Municipal de Montilivi,Girona,14624,0,0,X,12327,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00580,2025/26,20,2026-01-04,21:00,RC Celta de Vigo,Elche CF,Abanca-Balaídos,Vigo,24870,1,0,1,22165,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00581,2025/26,21,2026-01-12,21:00,CA Osasuna,Real Betis Balompié,El Sadar,Pamplona,23576,1,2,2,17166,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00582,2025/26,21,2026-01-11,21:00,FC Barcelona,Valencia CF,Spotify Camp Nou,Barcelona,45401,2,1,1,33379,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00583,2025/26,21,2026-01-11,21:00,RCD Espanyol de Barcelona,Getafe CF,Stage Front Stadium,Cornellà de Llobregat,40000,2,2,X,32652,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00584,2025/26,21,2026-01-12,16:15,Athletic Club,Levante UD,San Mamés,Bilbao,53289,7,1,1,42105,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00585,2025/26,21,2026-01-12,21:00,RCD Mallorca,Villarreal CF,Estadi Mallorca Son Moix,Palma,26020,2,0,1,21949,Víctor García Verdura,2026-07-02 06:00:00
+LL-00586,2025/26,21,2026-01-11,21:00,Real Sociedad de Fútbol,Deportivo Alavés,Reale Arena,San Sebastián,39313,0,1,2,34566,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00587,2025/26,21,2026-01-12,18:30,Real Madrid CF,Real Oviedo,Santiago Bernabéu,Madrid,83186,4,0,1,64629,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00587,2025/26,21,2026-01-12,18:30,Real Madrid CF,Real Oviedo,Santiago Bernabéu,Madrid,83186,4,0,1,64629,Mateo Busquets Ferrer,2026-07-03 06:00:00
+LL-00588,2025/26,21,2026-01-12,21:00,Girona FC,Atlético de Madrid,Estadi Municipal de Montilivi,Girona,14624,2,2,X,11118,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00589,2025/26,21,2026-01-12,18:30,Sevilla FC,Elche CF,Ramón Sánchez-Pizjuán,Sevilla,43883,2,1,1,33646,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00590,2025/26,21,2026-01-12,14:00,RC Celta de Vigo,Rayo Vallecano de Madrid,Abanca-Balaídos,Vigo,24870,1,1,X,21711,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00591,2025/26,22,2026-01-18,18:30,FC Barcelona,CA Osasuna,Spotify Camp Nou,Barcelona,45401,2,1,1,36413,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00592,2025/26,22,2026-01-16,16:15,Real Betis Balompié,Getafe CF,Benito Villamarín,Sevilla,60721,5,1,1,49298,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00593,2025/26,22,2026-01-16,18:30,Athletic Club,Valencia CF,San Mamés,Bilbao,53289,3,2,1,44974,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00594,2025/26,22,2026-01-16,14:00,RCD Espanyol de Barcelona,Villarreal CF,Stage Front Stadium,Cornellà de Llobregat,40000,0,4,2,29773,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00595,2025/26,22,2026-01-18,14:00,Real Sociedad de Fútbol,Levante UD,Reale Arena,San Sebastián,39313,1,0,1,38011,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00596,2025/26,22,2026-01-17,18:30,RCD Mallorca,Real Oviedo,Estadi Mallorca Son Moix,Palma,26020,0,0,X,21512,César Soto Grado,2026-07-02 06:00:00
+LL-00597,2025/26,22,2026-01-16,18:30,Girona FC,Deportivo Alavés,Estadi Municipal de Montilivi,Girona,14624,3,1,1,12650,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00598,2025/26,22,2026-01-17,21:00,Real Madrid CF,Elche CF,Santiago Bernabéu,Madrid,83186,0,2,2,81350,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00599,2025/26,22,2026-01-17,18:30,RC Celta de Vigo,Atlético de Madrid,Abanca-Balaídos,Vigo,24870,0,1,2,22181,Mario Melero López,2026-07-02 06:00:00
+LL-00600,2025/26,22,2026-01-17,14:00,Sevilla FC,Rayo Vallecano de Madrid,Ramón Sánchez-Pizjuán,Sevilla,43883,0,2,2,37581,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00601,2025/26,23,2026-01-25,14:00,CA Osasuna,Getafe CF,El Sadar,Pamplona,23576,2,1,1,19676,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00602,2025/26,23,2026-01-23,16:15,Athletic Club,FC Barcelona,San Mamés,Bilbao,53289,1,2,2,52149,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00603,2025/26,23,2026-01-26,21:00,Real Betis Balompié,Villarreal CF,Benito Villamarín,Sevilla,60721,0,0,X,47347,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00604,2025/26,23,2026-01-25,14:00,Real Sociedad de Fútbol,Valencia CF,Reale Arena,San Sebastián,39313,2,0,1,31967,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00605,2025/26,23,2026-01-24,14:00,RCD Espanyol de Barcelona,Real Oviedo,Stage Front Stadium,Cornellà de Llobregat,40000,0,1,2,30369,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00606,2025/26,23,2026-01-25,16:15,Girona FC,Levante UD,Estadi Municipal de Montilivi,Girona,14624,1,0,1,11823,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00607,2025/26,23,2026-01-25,21:00,RCD Mallorca,Elche CF,Estadi Mallorca Son Moix,Palma,26020,0,1,2,18630,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00608,2025/26,23,2026-01-24,21:00,RC Celta de Vigo,Deportivo Alavés,Abanca-Balaídos,Vigo,24870,1,1,X,23453,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00609,2025/26,23,2026-01-25,14:00,Real Madrid CF,Rayo Vallecano de Madrid,Santiago Bernabéu,Madrid,83186,6,0,1,74659,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00610,2025/26,23,2026-01-24,21:00,Sevilla,Atlético,Ramón Sánchez-Pizjuán,Sevilla,43883,0,0,X,42341,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00611,2025/26,24,2026-01-31,16:15,Athletic Club,CA Osasuna,San Mamés,Bilbao,53289,3,3,X,40753,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00612,2025/26,24,2026-01-31,18:30,Getafe CF,Villarreal CF,Coliseum,Getafe,16500,1,0,1,13852,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00613,2025/26,24,2026-02-01,21:00,Real Sociedad de Fútbol,FC Barcelona,Reale Arena,San Sebastián,39313,2,0,1,38919,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00614,2025/26,24,2026-02-02,18:30,Real Betis Balompié,Real Oviedo,Benito Villamarín,Sevilla,60721,2,0,1,42731,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00615,2025/26,24,2026-02-01,14:00,Girona FC,Valencia CF,Estadi Municipal de Montilivi,Girona,14624,1,2,2,11975,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00616,2025/26,24,2026-02-02,21:00,RCD Espanyol de Barcelona,Elche CF,Stage Front Stadium,Cornellà de Llobregat,40000,2,3,2,31026,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00616,2025/26,24,2026-02-02,21:00,RCD Espanyol de Barcelona,Elche CF,Stage Front Stadium,Cornellà de Llobregat,40000,2,3,2,31026,Alejandro Quintero González,2026-07-03 06:00:00
+LL-00617,2025/26,24,2026-02-01,14:00,RC Celta de Vigo,Levante UD,Abanca-Balaídos,Vigo,24870,1,0,1,22613,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00618,2025/26,24,2026-02-01,21:00,RCD Mallorca,Rayo Vallecano de Madrid,Estadi Mallorca Son Moix,Palma,26020,1,0,1,22839,Mario Melero López,2026-07-02 06:00:00
+LL-00619,2025/26,24,2026-02-02,18:30,Sevilla FC,Deportivo Alavés,Ramón Sánchez-Pizjuán,Sevilla,43883,1,0,1,39186,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00620,2025/26,24,2026-01-31,16:15,Real Madrid CF,Atlético de Madrid,Santiago Bernabéu,Madrid,83186,0,2,2,81298,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00621,2025/26,25,2026-02-08,16:15,CA Osasuna,Villarreal CF,El Sadar,Pamplona,23576,1,0,1,23340,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00622,2025/26,25,2026-02-08,16:15,Real Sociedad de Fútbol,Athletic Club,Reale Arena,San Sebastián,39313,0,0,X,33242,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00623,2025/26,25,2026-02-09,21:00,Getafe CF,Real Oviedo,Coliseum,Getafe,16500,1,2,2,11681,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00624,2025-2026,25,2026-02-06,14:00,Girona FC,FC Barcelona,Estadi Municipal de Montilivi,Girona,14624,1,3,2,14230,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00625,2025-2026,25,2026-02-08,18:30,Real Betis Balompié,Elche CF,Benito Villamarín,Sevilla,60721,0,2,2,56395,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00626,2025/26,25,2026-02-08,14:00,RC Celta de Vigo,Valencia CF,Abanca-Balaídos,Vigo,24870,1,2,2,20560,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00627,2025/26,25,2026-02-07,21:00,RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,Stage Front Stadium,Cornellà de Llobregat,40000,0,1,2,33991,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00628,2025-2026,25,2026-02-08,18:30,Sevilla FC,Levante UD,Ramón Sánchez-Pizjuán,Sevilla,43883,3,2,1,38232,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00629,2025/26,25,2026-02-09,21:00,RCD Mallorca,Atlético de Madrid,Estadi Mallorca Son Moix,Palma,26020,1,1,X,24462,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00630,2025/26,25,2026-02-08,21:00,Real Madrid CF,Deportivo Alavés,Santiago Bernabéu,Madrid,83186,4,0,1,75993,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00630,2025/26,25,2026-02-08,21:00,Real Madrid CF,Deportivo Alavés,Santiago Bernabéu,Madrid,83186,4,0,1,75993,Adrián Cordero Vega,2026-07-03 06:00:00
+LL-00631,2025/26,26,2026-02-14,18:30,Real Sociedad de Fútbol,CA Osasuna,Reale Arena,San Sebastián,39313,0,2,2,29787,Mario Melero López,2026-07-02 06:00:00
+LL-00632,2025/26,26,15/02/2026,18:30,Villarreal CF,Real Oviedo,Estadio de la Cerámica,Villarreal,23008,2,1,1,20104,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00633,2025-2026,26,2026-02-13,14:00,Girona FC,Athletic Club,Estadi Municipal de Montilivi,Girona,14.624,0,0,X,12966,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00634,2025/26,26,2026-02-15,18:30,Getafe CF,Elche CF,Coliseum,Getafe,16500,1,0,1,13468,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00635,2025/26,26,15/02/2026,21:00,RC Celta de Vigo,FC Barcelona,Abanca-Balaídos,Vigo,24870,2,1,1,23593,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00636,2025/26,26,2026-02-14,18:30,Real Betis Balompié,Rayo Vallecano de Madrid,Benito Villamarín,Sevilla,60721,4,1,1,45675,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00637,2025/26,26,2026-02-14,21:00,Sevilla FC,Valencia CF,Ramón Sánchez-Pizjuán,Sevilla,43883,0,1,2,37064,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00638,2025-2026,26,2026-02-13,18:30,RCD Espanyol de Barcelona,Atlético de Madrid,Stage Front Stadium,Cornellà de Llobregat,40000,2,1,1,30373,Mario Melero López,2026-07-02 06:00:00
+LL-00639,2025/26,26,2026-02-14,21:00,Real Madrid CF,Levante UD,Santiago Bernabéu,Madrid,83186,3,0,1,69628,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00640,2025/26,26,2026-02-16,18:30,RCD Mallorca,Deportivo Alavés,Estadi Mallorca Son Moix,Palma,26.020,5,1,1,22811,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00641,2025/26,27,2026-02-22,14:00,CA Osasuna,Real Oviedo,El Sadar,Pamplona,23576,3,2,1,19136,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00642,2025/26,27,2026-02-22,21:00,Girona FC,Real Sociedad de Fútbol,Estadi Municipal de Montilivi,Girona,14624,1,1,X,12706,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00643,2025/26,27,2026-02-21,18:30,Villarreal,Elche,Estadio de la Cerámica,Villarreal,23008,3,1,1,18596,César Soto Grado,2026-07-02 06:00:00
+LL-00644,2025/26,27,2026-02-20,18:30,RC Celta de Vigo,Athletic Club,Abanca-Balaídos,Vigo,24870,1,0,1,23222,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00645,2025/26,27,2026-02-23,18:30,Getafe CF,Rayo Vallecano de Madrid,Coliseum,Getafe,16500,3,1,1,13338,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00646,2025/26,27,2026-02-21,14:00,Sevilla FC,FC Barcelona,Ramón Sánchez-Pizjuán,Sevilla,43883,2,3,2,40648,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00647,2025/26,27,2026-02-20,21:00,Real Betis Balompié,Atlético de Madrid,Benito Villamarín,Sevilla,60721,0,0,X,53577,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00648,2025/26,27,2026-02-21,14:00,Real Madrid CF,Valencia CF,Santiago Bernabéu,Madrid,83186,0,0,X,73570,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00649,2025/26,27,2026-02-22,21:00,RCD Espanyol de Barcelona,Deportivo Alavés,Stage Front Stadium,Cornellà de Llobregat,40000,0,0,X,34922,Mario Melero López,2026-07-02 06:00:00
+LL-00650,2025/26,27,2026-02-21,21:00,RCD Mallorca,Levante UD,Estadi Mallorca Son Moix,Palma,26020,4,0,1,21462,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00651,2025/26,28,2026-03-01,18:30,Girona FC,CA Osasuna,Estadi Municipal de Montilivi,Girona,14624,1,2,2,13592,César Soto Grado,2026-07-02 06:00:00
+LL-00652,2025/26,28,2026-03-01,18:30,Real Oviedo,Elche CF,Estadio Carlos Tartiere,Oviedo,30.500,0,1,2,26250,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00653,2025/26,28,2026-02-28,14:00,RC Celta de Vigo,Real Sociedad de Fútbol,Abanca-Balaídos,Vigo,24870,0,1,2,21711,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00654,2025/26,28,2026-02-28,14:00,Villarreal,Rayo Vallecano,Estadio de la Cerámica,Villarreal,23008,1,1,X,21470,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00655,2025/26,28,2026-03-02,21:00,Sevilla FC,Athletic Club,Ramón Sánchez-Pizjuán,Sevilla,43883,0,0,X,33065,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00656,2025/26,28,2026-02-28,18:30,Getafe CF,Atlético de Madrid,Coliseum,Getafe,16500,3,1,1,15207,Mario Melero López,2026-07-02 06:00:00
+LL-00657,2025/26,28,2026-03-02,18:30,Real Madrid CF,FC Barcelona,Santiago Bernabéu,Madrid,83186,2,3,2,73258,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00658,2025/26,28,2026-02-27,14:00,Real Betis Balompié,Deportivo Alavés,Benito Villamarín,Sevilla,60721,1,0,1,48301,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00659,2025/26,28,2026-02-27,21:00,RCD Mallorca,Valencia CF,Estadi Mallorca Son Moix,Palma,26020,0,0,X,21929,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00660,2025/26,28,2026-02-28,21:00,RCD Espanyol de Barcelona,Levante UD,Stage Front Stadium,Cornellà de Llobregat,40000,1,0,1,32065,Víctor García Verdura,2026-07-02 06:00:00
+LL-00661,2025/26,29,2026-03-14,14:00,CA Osasuna,Elche CF,El Sadar,Pamplona,23576,1,0,1,20351,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00662,2025/26,29,2026-03-15,18:30,RC Celta de Vigo,Girona FC,Abanca-Balaídos,Vigo,24870,2,3,2,20982,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00663,2025/26,29,2026-03-14,16:15,Real Oviedo,Rayo Vallecano de Madrid,Estadio Carlos Tartiere,Oviedo,30500,1,0,1,20765,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00664,2025/26,29,2026-03-14,18:30,Sevilla FC,Real Sociedad de Fútbol,Ramón Sánchez-Pizjuán,Sevilla,43883,2,1,1,37663,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00665,2025/26,29,2026-03-14,14:00,Villarreal CF,Atlético de Madrid,Estadio de la Cerámica,Villarreal,23008,2,1,1,22777,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00666,2025/26,29,2026-03-14,21:00,Real Madrid CF,Athletic Club,Santiago Bernabéu,Madrid,83186,5,0,1,77219,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00667,2025/26,29,2026-03-16,21:00,Getafe CF,Deportivo Alavés,Coliseum,Getafe,16500,3,0,1,13261,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00668,2025/26,29,2026-03-13,18:30,RCD Mallorca,FC Barcelona,Estadi Mallorca Son Moix,Palma,26020,1,4,2,21450,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00669,2025/26,29,2026-03-13,21:00,Real Betis Balompié,Levante UD,Benito Villamarín,Sevilla,60721,4,0,1,49409,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00670,2025/26,29,2026-03-15,16:15,RCD Espanyol de Barcelona,Valencia CF,Stage Front Stadium,Cornellà de Llobregat,40000,3,2,1,31126,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00671,2025/26,30,2026-03-22,16:15,RC Celta de Vigo,CA Osasuna,Abanca-Balaídos,Vigo,24870,1,1,X,21852,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00672,2025/26,30,2026-03-21,18:30,Elche CF,Rayo Vallecano de Madrid,Estadio Manuel Martínez Valero,Elche,31388,1,0,1,23358,César Soto Grado,2026-07-02 06:00:00
+LL-00673,2025/26,30,2026-03-22,14:00,Sevilla FC,Girona FC,Ramón Sánchez-Pizjuán,Sevilla,43883,2,1,1,38446,Guillermo Cuadra Fernández,2026-07-02 06:00:00
+LL-00674,2025/26,30,2026-03-21,18:30,Real Oviedo,Atlético de Madrid,Estadio Carlos Tartiere,Oviedo,30500,0,1,2,28212,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00675,2025/26,30,2026-03-23,21:00,Real Madrid CF,Real Sociedad de Fútbol,Santiago Bernabéu,Madrid,83186,5,2,1,67932,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00676,2025/26,30,2026-03-22,16:15,Villarreal CF,Deportivo Alavés,Estadio de la Cerámica,Villarreal,23008,3,1,1,20589,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00677,2025/26,30,2026-03-22,16:15,RCD Mallorca,Athletic Club,Estadi Mallorca Son Moix,Palma,26020,0,1,2,22809,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00678,2025/26,30,2026-03-22,14:00,Getafe CF,Levante UD,Coliseum,Getafe,16500,0,0,X,14032,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00679,2025/26,30,2026-03-21,18:30,RCD Espanyol de Barcelona,FC Barcelona,Stage Front Stadium,Cornellà de Llobregat,40000,1,3,2,35254,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00679,2025/26,30,2026-03-21,18:30,RCD Espanyol de Barcelona,FC Barcelona,Stage Front Stadium,Cornellà de Llobregat,40000,1,3,2,35254,Alejandro Hernández Hernández,2026-07-03 06:00:00
+LL-00680,2025/26,30,2026-03-21,14:00,Real Betis Balompié,Valencia CF,Benito Villamarín,Sevilla,60721,0,0,X,53482,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00681,2025/26,31,2026-03-29,18:30,CA Osasuna,Rayo Vallecano de Madrid,El Sadar,Pamplona,23576,2,0,1,18720,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00682,2025/26,31,2026-03-27,18:30,Sevilla FC,RC Celta de Vigo,Ramón Sánchez-Pizjuán,Sevilla,43883,1,0,1,34737,César Soto Grado,2026-07-02 06:00:00
+LL-00682,2025/26,31,2026-03-27,18:30,Sevilla FC,RC Celta de Vigo,Ramón Sánchez-Pizjuán,Sevilla,43883,1,0,1,34737,César Soto Grado,2026-07-03 06:00:00
+LL-00683,2025/26,31,2026-03-27,14:00,Elche CF,Atlético de Madrid,Estadio Manuel Martínez Valero,Elche,31388,1,0,1,26459,Víctor García Verdura,2026-07-02 06:00:00
+LL-00684,2025/26,31,2026-03-29,18:30,Real Madrid CF,Girona FC,Santiago Bernabéu,Madrid,83186,3,0,1,75271,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00685,2025/26,31,2026-03-28,21:00,Real Oviedo,Deportivo Alavés,Estadio Carlos Tartiere,Oviedo,30500,1,3,2,26349,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00686,2025/26,31,2026-03-27,18:30,RCD Mallorca,Real Sociedad de Fútbol,Estadi Mallorca Son Moix,Palma,26020,1,1,X,19792,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00687,2025/26,31,2026-03-27,18:30,Villarreal CF,Levante UD,Estadio de la Cerámica,Villarreal,23008,2,0,1,17537,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00688,2025-2026,31,2026-03-28,16:15,RCD Espanyol de Barcelona,Athletic Club,Stage Front Stadium,Cornellà de Llobregat,40000,2,1,1,34191,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00689,2025/26,31,2026-03-28,16:15,Getafe CF,Valencia CF,Coliseum,Getafe,16500,1,0,1,14670,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00690,2025/26,31,2026-03-30,16:15,Real Betis Balompié,FC Barcelona,Benito Villamarín,Sevilla,60.721,3,2,1,53204,Víctor García Verdura,2026-07-02 06:00:00
+LL-00691,2025/26,32,2026-04-04,18:30,Sevilla FC,CA Osasuna,Ramón Sánchez-Pizjuán,Sevilla,43883,1,2,2,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00692,2025/26,32,2026-04-05,21:00,Rayo Vallecano de Madrid,Atlético de Madrid,Estadio de Vallecas,Madrid,14708,0,1,2,,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00693,2025/26,32,2026-04-05,16:15,Real Madrid CF,RC Celta de Vigo,Santiago Bernabéu,Madrid,83186,0,0,X,69893,Mario Melero López,2026-07-02 06:00:00
+LL-00694,2025/26,32,2026-04-05,16:15,Elche CF,Deportivo Alavés,Estadio Manuel Martínez Valero,Elche,31388,1,0,1,25109,Mario Melero López,2026-07-02 06:00:00
+LL-00695,2025/26,32,2026-04-05,14:00,RCD Mallorca,Girona FC,Estadi Mallorca Son Moix,Palma,26020,0,1,2,,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00696,2025/26,32,2026-04-06,21:00,Real Oviedo,Levante UD,Estadio Carlos Tartiere,Oviedo,30500,2,1,1,22663,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00697,2025/26,32,2026-04-04,18:30,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,Stage Front Stadium,Cornellà de Llobregat,40000,0,1,2,33354,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00698,2025/26,32,2026-04-06,16:15,Villarreal CF,Valencia CF,Estadio de la Cerámica,Villarreal,23008,3,1,1,19516,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00699,2025/26,32,2026-04-05,16:15,Real Betis Balompié,Athletic Club,Benito Villamarín,Sevilla,60721,0,2,2,50104,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00700,2025/26,32,2026-04-05,21:00,Getafe CF,FC Barcelona,Coliseum,Getafe,16500,0,2,2,15333,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00701,2025/26,33,2026-04-12,21:00,CA Osasuna,Atlético de Madrid,El Sadar,Pamplona,23576,0,3,2,20764,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00702,2025/26,33,2026-04-12,21:00,Real Madrid CF,Sevilla FC,Santiago Bernabéu,Madrid,83186,2,2,X,73330,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00703,2025/26,33,2026-04-10,21:00,Rayo Vallecano de Madrid,Deportivo Alavés,Estadio de Vallecas,Madrid,14708,3,1,1,12657,Víctor García Verdura,2026-07-02 06:00:00
+LL-00704,2025-2026,33,2026-04-12,18:30,Mallorca,Celta,Estadi Mallorca Son Moix,Palma,26020,2,2,X,22744,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00705,2025/26,33,2026-04-10,14:00,Elche CF,Levante UD,Estadio Manuel Martínez Valero,Elche,31388,2,0,1,26384,Jesús Gil Manzano,2026-07-02 06:00:00
+LL-00706,2025/26,33,2026-04-11,18:30,RCD Espanyol de Barcelona,Girona FC,Stage Front Stadium,Cornellà de Llobregat,40000,5,0,1,31445,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00707,2025/26,33,2026-04-12,18:30,Real Oviedo,Valencia CF,Estadio Carlos Tartiere,Oviedo,30500,2,3,2,26830,César Soto Grado,2026-07-02 06:00:00
+LL-00708,2025/26,33,2026-04-12,16:15,Real Betis Balompié,Real Sociedad de Fútbol,Benito Villamarín,Sevilla,60721,0,0,X,51807,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00709,2025/26,33,2026-04-12,21:00,Villarreal CF,FC Barcelona,Estadio de la Cerámica,Villarreal,23008,2,2,X,,Isidro Díaz de Mera Escuderos,2026-07-02 06:00:00
+LL-00710,2025/26,33,2026-04-13,18:30,Getafe CF,Athletic Club,Coliseum,Getafe,16500,0,3,2,12244,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00711,2025/26,34,2026-04-19,18:30,Real Madrid CF,CA Osasuna,Santiago Bernabéu,Madrid,83186,2,4,2,77032,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00712,2025/26,34,18/04/2026,18:30,Atlético,Alavés,Riyadh Air Metropolitano,Madrid,70460,2,0,1,58566,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00713,2025/26,34,2026-04-20,18:30,RCD Mallorca,Sevilla FC,Estadi Mallorca Son Moix,Palma,26020,1,2,2,20269,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00714,2025/26,34,2026-04-18,21:00,Rayo Vallecano de Madrid,Levante UD,Estadio de Vallecas,Madrid,14708,4,0,1,,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00715,2025/26,34,2026-04-18,21:00,RCD Espanyol de Barcelona,RC Celta de Vigo,Stage Front Stadium,Cornellà de Llobregat,40000,2,3,2,32376,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00716,2025/26,34,2026-04-19,18:30,Elche CF,Valencia CF,Estadio Manuel Martínez Valero,Elche,31388,1,1,X,23800,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00717,2025/26,34,2026-04-18,21:00,Real Betis Balompié,Girona FC,Benito Villamarín,Sevilla,60721,2,0,1,52650,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00718,2025/26,34,2026-04-19,21:00,Real Oviedo,FC Barcelona,Estadio Carlos Tartiere,Oviedo,30500,0,1,2,29169,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00719,2025/26,34,2026-04-19,18:30,Getafe CF,Real Sociedad de Fútbol,Coliseum,Getafe,16500,0,2,2,16151,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00720,2025/26,34,2026-04-17,18:30,Villarreal CF,Athletic Club,Estadio de la Cerámica,Villarreal,23008,2,1,1,21509,César Soto Grado,2026-07-02 06:00:00
+LL-00721,2025-2026,35,2026-04-26,21:00,CA Osasuna,Deportivo Alavés,El Sadar,Pamplona,23576,0,0,X,20081,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00722,2025/26,35,2026-04-26,16:15,RCD Mallorca,Real Madrid CF,Estadi Mallorca Son Moix,Palma,26020,0,1,2,24288,César Soto Grado,2026-07-02 06:00:00
+LL-00723,2025/26,35,2026-04-24,16:15,Atlético de Madrid,Levante UD,Riyadh Air Metropolitano,Madrid,70460,0,1,2,54721,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00724,2025/26,35,2026-04-26,16:15,RCD Espanyol de Barcelona,Sevilla FC,Stage Front Stadium,Cornellà de Llobregat,40000,3,1,1,37184,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00725,2025/26,35,2026-04-25,14:00,Rayo Vallecano de Madrid,Valencia CF,Estadio de Vallecas,Madrid,14708,0,0,X,11124,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00726,2025/26,35,2026-04-26,16:15,Real Betis Balompié,RC Celta de Vigo,Benito Villamarín,Sevilla,60721,1,0,1,53339,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00727,2025/26,35,2026-04-26,16:15,Elche CF,FC Barcelona,Estadio Manuel Martínez Valero,Elche,31388,3,3,X,29478,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00728,2025/26,35,2026-04-27,16:15,Getafe CF,Girona FC,Coliseum,Getafe,16500,0,3,2,13851,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00729,2025/26,35,2026-04-27,16:15,Real Oviedo,Athletic Club,Estadio Carlos Tartiere,Oviedo,30500,0,1,2,27653,Alejandro Hernández Hernández,2026-07-02 06:00:00
+LL-00730,2025/26,35,2026-04-26,18:30,Villarreal CF,Real Sociedad de Fútbol,Estadio de la Cerámica,Villarreal,23008,0,0,X,18011,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00731,2025/26,36,2026-05-02,16:15,RCD Mallorca,CA Osasuna,Estadi Mallorca Son Moix,Palma,26020,3,2,1,,Víctor García Verdura,2026-07-02 06:00:00
+LL-00732,2025/26,36,04/05/2026,21:00,Deportivo Alavés,Levante UD,Mendizorroza,Vitoria-Gasteiz,19840,2,2,X,15991,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00733,2025/26,36,2026-05-02,21:00,RCD Espanyol de Barcelona,Real Madrid CF,Stage Front Stadium,Cornellà de Llobregat,40000,0,1,2,,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00734,2025/26,36,2026-05-02,18:30,Atlético de Madrid,Valencia CF,Riyadh Air Metropolitano,Madrid,70460,1,2,2,62902,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00735,2025/26,36,2026-05-02,16:15,Real Betis Balompié,Sevilla FC,Benito Villamarín,Sevilla,60721,2,0,1,51255,Víctor García Verdura,2026-07-02 06:00:00
+LL-00736,2025/26,36,2026-05-01,18:30,Rayo Vallecano de Madrid,FC Barcelona,Estadio de Vallecas,Madrid,14.708,1,1,X,12774,Juan Martínez Munuera,2026-07-02 06:00:00
+LL-00737,2025/26,36,2026-05-02,21:00,Getafe CF,RC Celta de Vigo,Coliseum,Getafe,16500,1,2,2,15016,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00738,2025/26,36,2026-05-03,16:15,Elche CF,Athletic Club,Estadio Manuel Martínez Valero,Elche,31388,0,2,2,25305,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00739,2025/26,36,2026-05-02,18:30,Villarreal,Girona,Estadio de la Cerámica,Villarreal,23008,4,2,1,19112,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00740,2025/26,36,2026-05-03,18:30,Real Oviedo,Real Sociedad de Fútbol,Estadio Carlos Tartiere,Oviedo,30500,0,2,2,29291,Miguel Ángel Ortiz Arias,2026-07-02 06:00:00
+LL-00741,2025/26,37,2026-05-10,21:00,CA Osasuna,Levante UD,El Sadar,Pamplona,23576,2,0,1,19701,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00742,2025/26,37,2026-05-09,21:00,RCD Espanyol de Barcelona,RCD Mallorca,Stage Front Stadium,Cornellà de Llobregat,40000,4,0,1,32367,César Soto Grado,2026-07-02 06:00:00
+LL-00743,2025/26,37,2026-05-11,21:00,Deportivo Alavés,Valencia CF,Mendizorroza,Vitoria-Gasteiz,19840,2,1,1,15073,Francisco José Hernández Maeso,2026-07-02 06:00:00
+LL-00744,2025/26,37,2026-05-08,18:30,Real Betis Balompié,Real Madrid CF,Benito Villamarín,Sevilla,60721,1,3,2,53982,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
+LL-00745,2025/26,37,2026-05-10,14:00,Atlético de Madrid,FC Barcelona,Riyadh Air Metropolitano,Madrid,70.460,3,1,1,62455,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00746,2025/26,37,2026-05-09,18:30,Getafe CF,Sevilla FC,Coliseum,Getafe,16500,0,1,2,13352,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00747,2025/26,37,09/05/2026,18:30,Rayo Vallecano de Madrid,Athletic Club,Estadio de Vallecas,Madrid,14708,1,2,2,14560,Javier Alberola Rojas,2026-07-02 06:00:00
+LL-00748,2025/26,37,2026-05-10,16:15,Villarreal CF,RC Celta de Vigo,Estadio de la Cerámica,Villarreal,23008,1,2,2,22346,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00749,2025/26,37,2026-05-10,18:30,Elche CF,Real Sociedad de Fútbol,Estadio Manuel Martínez Valero,Elche,31388,1,3,2,27495,Juan Pulido Santana,2026-07-02 06:00:00
+LL-00750,2025/26,37,2026-05-10,18:30,Real Oviedo,Girona FC,Estadio Carlos Tartiere,Oviedo,30500,1,2,2,24723,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00751,2025/26,38,2026-05-17,21:00,RCD Espanyol de Barcelona,CA Osasuna,Stage Front Stadium,Cornellà de Llobregat,40000,2,3,2,33980,Adrián Cordero Vega,2026-07-02 06:00:00
+LL-00752,2025/26,38,2026-05-15,18:30,Levante UD,Valencia CF,Estadi Ciutat de València,Valencia,26354,0,1,2,22593,César Soto Grado,2026-07-02 06:00:00
+LL-00753,2025/26,38,2026-05-16,14:00,Real Betis Balompié,RCD Mallorca,Benito Villamarín,Sevilla,60721,1,1,X,52316,Alejandro Quintero González,2026-07-02 06:00:00
+LL-00754,2025/26,38,2026-05-18,18:30,Deportivo Alavés,FC Barcelona,Mendizorroza,Vitoria-Gasteiz,19840,2,2,X,18533,José Luis Guzmán Mansilla,2026-07-02 06:00:00
+LL-00755,2025/26,38,2026-05-16,18:30,Getafe CF,Real Madrid CF,Coliseum,Getafe,16500,0,2,2,15263,Mateo Busquets Ferrer,2026-07-02 06:00:00
+LL-00756,2025/26,38,2026-05-17,21:00,Atlético de Madrid,Athletic Club,Riyadh Air Metropolitano,Madrid,70460,2,0,1,69755,Alejandro Muñiz Ruiz,2026-07-02 06:00:00
+LL-00757,2025/26,38,2026-05-16,14:00,Villarreal CF,Sevilla FC,Estadio de la Cerámica,Villarreal,23008,1,4,2,20876,José María Sánchez Martínez,2026-07-02 06:00:00
+LL-00758,2025/26,38,2026-05-16,14:00,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,Estadio de Vallecas,Madrid,14708,0,0,X,13098,Mario Melero López,2026-07-02 06:00:00
+LL-00759,2025/26,38,18/05/2026,14:00,Real Oviedo,RC Celta de Vigo,Estadio Carlos Tartiere,Oviedo,30500,2,0,1,26970,José Luis Munuera Montero,2026-07-02 06:00:00
+LL-00760,2025/26,38,2026-05-18,21:00,Elche CF,Girona FC,Estadio Manuel Martínez Valero,Elche,31388,0,0,X,24065,Ricardo de Burgos Bengoetxea,2026-07-02 06:00:00
