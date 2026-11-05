@@ -998,75 +998,79 @@ with open(DIR_VALID / "etiquetas_lesiones.csv", "w", newline="", encoding="utf-8
 
 # SQL de carga generado a partir de las mismas columnas (así nunca se desincronizan)
 ESQUEMAS = sorted({n.split(".")[0] for n in TABLAS})
-sql = ["""-- =============================================================================
--- 02_bronze_laliga.sql   (GENERADO por scripts/generar_bronze.py - no editar a mano)
--- Requisito: haber ejecutado antes snowflake/01_entorno_laliga.sql, que crea WH_LALIGA,
--- las databases {ENV}_LALIGA_BRONZE/SILVER/GOLD_DB y los roles {ENV}_LALIGA_TRANSFORM_ROLE.
---
--- Qué hace:
---   1. Crea en DEV_LALIGA_BRONZE_DB un esquema por sistema de origen (convención del curso).
---   2. Crea un stage interno y un file format CSV.
---   3. Crea las 6 tablas (TODAS las columnas VARCHAR + metadatos de carga) y las carga
---      con COPY INTO.
---   4. Da permiso de lectura sobre las tablas a DEV_LALIGA_TRANSFORM_ROLE (dbt).
--- Bronze solo existe en DEV: PRE y PRO serán clones (script 03, lo haremos al montar PRE/PRO).
+DB = "DEV_LALIGA_BRONZE_DB"
+cab = """-- =============================================================================
+-- 02 · Carga de Bronze desde los CSV de data/bronze
+--      (GENERADO por scripts/generar_bronze.py - no editar a mano)
 -- =============================================================================
-USE ROLE SYSADMIN;
-USE WAREHOUSE WH_LALIGA;
-USE DATABASE DEV_LALIGA_BRONZE_DB;
+-- Simula lo que haría la herramienta de ingesta (Fivetran): deja los datos
+-- crudos de las 6 fuentes del proyecto en DEV_LALIGA_BRONZE_DB. Pasos:
+--   1. Ejecuta la parte A (crea stage, formato de fichero y tablas).
+--   2. Sube los 6 CSV de data/bronze al stage DEV_LALIGA_BRONZE_DB.public.carga_bronze
+--      desde Snowsight: abre el stage CARGA_BRONZE en el explorador de
+--      databases y usa el botón para añadir ficheros.
+--   3. Ejecuta la parte B (COPY INTO), los permisos y la comprobación final.
+--
+-- Diferencia con el script del curso: aquí TODAS las columnas de negocio son
+-- varchar. Nuestras fuentes llegan sucias ("6,8", "42M€", "16/08/2024"...) y en
+-- bronze no se puede rechazar ni perder ninguna fila: el tipado se hace en silver.
+--
+-- _loaded_at: cada tabla tiene una columna con DEFAULT current_timestamp(). El
+-- COPY INTO no la menciona, así que Snowflake la rellena con el momento de la
+-- carga. dbt la usa como loaded_at_field para el freshness. _fecha_extraccion,
+-- en cambio, conserva la fecha en que el sistema de origen exportó la fila
+-- (equivale a _fivetran_synced).
+-- =============================================================================
 
--- 1. Un esquema por fuente
-""" + "".join(f"CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.{e};\n" for e in ESQUEMAS) + """
--- 2. File format y stage (en PUBLIC: es infraestructura de carga, no datos)
-CREATE OR REPLACE FILE FORMAT DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
-  TYPE = CSV
-  FIELD_DELIMITER = ','
-  SKIP_HEADER = 1
-  FIELD_OPTIONALLY_ENCLOSED_BY = '"'
-  NULL_IF = ('')
-  EMPTY_FIELD_AS_NULL = TRUE
-  ENCODING = 'UTF8';
+use role sysadmin;
+use warehouse WH_LALIGA;
 
-CREATE STAGE IF NOT EXISTS DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA
-  FILE_FORMAT = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
-  COMMENT = 'CSV recibidos de las 6 fuentes del proyecto LaLiga';
+-- =================================== PARTE A =================================
+create stage if not exists DEV_LALIGA_BRONZE_DB.public.carga_bronze
+    comment = 'Ficheros CSV para la carga inicial de Bronze (proyecto LaLiga)';
 
--- >>> PARA AQUÍ y sube los 6 CSV de data/bronze/ al stage:
---     Snowsight: Data > Databases > DEV_LALIGA_BRONZE_DB > PUBLIC > Stages > STG_LALIGA > "+ Files"
---     (o con SnowSQL: PUT file://data/bronze/*.csv @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;)
-LIST @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;
-
--- 3. Tablas y carga
-"""]
+create file format if not exists DEV_LALIGA_BRONZE_DB.public.csv_bronze
+    type = csv
+    skip_header = 1
+    field_optionally_enclosed_by = '"'
+    null_if = ('')
+    empty_field_as_null = true;
+"""
+sql = [cab]
+ancho = max(len(c) for cols, _f in TABLAS.values() for c in cols) + 2
 for nombre, (cols, _f) in TABLAS.items():
-    defs = ",\n  ".join(f"{c} VARCHAR" for c in cols)
-    sql.append(f"""
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.{nombre} (
-  {defs},
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
-);
-COPY INTO DEV_LALIGA_BRONZE_DB.{nombre}
-FROM (
-  SELECT {", ".join(f"${i}" for i in range(1, len(cols) + 1))},
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/{fichero(nombre)}
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
-""")
-sql.append("""
--- 4. Permisos: dbt (DEV_LALIGA_TRANSFORM_ROLE) lee bronze; nunca escribe en él
-GRANT USAGE ON DATABASE DEV_LALIGA_BRONZE_DB TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-""" + "".join(f"""GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.{e} TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.{e} TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-""" for e in ESQUEMAS) + """
-USE ROLE SYSADMIN;
+    lineas = []
+    for k, c in enumerate(cols):
+        tipo = "timestamp_ntz" if c == "_FECHA_EXTRACCION" else "varchar"
+        lineas.append(f"    {'  ' if k == 0 else ', '}{c.lower():<{ancho}}{tipo}")
+    lineas.append(f"    , {'_loaded_at':<{ancho}}timestamp_ltz default current_timestamp()")
+    sql.append(f"\ncreate or replace table {DB}.{nombre.lower()} (\n" + "\n".join(lineas) + "\n);\n")
+sql.append(f"""
+-- Antes de la parte B: comprueba que los {len(TABLAS)} ficheros están en el stage
+list @{DB}.public.carga_bronze;
 
--- 5. Comprobación de volúmenes
+-- =================================== PARTE B =================================
+-- La lista de columnas excluye _loaded_at: así toma su DEFAULT.
 """)
-sql.append("\nUNION ALL ".join(f"SELECT '{n}' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.{n}" for n in TABLAS) + ";\n")
+for nombre, (cols, _f) in TABLAS.items():
+    lista = ", ".join(c.lower() for c in cols)
+    sql.append(f"""copy into {DB}.{nombre.lower()}
+    ({lista})
+from @{DB}.public.carga_bronze files = ('{fichero(nombre)}')
+file_format = (format_name = '{DB}.public.csv_bronze');
+
+""")
+esquemas = sorted({n.split(".")[0].lower() for n in TABLAS})
+sql.append("""-- ================================ PERMISOS ===================================
+-- dbt (DEV_LALIGA_TRANSFORM_ROLE) solo LEE bronze. Hay que darlo después de crear
+-- las tablas: "on all tables" afecta solo a las que ya existen.
+""" + "".join(f"grant select on all tables in schema {DB}.{e} to role DEV_LALIGA_TRANSFORM_ROLE;\n" for e in esquemas))
+total = {n: len(f) for n, (c, f) in TABLAS.items()}
+sql.append("""
+-- ============================== COMPROBACIÓN =================================
+-- Resultado esperado con los datos del repo:
+--   """ + " · ".join(f"{n.split('.')[1].lower()} {v}" for n, v in total.items()) + "\n")
+sql.append(" union all\n".join(f"select '{n.split('.')[1].lower()}' as tabla, count(*) as filas from {DB}.{n.lower()}" for n in TABLAS) + ";\n")
 for viejo in ("01_bronze_ddl_y_carga.sql", "00_usuario_dbt.sql"):
     if (DIR_SQL / viejo).exists():
         (DIR_SQL / viejo).unlink()

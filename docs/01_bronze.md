@@ -10,8 +10,8 @@ siempre podemos volver a reconstruir silver y gold desde el dato original (traza
 |----------|---------------|
 | **6 tablas, una por fuente, en `DEV_LALIGA_BRONZE_DB` con un esquema por sistema de origen** | Convención del curso (`{ENV}_LALIGA_BRONZE_DB.<sistema>`). Cada sistema operacional exporta su propio fichero y bronze respeta esa separación: no mezcla fuentes. Bronze solo existe en DEV; PRE y PRO son clones. |
 | **Tablas desnormalizadas** | Así llegan los datos de los sistemas: cada fichero repite información (el estadio en cada partido, los datos del jugador en cada estadística, la agencia en cada contrato...). Normalizar es trabajo de silver. |
-| **Todas las columnas `VARCHAR`** | Si una fila trae `"6,8"` en una columna numérica, una tabla tipada haría fallar la carga. En bronze **no se puede perder ni rechazar ningún dato**; el tipado y la limpieza se hacen en silver. |
-| **Columnas de auditoría** `_FECHA_EXTRACCION`, `_FICHERO_ORIGEN`, `_FECHA_CARGA` | Gobierno del dato: saber de qué fichero viene cada fila y cuándo se cargó. Sirven para deduplicar y para la carga delta. |
+| **Todas las columnas de negocio `VARCHAR`** (a diferencia del script del curso, que tipa) | Si una fila trae `"6,8"` en una columna numérica, una tabla tipada haría fallar la carga. En bronze **no se puede perder ni rechazar ningún dato**; el tipado y la limpieza se hacen en silver. |
+| **Columnas de auditoría** `_fecha_extraccion` (cuándo exportó la fila el origen, equivale a `_fivetran_synced`) y `_loaded_at` (cuándo se cargó, `DEFAULT current_timestamp()`) | Gobierno del dato: saber cuándo se generó y cuándo se cargó cada fila. dbt usa `_loaded_at` para el *freshness*. Sirven para deduplicar y para la carga delta. |
 | **Carga con `COPY INTO` desde un stage interno** (ELT) | La ingesta va **fuera de dbt**: se copia el dato en bruto a Snowflake y dbt transforma dentro del almacén (bronze → silver → gold). Los *seeds* de dbt están pensados para tablas pequeñas y estáticas (catálogos), no para cargar datos de origen. |
 | **Carga completa (full)** | Son ficheros históricos de dos temporadas. En un caso real, las estadísticas usarían **carga delta** por `_FECHA_EXTRACCION`. |
 
@@ -97,14 +97,14 @@ Esto es lo que justificará cada transformación de silver. Cada problema tiene 
 Requisito: haber ejecutado `snowflake/01_entorno_laliga.sql` (nuestra adaptación del script del curso). Crea
 `WH_LALIGA`, las databases `{ENV}_LALIGA_BRONZE/SILVER/GOLD_DB` y los roles `{ENV}_LALIGA_TRANSFORM_ROLE`.
 
-1. Abre `snowflake/02_bronze_laliga.sql` en una worksheet y ejecútalo **hasta el `LIST @...`**.
-   Crea los 6 esquemas de origen, el file format y el stage.
+1. Abre `snowflake/02_bronze_laliga.sql` en una worksheet y ejecuta la **PARTE A**, hasta el
+   `list @...`. Crea el stage `carga_bronze`, el formato `csv_bronze` y las 6 tablas (los esquemas
+   ya los creó el script 01).
 2. Sube los 6 CSV de `data/bronze/` al stage: **Snowsight → Data → Databases → DEV_LALIGA_BRONZE_DB →
-   PUBLIC → Stages → STG_LALIGA → "+ Files"**.
-3. Vuelve a ejecutar el `LIST`: deben aparecer los 6 ficheros.
-4. Ejecuta el resto del script. Crea las tablas, hace los `COPY INTO` y da permiso de lectura a
-   `DEV_LALIGA_TRANSFORM_ROLE` y acceso a Cortex AI.
-5. La última consulta muestra el recuento de filas. Debe coincidir con la tabla del apartado 2.
+   PUBLIC → Stages → CARGA_BRONZE → "+ Files"**.
+3. Ejecuta el `list`: deben aparecer los 6 ficheros.
+4. Ejecuta la **PARTE B** (`COPY INTO`), los **PERMISOS** (lectura para `DEV_LALIGA_TRANSFORM_ROLE`)
+   y la **COMPROBACIÓN**. El recuento debe coincidir con el que indica el comentario del script.
 
 > El script se **genera automáticamente** desde `scripts/generar_bronze.py`, así que las columnas
 > del SQL siempre coinciden con las de los CSV.

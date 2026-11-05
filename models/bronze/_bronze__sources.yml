@@ -8,7 +8,7 @@ sources:
     description: "API de LaLiga: calendario y resultados."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: api_laliga
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: partidos
         identifier: PARTIDOS
@@ -31,13 +31,12 @@ sources:
           - name: ESPECTADORES
           - name: ARBITRO
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT
   - name: proveedor_estadisticas
     description: "Proveedor externo de estadísticas de partido."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: proveedor_estadisticas
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: estadisticas_jugador_partido
         identifier: ESTADISTICAS_JUGADOR_PARTIDO
@@ -67,13 +66,12 @@ sources:
           - name: TARJETAS_ROJAS
           - name: VALORACION
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT
   - name: rrhh
     description: "Departamento de RRHH: registro de contratos."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: rrhh
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: contratos
         identifier: CONTRATOS
@@ -100,13 +98,12 @@ sources:
           - name: AGENCIA_REPRESENTACION
           - name: EMAIL_AGENCIA
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT
   - name: mercado
     description: "Departamento de mercado: operaciones de fichajes."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: mercado
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: traspasos
         identifier: TRASPASOS
@@ -128,13 +125,12 @@ sources:
           - name: TIPO_OPERACION
           - name: IMPORTE
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT
   - name: servicios_medicos
     description: "Servicios médicos de los clubes."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: servicios_medicos
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: lesiones
         identifier: LESIONES
@@ -155,13 +151,12 @@ sources:
           - name: MEDICO_RESPONSABLE
           - name: PARTE_MEDICO
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT
   - name: app_scouting
     description: "Aplicación de scouting (texto libre de los ojeadores)."
     database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: app_scouting
-    loaded_at_field: _FECHA_CARGA
+    loaded_at_field: _loaded_at
     tables:
       - name: informes_scouting
         identifier: INFORMES_SCOUTING
@@ -181,5 +176,4 @@ sources:
           - name: NOTA_GLOBAL
           - name: INFORME
           - name: _FECHA_EXTRACCION
-          - name: _FICHERO_ORIGEN
-          - name: _FECHA_CARGA
+          - name: _LOADED_AT

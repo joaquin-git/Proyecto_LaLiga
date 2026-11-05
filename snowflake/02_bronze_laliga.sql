@@ -1,256 +1,217 @@
 -- =============================================================================
--- 02_bronze_laliga.sql   (GENERADO por scripts/generar_bronze.py - no editar a mano)
--- Requisito: haber ejecutado antes snowflake/01_entorno_laliga.sql, que crea WH_LALIGA,
--- las databases {ENV}_LALIGA_BRONZE/SILVER/GOLD_DB y los roles {ENV}_LALIGA_TRANSFORM_ROLE.
---
--- Qué hace:
---   1. Crea en DEV_LALIGA_BRONZE_DB un esquema por sistema de origen (convención del curso).
---   2. Crea un stage interno y un file format CSV.
---   3. Crea las 6 tablas (TODAS las columnas VARCHAR + metadatos de carga) y las carga
---      con COPY INTO.
---   4. Da permiso de lectura sobre las tablas a DEV_LALIGA_TRANSFORM_ROLE (dbt).
--- Bronze solo existe en DEV: PRE y PRO serán clones (script 03, lo haremos al montar PRE/PRO).
+-- 02 · Carga de Bronze desde los CSV de data/bronze
+--      (GENERADO por scripts/generar_bronze.py - no editar a mano)
 -- =============================================================================
-USE ROLE SYSADMIN;
-USE WAREHOUSE WH_LALIGA;
-USE DATABASE DEV_LALIGA_BRONZE_DB;
+-- Simula lo que haría la herramienta de ingesta (Fivetran): deja los datos
+-- crudos de las 6 fuentes del proyecto en DEV_LALIGA_BRONZE_DB. Pasos:
+--   1. Ejecuta la parte A (crea stage, formato de fichero y tablas).
+--   2. Sube los 6 CSV de data/bronze al stage DEV_LALIGA_BRONZE_DB.public.carga_bronze
+--      desde Snowsight: abre el stage CARGA_BRONZE en el explorador de
+--      databases y usa el botón para añadir ficheros.
+--   3. Ejecuta la parte B (COPY INTO), los permisos y la comprobación final.
+--
+-- Diferencia con el script del curso: aquí TODAS las columnas de negocio son
+-- varchar. Nuestras fuentes llegan sucias ("6,8", "42M€", "16/08/2024"...) y en
+-- bronze no se puede rechazar ni perder ninguna fila: el tipado se hace en silver.
+--
+-- _loaded_at: cada tabla tiene una columna con DEFAULT current_timestamp(). El
+-- COPY INTO no la menciona, así que Snowflake la rellena con el momento de la
+-- carga. dbt la usa como loaded_at_field para el freshness. _fecha_extraccion,
+-- en cambio, conserva la fecha en que el sistema de origen exportó la fila
+-- (equivale a _fivetran_synced).
+-- =============================================================================
 
--- 1. Un esquema por fuente
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.API_LALIGA;
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.APP_SCOUTING;
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.MERCADO;
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS;
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.RRHH;
-CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS;
+use role sysadmin;
+use warehouse WH_LALIGA;
 
--- 2. File format y stage (en PUBLIC: es infraestructura de carga, no datos)
-CREATE OR REPLACE FILE FORMAT DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
-  TYPE = CSV
-  FIELD_DELIMITER = ','
-  SKIP_HEADER = 1
-  FIELD_OPTIONALLY_ENCLOSED_BY = '"'
-  NULL_IF = ('')
-  EMPTY_FIELD_AS_NULL = TRUE
-  ENCODING = 'UTF8';
+-- =================================== PARTE A =================================
+create stage if not exists DEV_LALIGA_BRONZE_DB.public.carga_bronze
+    comment = 'Ficheros CSV para la carga inicial de Bronze (proyecto LaLiga)';
 
-CREATE STAGE IF NOT EXISTS DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA
-  FILE_FORMAT = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
-  COMMENT = 'CSV recibidos de las 6 fuentes del proyecto LaLiga';
+create file format if not exists DEV_LALIGA_BRONZE_DB.public.csv_bronze
+    type = csv
+    skip_header = 1
+    field_optionally_enclosed_by = '"'
+    null_if = ('')
+    empty_field_as_null = true;
 
--- >>> PARA AQUÍ y sube los 6 CSV de data/bronze/ al stage:
---     Snowsight: Data > Databases > DEV_LALIGA_BRONZE_DB > PUBLIC > Stages > STG_LALIGA > "+ Files"
---     (o con SnowSQL: PUT file://data/bronze/*.csv @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;)
-LIST @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;
-
--- 3. Tablas y carga
-
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.API_LALIGA.PARTIDOS (
-  ID_PARTIDO VARCHAR,
-  TEMPORADA VARCHAR,
-  JORNADA VARCHAR,
-  FECHA_PARTIDO VARCHAR,
-  HORA VARCHAR,
-  EQUIPO_LOCAL VARCHAR,
-  EQUIPO_VISITANTE VARCHAR,
-  ESTADIO VARCHAR,
-  CIUDAD_ESTADIO VARCHAR,
-  AFORO_ESTADIO VARCHAR,
-  GOLES_LOCAL VARCHAR,
-  GOLES_VISITANTE VARCHAR,
-  RESULTADO VARCHAR,
-  ESPECTADORES VARCHAR,
-  ARBITRO VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.api_laliga.partidos (
+      id_partido               varchar
+    , temporada                varchar
+    , jornada                  varchar
+    , fecha_partido            varchar
+    , hora                     varchar
+    , equipo_local             varchar
+    , equipo_visitante         varchar
+    , estadio                  varchar
+    , ciudad_estadio           varchar
+    , aforo_estadio            varchar
+    , goles_local              varchar
+    , goles_visitante          varchar
+    , resultado                varchar
+    , espectadores             varchar
+    , arbitro                  varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.API_LALIGA.PARTIDOS
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/api_laliga__partidos.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO (
-  ID_PARTIDO VARCHAR,
-  TEMPORADA VARCHAR,
-  FECHA_PARTIDO VARCHAR,
-  ID_JUGADOR_PROVEEDOR VARCHAR,
-  JUGADOR VARCHAR,
-  FECHA_NACIMIENTO VARCHAR,
-  NACIONALIDAD VARCHAR,
-  EQUIPO VARCHAR,
-  RIVAL VARCHAR,
-  CONDICION VARCHAR,
-  POSICION VARCHAR,
-  TITULAR VARCHAR,
-  MINUTOS VARCHAR,
-  GOLES VARCHAR,
-  ASISTENCIAS VARCHAR,
-  TIROS VARCHAR,
-  TIROS_A_PUERTA VARCHAR,
-  PASES_INTENTADOS VARCHAR,
-  PASES_COMPLETADOS VARCHAR,
-  RECUPERACIONES VARCHAR,
-  TARJETAS_AMARILLAS VARCHAR,
-  TARJETAS_ROJAS VARCHAR,
-  VALORACION VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.proveedor_estadisticas.estadisticas_jugador_partido (
+      id_partido               varchar
+    , temporada                varchar
+    , fecha_partido            varchar
+    , id_jugador_proveedor     varchar
+    , jugador                  varchar
+    , fecha_nacimiento         varchar
+    , nacionalidad             varchar
+    , equipo                   varchar
+    , rival                    varchar
+    , condicion                varchar
+    , posicion                 varchar
+    , titular                  varchar
+    , minutos                  varchar
+    , goles                    varchar
+    , asistencias              varchar
+    , tiros                    varchar
+    , tiros_a_puerta           varchar
+    , pases_intentados         varchar
+    , pases_completados        varchar
+    , recuperaciones           varchar
+    , tarjetas_amarillas       varchar
+    , tarjetas_rojas           varchar
+    , valoracion               varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/proveedor_estadisticas__estadisticas_jugador_partido.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.RRHH.CONTRATOS (
-  ID_CONTRATO VARCHAR,
-  CODIGO_LICENCIA VARCHAR,
-  JUGADOR VARCHAR,
-  FECHA_NACIMIENTO VARCHAR,
-  NACIONALIDADES VARCHAR,
-  POSICION VARCHAR,
-  EQUIPO VARCHAR,
-  CIUDAD_EQUIPO VARCHAR,
-  TIPO_CONTRATO VARCHAR,
-  CLUB_PROPIETARIO VARCHAR,
-  FECHA_INICIO VARCHAR,
-  FECHA_FIN_PREVISTA VARCHAR,
-  FECHA_BAJA VARCHAR,
-  ESTADO_CONTRATO VARCHAR,
-  SALARIO_BRUTO_ANUAL_EUR VARCHAR,
-  CLAUSULA_RESCISION_EUR VARCHAR,
-  AGENTE VARCHAR,
-  AGENCIA_REPRESENTACION VARCHAR,
-  EMAIL_AGENCIA VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.rrhh.contratos (
+      id_contrato              varchar
+    , codigo_licencia          varchar
+    , jugador                  varchar
+    , fecha_nacimiento         varchar
+    , nacionalidades           varchar
+    , posicion                 varchar
+    , equipo                   varchar
+    , ciudad_equipo            varchar
+    , tipo_contrato            varchar
+    , club_propietario         varchar
+    , fecha_inicio             varchar
+    , fecha_fin_prevista       varchar
+    , fecha_baja               varchar
+    , estado_contrato          varchar
+    , salario_bruto_anual_eur  varchar
+    , clausula_rescision_eur   varchar
+    , agente                   varchar
+    , agencia_representacion   varchar
+    , email_agencia            varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.RRHH.CONTRATOS
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/rrhh__contratos.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.MERCADO.TRASPASOS (
-  ID_OPERACION VARCHAR,
-  FECHA_OPERACION VARCHAR,
-  VENTANA VARCHAR,
-  JUGADOR VARCHAR,
-  NACIONALIDAD VARCHAR,
-  POSICION VARCHAR,
-  CLUB_ORIGEN VARCHAR,
-  LIGA_ORIGEN VARCHAR,
-  PAIS_ORIGEN VARCHAR,
-  CLUB_DESTINO VARCHAR,
-  LIGA_DESTINO VARCHAR,
-  PAIS_DESTINO VARCHAR,
-  TIPO_OPERACION VARCHAR,
-  IMPORTE VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.mercado.traspasos (
+      id_operacion             varchar
+    , fecha_operacion          varchar
+    , ventana                  varchar
+    , jugador                  varchar
+    , nacionalidad             varchar
+    , posicion                 varchar
+    , club_origen              varchar
+    , liga_origen              varchar
+    , pais_origen              varchar
+    , club_destino             varchar
+    , liga_destino             varchar
+    , pais_destino             varchar
+    , tipo_operacion           varchar
+    , importe                  varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.MERCADO.TRASPASOS
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/mercado__traspasos.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS.LESIONES (
-  ID_LESION VARCHAR,
-  CODIGO_LICENCIA VARCHAR,
-  JUGADOR VARCHAR,
-  EQUIPO VARCHAR,
-  TEMPORADA VARCHAR,
-  FECHA_LESION VARCHAR,
-  FECHA_ALTA VARCHAR,
-  TIPO_LESION VARCHAR,
-  ZONA_CORPORAL VARCHAR,
-  DIAS_BAJA VARCHAR,
-  PARTIDOS_PERDIDOS VARCHAR,
-  MEDICO_RESPONSABLE VARCHAR,
-  PARTE_MEDICO VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.servicios_medicos.lesiones (
+      id_lesion                varchar
+    , codigo_licencia          varchar
+    , jugador                  varchar
+    , equipo                   varchar
+    , temporada                varchar
+    , fecha_lesion             varchar
+    , fecha_alta               varchar
+    , tipo_lesion              varchar
+    , zona_corporal            varchar
+    , dias_baja                varchar
+    , partidos_perdidos        varchar
+    , medico_responsable       varchar
+    , parte_medico             varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS.LESIONES
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/servicios_medicos__lesiones.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.APP_SCOUTING.INFORMES_SCOUTING (
-  ID_INFORME VARCHAR,
-  FECHA_INFORME VARCHAR,
-  OJEADOR VARCHAR,
-  EMAIL_OJEADOR VARCHAR,
-  ZONA_OJEADOR VARCHAR,
-  JUGADOR VARCHAR,
-  EQUIPO_JUGADOR VARCHAR,
-  PARTIDO_OBSERVADO VARCHAR,
-  FECHA_PARTIDO VARCHAR,
-  POSICIONES_OBSERVADAS VARCHAR,
-  NOTA_GLOBAL VARCHAR,
-  INFORME VARCHAR,
-  _FECHA_EXTRACCION VARCHAR,
-  _FICHERO_ORIGEN VARCHAR,
-  _FECHA_CARGA TIMESTAMP_NTZ
+create or replace table DEV_LALIGA_BRONZE_DB.app_scouting.informes_scouting (
+      id_informe               varchar
+    , fecha_informe            varchar
+    , ojeador                  varchar
+    , email_ojeador            varchar
+    , zona_ojeador             varchar
+    , jugador                  varchar
+    , equipo_jugador           varchar
+    , partido_observado        varchar
+    , fecha_partido            varchar
+    , posiciones_observadas    varchar
+    , nota_global              varchar
+    , informe                  varchar
+    , _fecha_extraccion        timestamp_ntz
+    , _loaded_at               timestamp_ltz default current_timestamp()
 );
-COPY INTO DEV_LALIGA_BRONZE_DB.APP_SCOUTING.INFORMES_SCOUTING
-FROM (
-  SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,
-         METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/app_scouting__informes_scouting.csv
-)
-FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
-ON_ERROR = 'ABORT_STATEMENT';
 
--- 4. Permisos: dbt (DEV_LALIGA_TRANSFORM_ROLE) lee bronze; nunca escribe en él
-GRANT USAGE ON DATABASE DEV_LALIGA_BRONZE_DB TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.API_LALIGA TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.API_LALIGA TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.APP_SCOUTING TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.APP_SCOUTING TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.MERCADO TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.MERCADO TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.RRHH TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.RRHH TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
+-- Antes de la parte B: comprueba que los 6 ficheros están en el stage
+list @DEV_LALIGA_BRONZE_DB.public.carga_bronze;
 
-USE ROLE SYSADMIN;
+-- =================================== PARTE B =================================
+-- La lista de columnas excluye _loaded_at: así toma su DEFAULT.
+copy into DEV_LALIGA_BRONZE_DB.api_laliga.partidos
+    (id_partido, temporada, jornada, fecha_partido, hora, equipo_local, equipo_visitante, estadio, ciudad_estadio, aforo_estadio, goles_local, goles_visitante, resultado, espectadores, arbitro, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('api_laliga__partidos.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
 
--- 5. Comprobación de volúmenes
-SELECT 'API_LALIGA.PARTIDOS' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.API_LALIGA.PARTIDOS
-UNION ALL SELECT 'PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO
-UNION ALL SELECT 'RRHH.CONTRATOS' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.RRHH.CONTRATOS
-UNION ALL SELECT 'MERCADO.TRASPASOS' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.MERCADO.TRASPASOS
-UNION ALL SELECT 'SERVICIOS_MEDICOS.LESIONES' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.SERVICIOS_MEDICOS.LESIONES
-UNION ALL SELECT 'APP_SCOUTING.INFORMES_SCOUTING' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.APP_SCOUTING.INFORMES_SCOUTING;
+copy into DEV_LALIGA_BRONZE_DB.proveedor_estadisticas.estadisticas_jugador_partido
+    (id_partido, temporada, fecha_partido, id_jugador_proveedor, jugador, fecha_nacimiento, nacionalidad, equipo, rival, condicion, posicion, titular, minutos, goles, asistencias, tiros, tiros_a_puerta, pases_intentados, pases_completados, recuperaciones, tarjetas_amarillas, tarjetas_rojas, valoracion, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('proveedor_estadisticas__estadisticas_jugador_partido.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
+
+copy into DEV_LALIGA_BRONZE_DB.rrhh.contratos
+    (id_contrato, codigo_licencia, jugador, fecha_nacimiento, nacionalidades, posicion, equipo, ciudad_equipo, tipo_contrato, club_propietario, fecha_inicio, fecha_fin_prevista, fecha_baja, estado_contrato, salario_bruto_anual_eur, clausula_rescision_eur, agente, agencia_representacion, email_agencia, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('rrhh__contratos.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
+
+copy into DEV_LALIGA_BRONZE_DB.mercado.traspasos
+    (id_operacion, fecha_operacion, ventana, jugador, nacionalidad, posicion, club_origen, liga_origen, pais_origen, club_destino, liga_destino, pais_destino, tipo_operacion, importe, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('mercado__traspasos.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
+
+copy into DEV_LALIGA_BRONZE_DB.servicios_medicos.lesiones
+    (id_lesion, codigo_licencia, jugador, equipo, temporada, fecha_lesion, fecha_alta, tipo_lesion, zona_corporal, dias_baja, partidos_perdidos, medico_responsable, parte_medico, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('servicios_medicos__lesiones.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
+
+copy into DEV_LALIGA_BRONZE_DB.app_scouting.informes_scouting
+    (id_informe, fecha_informe, ojeador, email_ojeador, zona_ojeador, jugador, equipo_jugador, partido_observado, fecha_partido, posiciones_observadas, nota_global, informe, _fecha_extraccion)
+from @DEV_LALIGA_BRONZE_DB.public.carga_bronze files = ('app_scouting__informes_scouting.csv')
+file_format = (format_name = 'DEV_LALIGA_BRONZE_DB.public.csv_bronze');
+
+-- ================================ PERMISOS ===================================
+-- dbt (DEV_LALIGA_TRANSFORM_ROLE) solo LEE bronze. Hay que darlo después de crear
+-- las tablas: "on all tables" afecta solo a las que ya existen.
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.api_laliga to role DEV_LALIGA_TRANSFORM_ROLE;
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.app_scouting to role DEV_LALIGA_TRANSFORM_ROLE;
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.mercado to role DEV_LALIGA_TRANSFORM_ROLE;
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.proveedor_estadisticas to role DEV_LALIGA_TRANSFORM_ROLE;
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.rrhh to role DEV_LALIGA_TRANSFORM_ROLE;
+grant select on all tables in schema DEV_LALIGA_BRONZE_DB.servicios_medicos to role DEV_LALIGA_TRANSFORM_ROLE;
+
+-- ============================== COMPROBACIÓN =================================
+-- Resultado esperado con los datos del repo:
+--   partidos 767 · estadisticas_jugador_partido 22793 · contratos 619 · traspasos 126 · lesiones 747 · informes_scouting 1056
+select 'partidos' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.api_laliga.partidos union all
+select 'estadisticas_jugador_partido' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.proveedor_estadisticas.estadisticas_jugador_partido union all
+select 'contratos' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.rrhh.contratos union all
+select 'traspasos' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.mercado.traspasos union all
+select 'lesiones' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.servicios_medicos.lesiones union all
+select 'informes_scouting' as tabla, count(*) as filas from DEV_LALIGA_BRONZE_DB.app_scouting.informes_scouting;
