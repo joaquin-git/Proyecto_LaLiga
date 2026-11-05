@@ -15,21 +15,21 @@ snapshot-paths: ["snapshots"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
-# Convención del curso: una database por capa y entorno -> {ENV}_SILVER_DB / {ENV}_GOLD_DB.
+# Convención del curso: una database por capa y entorno -> {ENV}_LALIGA_SILVER_DB / {ENV}_LALIGA_GOLD_DB.
 # El entorno lo marca la variable de entorno DBT_ENTORNO (DEV por defecto; en dbt Cloud se
 # define PRE / PRO en cada environment). Así el mismo código despliega en los tres entornos.
 models:
   proyecto_laliga:
     silver:
-      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_SILVER_DB"
+      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_SILVER_DB"
       +materialized: table
       # cada subcarpeta (= sistema de origen) tendrá su +schema, como en el proyecto del curso
     gold:
-      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_GOLD_DB"
+      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_GOLD_DB"
       +schema: laliga
       +materialized: table
 
 snapshots:
   proyecto_laliga:
-    +target_database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_SILVER_DB"
+    +target_database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_SILVER_DB"
     +target_schema: snapshots

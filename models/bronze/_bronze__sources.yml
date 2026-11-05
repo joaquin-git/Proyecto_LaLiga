@@ -1,12 +1,12 @@
 version: 2
 
-# Una source por sistema de origen = un esquema en {ENV}_BRONZE_DB (convención del curso).
-# La database depende del entorno: DEV_BRONZE_DB / PRE_BRONZE_DB / PRO_BRONZE_DB (variable DBT_ENTORNO).
+# Una source por sistema de origen = un esquema en {ENV}_LALIGA_BRONZE_DB (convención del curso).
+# La database depende del entorno: DEV_LALIGA_BRONZE_DB / PRE_LALIGA_BRONZE_DB / PRO_LALIGA_BRONZE_DB (variable DBT_ENTORNO).
 
 sources:
   - name: api_laliga
     description: "API de LaLiga: calendario y resultados."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: api_laliga
     loaded_at_field: _FECHA_CARGA
     tables:
@@ -35,7 +35,7 @@ sources:
           - name: _FECHA_CARGA
   - name: proveedor_estadisticas
     description: "Proveedor externo de estadísticas de partido."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: proveedor_estadisticas
     loaded_at_field: _FECHA_CARGA
     tables:
@@ -71,7 +71,7 @@ sources:
           - name: _FECHA_CARGA
   - name: rrhh
     description: "Departamento de RRHH: registro de contratos."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: rrhh
     loaded_at_field: _FECHA_CARGA
     tables:
@@ -104,7 +104,7 @@ sources:
           - name: _FECHA_CARGA
   - name: mercado
     description: "Departamento de mercado: operaciones de fichajes."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: mercado
     loaded_at_field: _FECHA_CARGA
     tables:
@@ -132,7 +132,7 @@ sources:
           - name: _FECHA_CARGA
   - name: servicios_medicos
     description: "Servicios médicos de los clubes."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: servicios_medicos
     loaded_at_field: _FECHA_CARGA
     tables:
@@ -159,7 +159,7 @@ sources:
           - name: _FECHA_CARGA
   - name: app_scouting
     description: "Aplicación de scouting (texto libre de los ojeadores)."
-    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_BRONZE_DB"
     schema: app_scouting
     loaded_at_field: _FECHA_CARGA
     tables:

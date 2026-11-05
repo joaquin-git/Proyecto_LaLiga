@@ -968,7 +968,7 @@ TABLAS["APP_SCOUTING.INFORMES_SCOUTING"] = (cols, filas)
 # ----------------------------------------------------------------------------
 # 8. Guardar
 # ----------------------------------------------------------------------------
-# Convención del curso: database {ENV}_BRONZE_DB, un esquema por sistema de origen.
+# Convención del curso: database {ENV}_LALIGA_BRONZE_DB, un esquema por sistema de origen.
 # Fichero CSV: <esquema>__<tabla>.csv (todos en la misma carpeta y en la raíz del stage).
 def fichero(nombre):
     esq, tab = nombre.split(".")
@@ -1000,26 +1000,25 @@ with open(DIR_VALID / "etiquetas_lesiones.csv", "w", newline="", encoding="utf-8
 ESQUEMAS = sorted({n.split(".")[0] for n in TABLAS})
 sql = ["""-- =============================================================================
 -- 02_bronze_laliga.sql   (GENERADO por scripts/generar_bronze.py - no editar a mano)
--- Requisito: haber ejecutado antes el script del profesor (01 · Entorno Snowflake del
--- curso), que crea WH_CURSO, las databases {ENV}_BRONZE/SILVER/GOLD_DB y los roles
--- {ENV}_TRANSFORM_ROLE.
+-- Requisito: haber ejecutado antes snowflake/01_entorno_laliga.sql, que crea WH_LALIGA,
+-- las databases {ENV}_LALIGA_BRONZE/SILVER/GOLD_DB y los roles {ENV}_LALIGA_TRANSFORM_ROLE.
 --
 -- Qué hace:
---   1. Crea en DEV_BRONZE_DB un esquema por sistema de origen (convención del curso).
+--   1. Crea en DEV_LALIGA_BRONZE_DB un esquema por sistema de origen (convención del curso).
 --   2. Crea un stage interno y un file format CSV.
 --   3. Crea las 6 tablas (TODAS las columnas VARCHAR + metadatos de carga) y las carga
 --      con COPY INTO.
---   4. Da permiso de lectura a DEV_TRANSFORM_ROLE (dbt) y acceso a Cortex AI.
--- Bronze solo existe en DEV: PRE y PRO serán clones (script 03 del curso).
+--   4. Da permiso de lectura sobre las tablas a DEV_LALIGA_TRANSFORM_ROLE (dbt).
+-- Bronze solo existe en DEV: PRE y PRO serán clones (script 03, lo haremos al montar PRE/PRO).
 -- =============================================================================
 USE ROLE SYSADMIN;
-USE WAREHOUSE WH_CURSO;
-USE DATABASE DEV_BRONZE_DB;
+USE WAREHOUSE WH_LALIGA;
+USE DATABASE DEV_LALIGA_BRONZE_DB;
 
 -- 1. Un esquema por fuente
-""" + "".join(f"CREATE SCHEMA IF NOT EXISTS DEV_BRONZE_DB.{e};\n" for e in ESQUEMAS) + """
+""" + "".join(f"CREATE SCHEMA IF NOT EXISTS DEV_LALIGA_BRONZE_DB.{e};\n" for e in ESQUEMAS) + """
 -- 2. File format y stage (en PUBLIC: es infraestructura de carga, no datos)
-CREATE OR REPLACE FILE FORMAT DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW
+CREATE OR REPLACE FILE FORMAT DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
   TYPE = CSV
   FIELD_DELIMITER = ','
   SKIP_HEADER = 1
@@ -1028,14 +1027,14 @@ CREATE OR REPLACE FILE FORMAT DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW
   EMPTY_FIELD_AS_NULL = TRUE
   ENCODING = 'UTF8';
 
-CREATE STAGE IF NOT EXISTS DEV_BRONZE_DB.PUBLIC.STG_LALIGA
-  FILE_FORMAT = DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW
+CREATE STAGE IF NOT EXISTS DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA
+  FILE_FORMAT = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW
   COMMENT = 'CSV recibidos de las 6 fuentes del proyecto LaLiga';
 
 -- >>> PARA AQUÍ y sube los 6 CSV de data/bronze/ al stage:
---     Snowsight: Data > Databases > DEV_BRONZE_DB > PUBLIC > Stages > STG_LALIGA > "+ Files"
---     (o con SnowSQL: PUT file://data/bronze/*.csv @DEV_BRONZE_DB.PUBLIC.STG_LALIGA;)
-LIST @DEV_BRONZE_DB.PUBLIC.STG_LALIGA;
+--     Snowsight: Data > Databases > DEV_LALIGA_BRONZE_DB > PUBLIC > Stages > STG_LALIGA > "+ Files"
+--     (o con SnowSQL: PUT file://data/bronze/*.csv @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;)
+LIST @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA;
 
 -- 3. Tablas y carga
 """]
@@ -1043,39 +1042,31 @@ for nombre, (cols, _f) in TABLAS.items():
     defs = ",\n  ".join(f"{c} VARCHAR" for c in cols)
     sql.append(f"""
 -- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE DEV_BRONZE_DB.{nombre} (
+CREATE OR REPLACE TABLE DEV_LALIGA_BRONZE_DB.{nombre} (
   {defs},
   _FICHERO_ORIGEN VARCHAR,
   _FECHA_CARGA TIMESTAMP_NTZ
 );
-COPY INTO DEV_BRONZE_DB.{nombre}
+COPY INTO DEV_LALIGA_BRONZE_DB.{nombre}
 FROM (
   SELECT {", ".join(f"${i}" for i in range(1, len(cols) + 1))},
          METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @DEV_BRONZE_DB.PUBLIC.STG_LALIGA/{fichero(nombre)}
+  FROM @DEV_LALIGA_BRONZE_DB.PUBLIC.STG_LALIGA/{fichero(nombre)}
 )
-FILE_FORMAT = (FORMAT_NAME = DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW)
+FILE_FORMAT = (FORMAT_NAME = DEV_LALIGA_BRONZE_DB.PUBLIC.FF_CSV_RAW)
 ON_ERROR = 'ABORT_STATEMENT';
 """)
 sql.append("""
--- 4. Permisos: dbt (DEV_TRANSFORM_ROLE) lee bronze; nunca escribe en él
-GRANT USAGE ON DATABASE DEV_BRONZE_DB TO ROLE DEV_TRANSFORM_ROLE;
-""" + "".join(f"""GRANT USAGE ON SCHEMA DEV_BRONZE_DB.{e} TO ROLE DEV_TRANSFORM_ROLE;
-GRANT SELECT ON ALL TABLES IN SCHEMA DEV_BRONZE_DB.{e} TO ROLE DEV_TRANSFORM_ROLE;
+-- 4. Permisos: dbt (DEV_LALIGA_TRANSFORM_ROLE) lee bronze; nunca escribe en él
+GRANT USAGE ON DATABASE DEV_LALIGA_BRONZE_DB TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
+""" + "".join(f"""GRANT USAGE ON SCHEMA DEV_LALIGA_BRONZE_DB.{e} TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
+GRANT SELECT ON ALL TABLES IN SCHEMA DEV_LALIGA_BRONZE_DB.{e} TO ROLE DEV_LALIGA_TRANSFORM_ROLE;
 """ for e in ESQUEMAS) + """
--- Cortex AI (AI_COMPLETE, AI_CLASSIFY, AI_FILTER) para la capa GOLD.
--- Por defecto CORTEX_USER ya está concedido a PUBLIC; esto lo hace explícito.
-USE ROLE ACCOUNTADMIN;
-GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE DEV_TRANSFORM_ROLE;
-GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE PRE_TRANSFORM_ROLE;
-GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE PRO_TRANSFORM_ROLE;
--- Si tu región no tiene el modelo que usemos:
--- ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
 USE ROLE SYSADMIN;
 
 -- 5. Comprobación de volúmenes
 """)
-sql.append("\nUNION ALL ".join(f"SELECT '{n}' AS tabla, COUNT(*) AS filas FROM DEV_BRONZE_DB.{n}" for n in TABLAS) + ";\n")
+sql.append("\nUNION ALL ".join(f"SELECT '{n}' AS tabla, COUNT(*) AS filas FROM DEV_LALIGA_BRONZE_DB.{n}" for n in TABLAS) + ";\n")
 for viejo in ("01_bronze_ddl_y_carga.sql", "00_usuario_dbt.sql"):
     if (DIR_SQL / viejo).exists():
         (DIR_SQL / viejo).unlink()

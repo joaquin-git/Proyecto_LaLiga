@@ -1,5 +1,5 @@
 {#
-  Los entornos ya están separados por DATABASE (DEV_/PRE_/PRO_SILVER_DB...), así que el
+  Los entornos ya están separados por DATABASE (DEV_/PRE_/PRO_LALIGA_SILVER_DB...), así que el
   esquema se usa tal cual: la carpeta silver/rrhh -> esquema RRHH, gold -> LALIGA.
   Si un modelo no define esquema, va al esquema por defecto de la conexión.
 #}
