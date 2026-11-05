@@ -1,4 +1,4 @@
-name: 'proyecto_laliga'
+name: 'proyecto_laliga'   # proyecto de dbt Cloud: Proyecto_LaLiga (dbt exige minúsculas y _ en este nombre)
 version: '1.0.0'
 config-version: 2
 
@@ -16,6 +16,8 @@ clean-targets: ["target", "dbt_packages"]
 
 models:
   proyecto_laliga:
+    bronze:
+      +schema: bronze        # solo declara las sources; los datos los carga COPY INTO
     silver:
       +schema: silver
       +materialized: table

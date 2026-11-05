@@ -17,7 +17,8 @@ Orden recomendado: **Snowflake → dbt Cloud → conexión con este repositorio*
 
 1. Regístrate en <https://www.getdbt.com/signup> con el plan **Developer** (gratuito, un proyecto).
 2. Al crear el proyecto:
-   - **Nombre:** `proyecto_laliga`.
+   - **Nombre del proyecto en dbt Cloud:** `Proyecto_LaLiga` (dentro de `dbt_project.yml` se llama
+     `proyecto_laliga`, porque dbt solo admite minúsculas y guiones bajos en ese campo).
    - **Conexión:** *Snowflake*.
      | Campo | Valor |
      |-------|-------|
@@ -40,6 +41,17 @@ Orden recomendado: **Snowflake → dbt Cloud → conexión con este repositorio*
    ```
 
 ## 3. Cómo están organizados los esquemas
+
+Estructura de carpetas (la misma organización que el proyecto de la formación):
+
+```
+models/
+  bronze/   _bronze__sources.yml        -> declara las 6 tablas RAW de Snowflake
+  silver/   <fuente>/slv_<fuente>__<tabla>.sql   (staging/ para limpieza intermedia)
+  gold/     dim_*.sql, fct_*.sql
+snapshots/  histórico SCD2 (contratos/salarios)
+seeds/      catálogos pequeños (alias de clubes)
+```
 
 El macro `macros/generate_schema_name.sql` hace que:
 - En **desarrollo** (IDE): todo se construye en tu esquema personal `DBT_<TUNOMBRE>`, para no
