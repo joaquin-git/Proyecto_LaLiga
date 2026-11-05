@@ -6,7 +6,7 @@ Uso:  python3 scripts/generar_bronze.py
 Salida:
   data/bronze/*.csv                          -> ficheros que se cargan en Snowflake
   data/validacion/etiquetas_scouting.csv     -> "verdad" oculta para medir AI_CLASSIFY
-  snowflake/01_bronze_ddl_y_carga.sql        -> DDL + COPY INTO (generado a partir de las columnas)
+  snowflake/02_bronze_laliga.sql             -> DDL + COPY INTO + permisos (generado a partir de las columnas)
 
 Es determinista (semilla fija): siempre produce los mismos datos.
 Los datos de rendimiento, salarios, lesiones, informes, agentes y ojeadores son SIMULADOS.
@@ -845,7 +845,7 @@ for f in rnd.sample(filas, 7):
     dup[-1] = "2026-07-03 06:00:00"
     filas.append(dup)
 filas.sort(key=lambda r: (r[0], r[-1]))
-TABLAS["RAW_PARTIDOS"] = (cols, filas)
+TABLAS["API_LALIGA.PARTIDOS"] = (cols, filas)
 
 # RAW_ESTADISTICAS_JUGADOR_PARTIDO --------------------------------------------
 POS_LARGA = {"POR": "Portero", "DEF": "Defensa", "MED": "Centrocampista", "DEL": "Delantero"}
@@ -874,7 +874,7 @@ for s in STATS:
 for f in rnd.sample(filas, 160):
     filas.append(f[:])
 rnd.shuffle(filas)
-TABLAS["RAW_ESTADISTICAS_JUGADOR_PARTIDO"] = (cols, filas)
+TABLAS["PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO"] = (cols, filas)
 
 # RAW_CONTRATOS ---------------------------------------------------------------
 cols = ["ID_CONTRATO", "CODIGO_LICENCIA", "JUGADOR", "FECHA_NACIMIENTO", "NACIONALIDADES", "POSICION", "EQUIPO",
@@ -906,7 +906,7 @@ for c in sorted(CONTRATOS, key=lambda c: c["id_contrato"]):
                   club_txt(c["propietario"]) if c["propietario"] else "", f_ini, c["fin_prevista"].isoformat(),
                   c["baja"].isoformat() if c["baja"] else "", estado, sal, cla, j.agente, ag_nom, ag_mail,
                   FECHA_EXTRACCION])
-TABLAS["RAW_CONTRATOS"] = (cols, filas)
+TABLAS["RRHH.CONTRATOS"] = (cols, filas)
 
 # RAW_TRASPASOS ---------------------------------------------------------------
 cols = ["ID_OPERACION", "FECHA_OPERACION", "VENTANA", "JUGADOR", "NACIONALIDAD", "POSICION", "CLUB_ORIGEN",
@@ -927,7 +927,7 @@ for i, m in enumerate(MOVS, start=1):
         imp = fmt_importe_sucio(m["importe"])
     filas.append([f"TR-{i:04d}", fmt_fecha_es(f), ventana, m["jugador"], j.nac, POS_LARGA[j.pos], co, lo, po, cd, ld, pd,
                   m["tipo"], imp, FECHA_EXTRACCION])
-TABLAS["RAW_TRASPASOS"] = (cols, filas)
+TABLAS["MERCADO.TRASPASOS"] = (cols, filas)
 
 # RAW_LESIONES ----------------------------------------------------------------
 cols = ["ID_LESION", "CODIGO_LICENCIA", "JUGADOR", "EQUIPO", "TEMPORADA", "FECHA_LESION", "FECHA_ALTA",
@@ -950,7 +950,7 @@ for i, l in enumerate(LESIONES, start=1):
                   "" if rnd.random() < 0.03 else fmt_fecha_es(l["alta"]), l["tipo"], zona,
                   (l["alta"] - l["inicio"]).days, l["partidos_perdidos"], MEDICO_CLUB[club], texto, FECHA_EXTRACCION])
     ETIQ_LES.append(dict(id_lesion=f"LES-{i:05d}", es_recurrente_real=recurrente, es_grave_real=grave))
-TABLAS["RAW_LESIONES"] = (cols, filas)
+TABLAS["SERVICIOS_MEDICOS.LESIONES"] = (cols, filas)
 
 # RAW_INFORMES_SCOUTING -------------------------------------------------------
 cols = ["ID_INFORME", "FECHA_INFORME", "OJEADOR", "EMAIL_OJEADOR", "ZONA_OJEADOR", "JUGADOR", "EQUIPO_JUGADOR",
@@ -962,18 +962,27 @@ for inf in INFORMES:
     filas.append([inf["id"], inf["fecha"].strftime("%Y-%m-%d %H:%M"), oj[0], oj[1], oj[2], inf["nombre_txt"],
                   alias(inf["club"], "alias"), inf["partido_txt"], inf["partido"]["fecha"].isoformat(),
                   ", ".join(inf["posiciones"]), nota, inf["texto"], FECHA_EXTRACCION])
-TABLAS["RAW_INFORMES_SCOUTING"] = (cols, filas)
+TABLAS["APP_SCOUTING.INFORMES_SCOUTING"] = (cols, filas)
 
 
 # ----------------------------------------------------------------------------
 # 8. Guardar
 # ----------------------------------------------------------------------------
+# Convención del curso: database {ENV}_BRONZE_DB, un esquema por sistema de origen.
+# Fichero CSV: <esquema>__<tabla>.csv (todos en la misma carpeta y en la raíz del stage).
+def fichero(nombre):
+    esq, tab = nombre.split(".")
+    return f"{esq.lower()}__{tab.lower()}.csv"
+
+
 DIR_BRONZE.mkdir(parents=True, exist_ok=True)
 DIR_VALID.mkdir(parents=True, exist_ok=True)
 DIR_SQL.mkdir(parents=True, exist_ok=True)
+for viejo in DIR_BRONZE.glob("raw_*.csv"):
+    viejo.unlink()
 
 for nombre, (cols, filas) in TABLAS.items():
-    with open(DIR_BRONZE / f"{nombre.lower()}.csv", "w", newline="", encoding="utf-8") as fh:
+    with open(DIR_BRONZE / fichero(nombre), "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh, quoting=csv.QUOTE_MINIMAL)
         w.writerow(cols)
         w.writerows(filas)
@@ -988,26 +997,29 @@ with open(DIR_VALID / "etiquetas_lesiones.csv", "w", newline="", encoding="utf-8
     w.writerows(ETIQ_LES)
 
 # SQL de carga generado a partir de las mismas columnas (así nunca se desincronizan)
+ESQUEMAS = sorted({n.split(".")[0] for n in TABLAS})
 sql = ["""-- =============================================================================
--- 01_bronze_ddl_y_carga.sql   (GENERADO por scripts/generar_bronze.py - no editar a mano)
--- Crea la base de datos, los esquemas BRONZE/SILVER/GOLD, el stage interno y las
--- 6 tablas RAW, y carga los CSV con COPY INTO.
--- Bronze = copia fiel del origen: TODAS las columnas como VARCHAR (no se pierde nada
--- aunque venga sucio) + metadatos de auditoría de la carga.
+-- 02_bronze_laliga.sql   (GENERADO por scripts/generar_bronze.py - no editar a mano)
+-- Requisito: haber ejecutado antes el script del profesor (01 · Entorno Snowflake del
+-- curso), que crea WH_CURSO, las databases {ENV}_BRONZE/SILVER/GOLD_DB y los roles
+-- {ENV}_TRANSFORM_ROLE.
+--
+-- Qué hace:
+--   1. Crea en DEV_BRONZE_DB un esquema por sistema de origen (convención del curso).
+--   2. Crea un stage interno y un file format CSV.
+--   3. Crea las 6 tablas (TODAS las columnas VARCHAR + metadatos de carga) y las carga
+--      con COPY INTO.
+--   4. Da permiso de lectura a DEV_TRANSFORM_ROLE (dbt) y acceso a Cortex AI.
+-- Bronze solo existe en DEV: PRE y PRO serán clones (script 03 del curso).
 -- =============================================================================
 USE ROLE SYSADMIN;
+USE WAREHOUSE WH_CURSO;
+USE DATABASE DEV_BRONZE_DB;
 
-CREATE WAREHOUSE IF NOT EXISTS WH_LALIGA
-  WAREHOUSE_SIZE = 'XSMALL' AUTO_SUSPEND = 60 AUTO_RESUME = TRUE INITIALLY_SUSPENDED = TRUE;
-USE WAREHOUSE WH_LALIGA;
-
-CREATE DATABASE IF NOT EXISTS LALIGA_DB;
-CREATE SCHEMA IF NOT EXISTS LALIGA_DB.BRONZE;
-CREATE SCHEMA IF NOT EXISTS LALIGA_DB.SILVER;
-CREATE SCHEMA IF NOT EXISTS LALIGA_DB.GOLD;
-USE SCHEMA LALIGA_DB.BRONZE;
-
-CREATE OR REPLACE FILE FORMAT FF_CSV_RAW
+-- 1. Un esquema por fuente
+""" + "".join(f"CREATE SCHEMA IF NOT EXISTS DEV_BRONZE_DB.{e};\n" for e in ESQUEMAS) + """
+-- 2. File format y stage (en PUBLIC: es infraestructura de carga, no datos)
+CREATE OR REPLACE FILE FORMAT DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW
   TYPE = CSV
   FIELD_DELIMITER = ','
   SKIP_HEADER = 1
@@ -1016,37 +1028,60 @@ CREATE OR REPLACE FILE FORMAT FF_CSV_RAW
   EMPTY_FIELD_AS_NULL = TRUE
   ENCODING = 'UTF8';
 
-CREATE STAGE IF NOT EXISTS STG_RAW FILE_FORMAT = FF_CSV_RAW
-  COMMENT = 'Ficheros CSV recibidos de las fuentes';
+CREATE STAGE IF NOT EXISTS DEV_BRONZE_DB.PUBLIC.STG_LALIGA
+  FILE_FORMAT = DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW
+  COMMENT = 'CSV recibidos de las 6 fuentes del proyecto LaLiga';
 
--- >>> Sube aquí los 6 CSV de data/bronze/ al stage STG_RAW (Snowsight: Data > Databases >
---     LALIGA_DB > BRONZE > Stages > STG_RAW > "+ Files")  o con SnowSQL:
---     PUT file://data/bronze/*.csv @LALIGA_DB.BRONZE.STG_RAW AUTO_COMPRESS=TRUE;
-LIST @STG_RAW;
+-- >>> PARA AQUÍ y sube los 6 CSV de data/bronze/ al stage:
+--     Snowsight: Data > Databases > DEV_BRONZE_DB > PUBLIC > Stages > STG_LALIGA > "+ Files"
+--     (o con SnowSQL: PUT file://data/bronze/*.csv @DEV_BRONZE_DB.PUBLIC.STG_LALIGA;)
+LIST @DEV_BRONZE_DB.PUBLIC.STG_LALIGA;
+
+-- 3. Tablas y carga
 """]
 for nombre, (cols, _f) in TABLAS.items():
     defs = ",\n  ".join(f"{c} VARCHAR" for c in cols)
     sql.append(f"""
 -- -----------------------------------------------------------------------------
-CREATE OR REPLACE TABLE {nombre} (
+CREATE OR REPLACE TABLE DEV_BRONZE_DB.{nombre} (
   {defs},
   _FICHERO_ORIGEN VARCHAR,
   _FECHA_CARGA TIMESTAMP_NTZ
 );
-COPY INTO {nombre}
+COPY INTO DEV_BRONZE_DB.{nombre}
 FROM (
   SELECT {", ".join(f"${i}" for i in range(1, len(cols) + 1))},
          METADATA$FILENAME, CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
-  FROM @STG_RAW/{nombre.lower()}.csv
+  FROM @DEV_BRONZE_DB.PUBLIC.STG_LALIGA/{fichero(nombre)}
 )
-FILE_FORMAT = (FORMAT_NAME = FF_CSV_RAW)
+FILE_FORMAT = (FORMAT_NAME = DEV_BRONZE_DB.PUBLIC.FF_CSV_RAW)
 ON_ERROR = 'ABORT_STATEMENT';
 """)
-sql.append("\n-- Comprobación rápida de volúmenes\n" + "\nUNION ALL ".join(
-    f"SELECT '{n}' AS tabla, COUNT(*) AS filas FROM {n}" for n in TABLAS) + ";\n")
-(DIR_SQL / "01_bronze_ddl_y_carga.sql").write_text("".join(sql), encoding="utf-8")
+sql.append("""
+-- 4. Permisos: dbt (DEV_TRANSFORM_ROLE) lee bronze; nunca escribe en él
+GRANT USAGE ON DATABASE DEV_BRONZE_DB TO ROLE DEV_TRANSFORM_ROLE;
+""" + "".join(f"""GRANT USAGE ON SCHEMA DEV_BRONZE_DB.{e} TO ROLE DEV_TRANSFORM_ROLE;
+GRANT SELECT ON ALL TABLES IN SCHEMA DEV_BRONZE_DB.{e} TO ROLE DEV_TRANSFORM_ROLE;
+""" for e in ESQUEMAS) + """
+-- Cortex AI (AI_COMPLETE, AI_CLASSIFY, AI_FILTER) para la capa GOLD.
+-- Por defecto CORTEX_USER ya está concedido a PUBLIC; esto lo hace explícito.
+USE ROLE ACCOUNTADMIN;
+GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE DEV_TRANSFORM_ROLE;
+GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE PRE_TRANSFORM_ROLE;
+GRANT DATABASE ROLE SNOWFLAKE.CORTEX_USER TO ROLE PRO_TRANSFORM_ROLE;
+-- Si tu región no tiene el modelo que usemos:
+-- ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
+USE ROLE SYSADMIN;
+
+-- 5. Comprobación de volúmenes
+""")
+sql.append("\nUNION ALL ".join(f"SELECT '{n}' AS tabla, COUNT(*) AS filas FROM DEV_BRONZE_DB.{n}" for n in TABLAS) + ";\n")
+for viejo in ("01_bronze_ddl_y_carga.sql", "00_usuario_dbt.sql"):
+    if (DIR_SQL / viejo).exists():
+        (DIR_SQL / viejo).unlink()
+(DIR_SQL / "02_bronze_laliga.sql").write_text("".join(sql), encoding="utf-8")
 
 # resumen
 print("Jugadores:", len(JUGADORES), "| Tramos:", len(TRAMOS))
 for n, (c, f) in TABLAS.items():
-    print(f"{n:38s} {len(f):>7} filas  {len(c)} columnas")
+    print(f"{n:55s} {len(f):>7} filas  {len(c)} columnas")

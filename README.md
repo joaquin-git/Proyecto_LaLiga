@@ -25,7 +25,7 @@ necesita datos, no intuición, para decidir a quién renovar, vender o fichar.
 ## Arquitectura (medallion)
 
 ```
-FUENTES (6 CSV)          BRONZE (6 tablas RAW)      SILVER (~13 tablas, 3FN)       GOLD (5-6 tablas, estrella)      CONSUMO
+FUENTES (6 CSV)          BRONZE (DEV_BRONZE_DB)      SILVER ({ENV}_SILVER_DB)       GOLD ({ENV}_GOLD_DB)      CONSUMO
 API partidos      ─┐                                 modelo entidad-relación         modelo dimensional              Power BI
 Proveedor stats   ─┤     copia fiel, todo VARCHAR    limpieza + normalización        hechos + dimensiones            (Copilot)
 RRHH contratos    ─┼──►  + metadatos de carga   ──►  claves PK/FK, tipos         ──► Cortex: AI_CLASSIFY,       ──►
@@ -41,7 +41,7 @@ App scouting      ─┘
 | `data/bronze/` | Los 6 CSV de origen (generados) |
 | `data/validacion/` | "Verdad" oculta para medir la precisión de AI_CLASSIFY / AI_FILTER (no se carga en bronze) |
 | `scripts/` | Generador del dataset (`generar_bronze.py`) y datos maestros |
-| `snowflake/` | Scripts SQL de configuración y carga de bronze |
+| `snowflake/` | `02_bronze_laliga.sql`: carga de bronze (se ejecuta después del script 01 del profesor) |
 | `models/silver`, `models/gold` | Modelos dbt (se irán creando paso a paso) |
 | `docs/` | Documentación de cada paso: caso de uso, bronze, modelado silver, modelado gold |
 
@@ -53,7 +53,7 @@ App scouting      ─┘
 4. ⬜ **Gold**: grano, medidas, dimensiones + Cortex AI
 5. ⬜ **Power BI**
 
-Configuración de dbt Cloud + Snowflake: [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
+Configuración de dbt Cloud + Snowflake (convención del curso: `WH_CURSO`, `{ENV}_BRONZE/SILVER/GOLD_DB`, `{ENV}_TRANSFORM_ROLE`): [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
 
 ## ⚠️ Aviso sobre los datos
 

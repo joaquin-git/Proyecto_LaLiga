@@ -1,14 +1,18 @@
 version: 2
 
+# Una source por sistema de origen = un esquema en {ENV}_BRONZE_DB (convención del curso).
+# La database depende del entorno: DEV_BRONZE_DB / PRE_BRONZE_DB / PRO_BRONZE_DB (variable DBT_ENTORNO).
+
 sources:
-  - name: bronze
-    description: "Capa RAW: copia fiel de las 6 fuentes, todo VARCHAR + metadatos de carga."
-    database: LALIGA_DB
-    schema: BRONZE
+  - name: api_laliga
+    description: "API de LaLiga: calendario y resultados."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: api_laliga
     loaded_at_field: _FECHA_CARGA
     tables:
-      - name: RAW_PARTIDOS
-        description: "API de LaLiga. Una fila = un partido. Desnormalizada: estadio, ciudad y aforo se repiten."
+      - name: partidos
+        identifier: PARTIDOS
+        description: "Una fila = un partido. Desnormalizada: estadio, ciudad y aforo se repiten. Tiene duplicados."
         columns:
           - name: ID_PARTIDO
             data_tests: [not_null]
@@ -29,8 +33,15 @@ sources:
           - name: _FECHA_EXTRACCION
           - name: _FICHERO_ORIGEN
           - name: _FECHA_CARGA
-      - name: RAW_ESTADISTICAS_JUGADOR_PARTIDO
-        description: "Proveedor externo. Una fila = un jugador en un partido. Contiene duplicados."
+  - name: proveedor_estadisticas
+    description: "Proveedor externo de estadísticas de partido."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: proveedor_estadisticas
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: estadisticas_jugador_partido
+        identifier: ESTADISTICAS_JUGADOR_PARTIDO
+        description: "Una fila = un jugador en un partido. Identifica al jugador con ID_JUGADOR_PROVEEDOR. Tiene duplicados."
         columns:
           - name: ID_PARTIDO
           - name: TEMPORADA
@@ -58,8 +69,15 @@ sources:
           - name: _FECHA_EXTRACCION
           - name: _FICHERO_ORIGEN
           - name: _FECHA_CARGA
-      - name: RAW_CONTRATOS
-        description: "RRHH. Una fila = un contrato o renovación. Base del histórico salarial (SCD2)."
+  - name: rrhh
+    description: "Departamento de RRHH: registro de contratos."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: rrhh
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: contratos
+        identifier: CONTRATOS
+        description: "Una fila = un contrato o renovación. Base del histórico salarial (SCD2)."
         columns:
           - name: ID_CONTRATO
             data_tests: [not_null]
@@ -84,8 +102,15 @@ sources:
           - name: _FECHA_EXTRACCION
           - name: _FICHERO_ORIGEN
           - name: _FECHA_CARGA
-      - name: RAW_TRASPASOS
-        description: "Mercado. Una fila = una operación (traspaso, cesión, libre, fin de cesión)."
+  - name: mercado
+    description: "Departamento de mercado: operaciones de fichajes."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: mercado
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: traspasos
+        identifier: TRASPASOS
+        description: "Una fila = una operación (traspaso, cesión, libre, fin de cesión). Incluye clubes de fuera de LaLiga."
         columns:
           - name: ID_OPERACION
             data_tests: [not_null]
@@ -105,8 +130,15 @@ sources:
           - name: _FECHA_EXTRACCION
           - name: _FICHERO_ORIGEN
           - name: _FECHA_CARGA
-      - name: RAW_LESIONES
-        description: "Servicios médicos. Una fila = una lesión. PARTE_MEDICO es texto libre (AI_FILTER)."
+  - name: servicios_medicos
+    description: "Servicios médicos de los clubes."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: servicios_medicos
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: lesiones
+        identifier: LESIONES
+        description: "Una fila = una lesión. PARTE_MEDICO es texto libre (AI_FILTER en gold)."
         columns:
           - name: ID_LESION
             data_tests: [not_null]
@@ -125,8 +157,15 @@ sources:
           - name: _FECHA_EXTRACCION
           - name: _FICHERO_ORIGEN
           - name: _FECHA_CARGA
-      - name: RAW_INFORMES_SCOUTING
-        description: "App de scouting. Una fila = un informe. INFORME es texto libre (AI_CLASSIFY / AI_COMPLETE)."
+  - name: app_scouting
+    description: "Aplicación de scouting (texto libre de los ojeadores)."
+    database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_BRONZE_DB"
+    schema: app_scouting
+    loaded_at_field: _FECHA_CARGA
+    tables:
+      - name: informes_scouting
+        identifier: INFORMES_SCOUTING
+        description: "Una fila = un informe. INFORME es texto libre (AI_CLASSIFY / AI_COMPLETE en gold)."
         columns:
           - name: ID_INFORME
             data_tests: [not_null]

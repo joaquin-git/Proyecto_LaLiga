@@ -8,7 +8,7 @@ siempre podemos volver a reconstruir silver y gold desde el dato original (traza
 
 | Decisión | Justificación |
 |----------|---------------|
-| **6 tablas, una por fuente** | Cada sistema operacional exporta su propio fichero. Bronze respeta esa separación: no mezcla fuentes. |
+| **6 tablas, una por fuente, en `DEV_BRONZE_DB` con un esquema por sistema de origen** | Convención del curso (`{ENV}_BRONZE_DB.<sistema>`). Cada sistema operacional exporta su propio fichero y bronze respeta esa separación: no mezcla fuentes. Bronze solo existe en DEV; PRE y PRO son clones. |
 | **Tablas desnormalizadas** | Así llegan los datos de los sistemas: cada fichero repite información (el estadio en cada partido, los datos del jugador en cada estadística, la agencia en cada contrato...). Normalizar es trabajo de silver. |
 | **Todas las columnas `VARCHAR`** | Si una fila trae `"6,8"` en una columna numérica, una tabla tipada haría fallar la carga. En bronze **no se puede perder ni rechazar ningún dato**; el tipado y la limpieza se hacen en silver. |
 | **Columnas de auditoría** `_FECHA_EXTRACCION`, `_FICHERO_ORIGEN`, `_FECHA_CARGA` | Gobierno del dato: saber de qué fichero viene cada fila y cuándo se cargó. Sirven para deduplicar y para la carga delta. |
@@ -19,27 +19,27 @@ siempre podemos volver a reconstruir silver y gold desde el dato original (traza
 
 | Tabla | Fuente simulada | Una fila es... | Filas aprox. |
 |-------|-----------------|----------------|-------------:|
-| `RAW_PARTIDOS` | API de LaLiga (calendario y resultados) | un partido | 767 |
-| `RAW_ESTADISTICAS_JUGADOR_PARTIDO` | Proveedor externo de estadísticas | un jugador que jugó en un partido | 22.800 |
-| `RAW_CONTRATOS` | Departamento de RRHH / registro de contratos | un contrato (o renovación) de un jugador con un club | 620 |
-| `RAW_TRASPASOS` | Departamento de mercado | una operación de mercado (traspaso, cesión, libre, fin de cesión) | 126 |
-| `RAW_LESIONES` | Servicios médicos de los clubes | una lesión de un jugador | 750 |
-| `RAW_INFORMES_SCOUTING` | App de scouting (texto libre) | un informe de un ojeador sobre un jugador en un partido | 1.050 |
+| `API_LALIGA.PARTIDOS` | API de LaLiga (calendario y resultados) | un partido | 767 |
+| `PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO` | Proveedor externo de estadísticas | un jugador que jugó en un partido | 22.800 |
+| `RRHH.CONTRATOS` | Departamento de RRHH / registro de contratos | un contrato (o renovación) de un jugador con un club | 620 |
+| `MERCADO.TRASPASOS` | Departamento de mercado | una operación de mercado (traspaso, cesión, libre, fin de cesión) | 126 |
+| `SERVICIOS_MEDICOS.LESIONES` | Servicios médicos de los clubes | una lesión de un jugador | 750 |
+| `APP_SCOUTING.INFORMES_SCOUTING` | App de scouting (texto libre) | un informe de un ojeador sobre un jugador en un partido | 1.050 |
 
 Volumen: 2 temporadas × 380 partidos, 23 clubes (20 por temporada: 3 descienden y 3 ascienden),
 unos 470 jugadores.
 
-### 2.1 RAW_PARTIDOS
+### 2.1 API_LALIGA.PARTIDOS
 `ID_PARTIDO, TEMPORADA, JORNADA, FECHA_PARTIDO, HORA, EQUIPO_LOCAL, EQUIPO_VISITANTE, ESTADIO,
 CIUDAD_ESTADIO, AFORO_ESTADIO, GOLES_LOCAL, GOLES_VISITANTE, RESULTADO, ESPECTADORES, ARBITRO`
 
-### 2.2 RAW_ESTADISTICAS_JUGADOR_PARTIDO
+### 2.2 PROVEEDOR_ESTADISTICAS.ESTADISTICAS_JUGADOR_PARTIDO
 `ID_PARTIDO, TEMPORADA, FECHA_PARTIDO, ID_JUGADOR_PROVEEDOR, JUGADOR, FECHA_NACIMIENTO,
 NACIONALIDAD, EQUIPO, RIVAL, CONDICION, POSICION, TITULAR, MINUTOS, GOLES, ASISTENCIAS, TIROS,
 TIROS_A_PUERTA, PASES_INTENTADOS, PASES_COMPLETADOS, RECUPERACIONES, TARJETAS_AMARILLAS,
 TARJETAS_ROJAS, VALORACION`
 
-### 2.3 RAW_CONTRATOS
+### 2.3 RRHH.CONTRATOS
 `ID_CONTRATO, CODIGO_LICENCIA, JUGADOR, FECHA_NACIMIENTO, NACIONALIDADES, POSICION, EQUIPO,
 CIUDAD_EQUIPO, TIPO_CONTRATO, CLUB_PROPIETARIO, FECHA_INICIO, FECHA_FIN_PREVISTA, FECHA_BAJA,
 ESTADO_CONTRATO, SALARIO_BRUTO_ANUAL_EUR, CLAUSULA_RESCISION_EUR, AGENTE, AGENCIA_REPRESENTACION,
@@ -49,18 +49,18 @@ EMAIL_AGENCIA`
   Rescindido por traspaso · Cedido a otro club · Cesión finalizada.
 - Una **renovación genera una fila nueva** con otro salario: es la base del histórico (SCD tipo 2) en gold.
 
-### 2.4 RAW_TRASPASOS
+### 2.4 MERCADO.TRASPASOS
 `ID_OPERACION, FECHA_OPERACION, VENTANA, JUGADOR, NACIONALIDAD, POSICION, CLUB_ORIGEN, LIGA_ORIGEN,
 PAIS_ORIGEN, CLUB_DESTINO, LIGA_DESTINO, PAIS_DESTINO, TIPO_OPERACION, IMPORTE`
 
-### 2.5 RAW_LESIONES
+### 2.5 SERVICIOS_MEDICOS.LESIONES
 `ID_LESION, CODIGO_LICENCIA, JUGADOR, EQUIPO, TEMPORADA, FECHA_LESION, FECHA_ALTA, TIPO_LESION,
 ZONA_CORPORAL, DIAS_BAJA, PARTIDOS_PERDIDOS, MEDICO_RESPONSABLE, PARTE_MEDICO`
 
 - `PARTE_MEDICO` es **texto libre** → en gold lo leerá `AI_FILTER` ("¿es una lesión recurrente?",
   "¿es grave?").
 
-### 2.6 RAW_INFORMES_SCOUTING
+### 2.6 APP_SCOUTING.INFORMES_SCOUTING
 `ID_INFORME, FECHA_INFORME, OJEADOR, EMAIL_OJEADOR, ZONA_OJEADOR, JUGADOR, EQUIPO_JUGADOR,
 PARTIDO_OBSERVADO, FECHA_PARTIDO, POSICIONES_OBSERVADAS, NOTA_GLOBAL, INFORME`
 
@@ -94,13 +94,17 @@ Esto es lo que justificará cada transformación de silver. Cada problema tiene 
 
 ## 4. Cómo cargarlo en Snowflake
 
-1. Ejecuta `snowflake/00_usuario_dbt.sql` (rol y usuario para dbt). Solo la primera vez.
-2. Ejecuta la primera parte de `snowflake/01_bronze_ddl_y_carga.sql`, hasta el `CREATE STAGE`.
-3. Sube los 6 CSV de `data/bronze/` al stage:
-   **Snowsight → Data → Databases → LALIGA_DB → BRONZE → Stages → STG_RAW → "+ Files"**.
-4. Ejecuta el resto del script: crea las 6 tablas y hace los `COPY INTO`.
-5. La última consulta muestra el recuento de filas de cada tabla. Debe coincidir con la tabla del
-   apartado 2.
+Requisito: haber ejecutado el script del profesor, *01 · Entorno Snowflake del curso*. Crea
+`WH_CURSO`, las databases `{ENV}_BRONZE/SILVER/GOLD_DB` y los roles `{ENV}_TRANSFORM_ROLE`.
+
+1. Abre `snowflake/02_bronze_laliga.sql` en una worksheet y ejecútalo **hasta el `LIST @...`**.
+   Crea los 6 esquemas de origen, el file format y el stage.
+2. Sube los 6 CSV de `data/bronze/` al stage: **Snowsight → Data → Databases → DEV_BRONZE_DB →
+   PUBLIC → Stages → STG_LALIGA → "+ Files"**.
+3. Vuelve a ejecutar el `LIST`: deben aparecer los 6 ficheros.
+4. Ejecuta el resto del script. Crea las tablas, hace los `COPY INTO` y da permiso de lectura a
+   `DEV_TRANSFORM_ROLE` y acceso a Cortex AI.
+5. La última consulta muestra el recuento de filas. Debe coincidir con la tabla del apartado 2.
 
 > El script se **genera automáticamente** desde `scripts/generar_bronze.py`, así que las columnas
 > del SQL siempre coinciden con las de los CSV.
