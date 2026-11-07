@@ -1,9 +1,8 @@
-# Proyecto de dbt Cloud: Proyecto_LaLiga (dbt exige minúsculas y _ en el campo name)
 name: 'proyecto_laliga'
 version: '1.0.0'
 config-version: 2
 
-profile: 'default'   # dbt Cloud ignora este valor y usa la conexión del proyecto
+profile: 'default'
 
 model-paths: ["models"]
 macro-paths: ["macros"]
@@ -15,21 +14,22 @@ snapshot-paths: ["snapshots"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
-# Convención del curso: una database por capa y entorno -> {ENV}_LALIGA_SILVER_DB / {ENV}_LALIGA_GOLD_DB.
-# El entorno lo marca la variable de entorno DBT_ENTORNO (DEV por defecto; en dbt Cloud se
-# define PRE / PRO en cada environment). Así el mismo código despliega en los tres entornos.
 models:
   proyecto_laliga:
-    silver:
-      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_SILVER_DB"
-      +materialized: table
-      # cada subcarpeta (= sistema de origen) tendrá su +schema, como en el proyecto del curso
-    gold:
-      +database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_GOLD_DB"
-      +schema: laliga
-      +materialized: table
-
-snapshots:
-  proyecto_laliga:
-    +target_database: "{{ env_var('DBT_ENTORNO', 'DEV') }}_LALIGA_SILVER_DB"
-    +target_schema: snapshots
+    # Staging: vistas 1:1 con Bronze (renombrar y castear). Viven en la database de Silver.
+    staging:
+      +database: "{{ env_var('DBT_SILVER_DB') }}"
+      +materialized: view
+      api_laliga:
+        +schema: api_laliga
+      proveedor_estadisticas:
+        +schema: proveedor_estadisticas
+      rrhh:
+        +schema: rrhh
+      mercado:
+        +schema: mercado
+      servicios_medicos:
+        +schema: servicios_medicos
+      app_scouting:
+        +schema: app_scouting
+    # silver y gold se configurarán cuando creemos sus modelos

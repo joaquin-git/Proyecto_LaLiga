@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: servicios_medicos
+    description: Servicios médicos de los clubes. Registro de lesiones.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: servicios_medicos
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: lesiones
+        description: Una fila = una lesión. PARTE_MEDICO es texto libre (lo leerá la IA en Gold).
+        columns:
+          - name: id_lesion
+            description: Identificador de la lesión.
+            data_tests: [not_null, unique]

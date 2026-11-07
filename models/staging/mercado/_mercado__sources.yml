@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: mercado
+    description: Departamento de mercado. Operaciones de fichajes.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: mercado
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: traspasos
+        description: Una fila = una operación (traspaso, cesión, libre o fin de cesión). Incluye clubes de fuera de LaLiga.
+        columns:
+          - name: id_operacion
+            description: Identificador de la operación.
+            data_tests: [not_null, unique]
