@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: api_laliga
+    description: API oficial de LaLiga. Calendario y resultados de los partidos.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: api_laliga
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: partidos
+        description: Una fila = un partido. Trae duplicados por re-extracciones (se limpian en Silver).
+        columns:
+          - name: id_partido
+            description: Identificador del partido en la API.
+            data_tests: [not_null]

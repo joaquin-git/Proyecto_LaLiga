@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: app_scouting
+    description: Aplicación de scouting. Informes de los ojeadores en texto libre.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: app_scouting
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: informes_scouting
+        description: Una fila = un informe de un ojeador sobre un jugador. INFORME es texto libre (lo leerá la IA en Gold).
+        columns:
+          - name: id_informe
+            description: Identificador del informe.
+            data_tests: [not_null, unique]

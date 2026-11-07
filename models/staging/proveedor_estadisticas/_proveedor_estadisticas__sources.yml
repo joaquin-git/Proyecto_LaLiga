@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: proveedor_estadisticas
+    description: Proveedor externo de estadísticas de rendimiento por partido.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: proveedor_estadisticas
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: estadisticas_jugador_partido
+        description: Una fila = un jugador en un partido. Trae duplicados por re-extracciones.
+        columns:
+          - name: id_partido
+            description: Partido al que pertenece la estadística.
+            data_tests: [not_null]
+          - name: id_jugador_proveedor
+            description: Identificador del jugador en el sistema del proveedor.
+            data_tests: [not_null]

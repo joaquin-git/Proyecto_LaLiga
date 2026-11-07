@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: rrhh
+    description: Departamento de RRHH. Registro de contratos y salarios de los jugadores.
+    database: "{{ env_var('DBT_BRONZE_DB') }}"
+    schema: rrhh
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: contratos
+        description: Una fila = un contrato o una renovación de un jugador con un club.
+        columns:
+          - name: id_contrato
+            description: Identificador del contrato en RRHH.
+            data_tests: [not_null, unique]
