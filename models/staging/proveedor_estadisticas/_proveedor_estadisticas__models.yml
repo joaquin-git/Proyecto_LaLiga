@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_proveedor_estadisticas__estadisticas_jugador_partido
+    description: >
+      Estadísticas de cada jugador en cada partido, con nombres de negocio y tipos correctos.
+      1:1 con Bronze: todavía contiene duplicados.
+    columns:
+      - name: partido_id
+        description: Partido al que pertenece la estadística.
+      - name: jugador_proveedor_id
+        description: Identificador del jugador en el sistema del proveedor.
+      - name: es_titular
+        description: Unifica los valores S/N y true/false del origen en un booleano.
+      - name: valoracion
+        description: Nota del partido. Se corrige la coma decimal ("6,8"). Puede faltar en origen.
+      - name: fecha_extraccion
+        description: Cuándo exportó la fila el sistema de origen.
+      - name: fecha_carga
+        description: Cuándo llegó la fila a Bronze.

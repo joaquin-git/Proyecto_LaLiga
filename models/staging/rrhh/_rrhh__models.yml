@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_rrhh__contratos
+    description: >
+      Contratos y renovaciones con fechas e importes convertidos.
+      Las nacionalidades siguen en una sola celda (se separan en Silver).
+    columns:
+      - name: contrato_id
+        description: Identificador del contrato en RRHH.
+      - name: codigo_licencia
+        description: Licencia del jugador. Será la clave del jugador en Silver (nunca el nombre).
+      - name: fecha_inicio
+        description: Fecha de inicio, unificada desde dos formatos de origen.
+      - name: salario_bruto_anual_eur
+        description: Salario bruto anual en euros. Se quitan puntos y el símbolo € ("4.500.000 €").
+      - name: fecha_baja
+        description: Fecha en la que terminó el contrato. Vacía si sigue vigente.
+      - name: fecha_extraccion
+        description: Cuándo exportó la fila el sistema de origen.
+      - name: fecha_carga
+        description: Cuándo llegó la fila a Bronze.

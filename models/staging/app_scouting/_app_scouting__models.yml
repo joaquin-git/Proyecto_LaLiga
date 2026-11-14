@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_app_scouting__informes_scouting
+    description: Informes de los ojeadores con fecha y nota convertidas. El texto del informe se mantiene libre.
+    columns:
+      - name: informe_id
+        description: Identificador del informe.
+      - name: nota_global
+        description: Nota de 1 a 10. Se corrige la coma decimal de algunos ojeadores ("7,5").
+      - name: texto_informe
+        description: Texto libre del ojeador. Lo leerá la IA en Gold.
+      - name: fecha_extraccion
+        description: Cuándo exportó la fila el sistema de origen.
+      - name: fecha_carga
+        description: Cuándo llegó la fila a Bronze.

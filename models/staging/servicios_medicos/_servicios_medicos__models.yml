@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_servicios_medicos__lesiones
+    description: Lesiones con fechas y números convertidos. El parte médico se mantiene como texto libre.
+    columns:
+      - name: lesion_id
+        description: Identificador de la lesión.
+      - name: fecha_alta
+        description: Puede faltar en origen; en Silver se completa con fecha_lesion + dias_baja.
+      - name: parte_medico
+        description: Texto libre del parte médico. Lo leerá la IA en Gold.
+      - name: fecha_extraccion
+        description: Cuándo exportó la fila el sistema de origen.
+      - name: fecha_carga
+        description: Cuándo llegó la fila a Bronze.
