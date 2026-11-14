@@ -7,7 +7,7 @@ with source as (
 renombrado as (
 
     select
-          id_partido                                            
+          id_partido                                            as partido_id
         , temporada                                             as temporada_origen
         , try_to_number(jornada)                                as jornada
         , coalesce(
@@ -25,8 +25,8 @@ renombrado as (
         , resultado                                             as resultado_quiniela
         , try_to_number(espectadores)                           as espectadores
         , trim(arbitro)                                         as arbitro
-        , _fecha_extraccion                                     as date_load
-        , _loaded_at                                            as loaded_at
+        , _fecha_extraccion                                     as fecha_extraccion
+        , _loaded_at                                            as fecha_carga
     from source
 
 )
