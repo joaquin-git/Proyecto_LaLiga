@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: slv_api_laliga__temporadas
+    description: Temporadas analizadas, con su primer y último partido.
+    columns:
+      - name: temporada_id
+        description: Temporada en formato corto (2024/25), unificada desde dos formatos de origen.
+      - name: fecha_inicio
+        description: Fecha del primer partido de la temporada.
+      - name: fecha_fin
+        description: Fecha del último partido de la temporada.
+
+  - name: slv_api_laliga__estadios
+    description: Estadios donde se juegan los partidos. Uno por fila (en Bronze se repetían en cada partido).
+    columns:
+      - name: estadio_id
+        description: Clave del estadio, generada con md5 a partir del nombre.
+      - name: ciudad
+        description: Ciudad del estadio (puede no coincidir con la del club, p. ej. el Estadi Johan Cruyff).
+      - name: aforo
+        description: Aforo del estadio.

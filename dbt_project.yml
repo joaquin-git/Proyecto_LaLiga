@@ -32,6 +32,14 @@ models:
         +schema: servicios_medicos
       app_scouting:
         +schema: app_scouting
+    
+    silver:
+      +database: "{{ env_var('DBT_SILVER_DB') }}"
+      +materialized: table
+      maestros:
+        +schema: maestros
+      api_laliga:
+        +schema: api_laliga
 
 seeds:
   proyecto_laliga:
