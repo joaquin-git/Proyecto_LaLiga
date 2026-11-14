@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_api_laliga__partidos
+    description: >
+      Partidos de la API de LaLiga con nombres de negocio y tipos correctos.
+      1:1 con Bronze: todavía contiene duplicados y nombres de club sin unificar.
+    columns:
+      - name: partido_id
+        description: Identificador del partido en la API.
+      - name: fecha_partido
+        description: Fecha del partido, unificada desde dos formatos de origen (YYYY-MM-DD y DD/MM/YYYY).
+      - name: aforo_estadio
+        description: Aforo del estadio como número (se limpia el separador de miles, "83.186").
+      - name: date_load
+        description: Cuándo exportó la fila el sistema de origen (equivale a _fivetran_synced del curso).
+      - name: loaded_at
+        description: Cuándo llegó la fila a Bronze.

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_mercado__traspasos
+    description: Operaciones de mercado con fecha e importe convertidos.
+    columns:
+      - name: traspaso_id
+        description: Identificador de la operación (id_operacion en origen).
+      - name: importe_eur
+        description: >
+          Importe en euros. 0 si la operación es libre o cesión; vacío si no se conoce (N/D).
+      - name: fecha_extraccion
+        description: Cuándo exportó la fila el sistema de origen.
+      - name: fecha_carga
+        description: Cuándo llegó la fila a Bronze.
