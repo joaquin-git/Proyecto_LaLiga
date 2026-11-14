@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: slv_maestros__paises
+    description: Países que aparecen en cualquier fuente (nacionalidades, traspasos). Uno por fila.
+    columns:
+      - name: pais_id
+        description: Clave del país, generada con md5 a partir del nombre.
+      - name: nombre_pais
+        description: Nombre del país.
+
+  - name: slv_maestros__ligas
+    description: Ligas de los clubes de origen y destino de los traspasos. Una por fila.
+    columns:
+      - name: liga_id
+        description: Clave de la liga, generada con md5 a partir del nombre.
+      - name: pais_id
+        description: País de la liga (clave foránea a slv_maestros__paises).
+
+  - name: slv_maestros__clubes
+    description: >
+      Dato maestro de clubes: una fila por club real, unificando los alias de las 6 fuentes
+      con el seed alias_clubes. Incluye clubes de LaLiga y extranjeros.
+    columns:
+      - name: club_id
+        description: Clave del club, generada con md5 a partir del nombre oficial.
+      - name: nombre_club
+        description: Nombre oficial del club.
+      - name: ciudad
+        description: Ciudad del club. Solo informada para clubes de LaLiga (la da RRHH).
+      - name: liga_id
+        description: Liga del club (clave foránea a slv_maestros__ligas). El país se obtiene a través de la liga.
