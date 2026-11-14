@@ -1,0 +1,14 @@
+version: 2
+
+seeds:
+  - name: alias_clubes
+    description: >
+      Tabla de traducción de los nombres de club que llegan de los sistemas de origen
+      a su nombre oficial.
+    columns:
+      - name: alias_club
+        description: Nombre del club tal como aparece en origen (Barça, Atleti, Pucela...).
+        data_tests: [not_null, unique]
+      - name: nombre_oficial_club
+        description: Nombre oficial del club (FC Barcelona, Atlético de Madrid...).
+        data_tests: [not_null]
