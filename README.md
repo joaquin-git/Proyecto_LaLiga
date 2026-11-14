@@ -25,7 +25,7 @@ necesita datos, no intuición, para decidir a quién renovar, vender o fichar.
 ## Arquitectura (medallion)
 
 ```
-FUENTES (6 CSV)          BRONZE (DEV_LALIGA_BRONZE_DB)      SILVER ({ENV}_LALIGA_SILVER_DB)       GOLD ({ENV}_LALIGA_GOLD_DB)      CONSUMO
+FUENTES (6 CSV)          BRONZE                          STAGING + SILVER                GOLD                            CONSUMO
 API partidos      ─┐                                 modelo entidad-relación         modelo dimensional              Power BI
 Proveedor stats   ─┤     copia fiel, todo VARCHAR    limpieza + normalización        hechos + dimensiones            (Copilot)
 RRHH contratos    ─┼──►  + metadatos de carga   ──►  claves PK/FK, tipos         ──► Cortex: AI_CLASSIFY,       ──►
@@ -36,24 +36,32 @@ App scouting      ─┘
 
 ## Estructura del repositorio
 
-| Carpeta | Contenido |
+| Carpeta / fichero | Contenido |
 |---------|-----------|
 | `data/bronze/` | Los 6 CSV de origen (generados) |
-| `data/validacion/` | "Verdad" oculta para medir la precisión de AI_CLASSIFY / AI_FILTER (no se carga en bronze) |
+| `data/validacion/` | "Verdad" oculta para medir la precisión de la IA en gold (no se carga en bronze) |
 | `scripts/` | Generador del dataset (`generar_bronze.py`) y datos maestros |
-| `snowflake/` | `01_entorno_laliga.sql` (warehouse, databases y roles) y `02_bronze_laliga.sql` (carga de bronze) |
-| `models/silver`, `models/gold` | Modelos dbt (se irán creando paso a paso) |
-| `docs/` | Documentación de cada paso: caso de uso, bronze, modelado silver, modelado gold |
+| `snowflake/` | Scripts de entorno (01), carga de bronze (02) y clones PRE/PRO (03) |
+| `models/staging/<sistema>/` | Declaración de las 6 fuentes de bronze (sources + freshness) |
+| `dbt_project.yml`, `packages.yml` | Configuración del proyecto dbt y paquetes (dbt_utils) |
+| `docs/` | Documentación técnica: configuración y capa bronze |
 
-## Paso a paso
+## Estado
 
-1. ✅ Caso de uso y preguntas de negocio
-2. ✅ **Bronze**: dataset + carga en Snowflake → [`docs/01_bronze.md`](docs/01_bronze.md)
-3. ⬜ **Silver**: modelo conceptual → lógico (DBML) → registro de decisiones → físico (dbt)
-4. ⬜ **Gold**: grano, medidas, dimensiones + Cortex AI
-5. ⬜ **Power BI**
+| Fase | Estado |
+|------|--------|
+| Caso de uso y dataset | ✅ |
+| Snowflake: entorno, carga de bronze y clones PRE/PRO | ✅ |
+| dbt: conexión, variables de entorno, sources y freshness | ✅ |
+| Seeds | ⬜ |
+| Staging (renombrar y castear) | ⬜ |
+| Silver (modelo entidad-relación) | ⬜ |
+| Gold (modelo dimensional + Cortex AI) | ⬜ |
+| Power BI | ⬜ |
 
-Configuración de dbt Cloud + Snowflake (convención del curso: `WH_LALIGA`, `{ENV}_LALIGA_BRONZE/SILVER/GOLD_DB`, `{ENV}_LALIGA_TRANSFORM_ROLE`): [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
+Documentación técnica:
+- Configuración de Snowflake y dbt: [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
+- Capa bronze (tablas, decisiones y problemas de calidad): [`docs/01_bronze.md`](docs/01_bronze.md)
 
 ## ⚠️ Aviso sobre los datos
 
