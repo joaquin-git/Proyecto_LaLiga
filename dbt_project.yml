@@ -32,12 +32,12 @@ models:
         +schema: servicios_medicos
       app_scouting:
         +schema: app_scouting
-    
-    seeds:
-      proyecto_laliga:
-        +database: "{{ env_var('DBT_SILVER_DB') }}"
-        +schema: seeds
-        alias_clubes:
-          +column_types:
-            alias_club: varchar(50)
-            nombre_oficial_club: varchar(50)
+
+seeds:
+  proyecto_laliga:
+    +database: "{{ env_var('DBT_SILVER_DB') }}"
+    +schema: seeds
+    alias_clubes:
+      +column_types:
+        alias_club: varchar(50)
+        nombre_oficial_club: varchar(50)
