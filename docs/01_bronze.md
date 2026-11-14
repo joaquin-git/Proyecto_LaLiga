@@ -105,6 +105,7 @@ Requisito: haber ejecutado `snowflake/01_entorno_laliga.sql` (nuestra adaptació
 3. Ejecuta el `list`: deben aparecer los 6 ficheros.
 4. Ejecuta la **PARTE B** (`COPY INTO`), los **PERMISOS** (lectura para `DEV_LALIGA_TRANSFORM_ROLE`)
    y la **COMPROBACIÓN**. El recuento debe coincidir con el que indica el comentario del script.
+5. Ejecuta `snowflake/03_clonar_bronze_laliga.sql` para crear bronze en PRE y PRO.
 
 > El script se **genera automáticamente** desde `scripts/generar_bronze.py`, así que las columnas
 > del SQL siempre coinciden con las de los CSV.
