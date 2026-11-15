@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: slv_rrhh__jugadores
+    description: >
+      Jugadores, uno por fila. RRHH es la fuente maestra: identifica al jugador con su licencia.
+      Incluye el identificador del proveedor de estadísticas para poder cruzar ambas fuentes.
+    columns:
+      - name: jugador_id
+        description: Código de licencia del jugador. Nunca el nombre (hay homónimos, p. ej. dos "Juan Cruz").
+      - name: jugador_proveedor_id
+        description: >
+          Identificador del jugador en el proveedor de estadísticas, cruzado por nombre + fecha de
+          nacimiento. Vacío si el jugador no disputó ningún minuto (p. ej. Jasper Cillessen).
+      - name: posicion
+        description: POR, DEF, MED o DEL (unificado desde los nombres largos de RRHH).
+
+  - name: slv_rrhh__jugador_nacionalidades
+    description: >
+      Nacionalidades de cada jugador (relación N:M jugador-país). Separa la celda con varios
+      valores de origen ("Marruecos; España") en una fila por país (1FN).
+    columns:
+      - name: jugador_id
+        description: Jugador (clave hacia slv_rrhh__jugadores).
+      - name: pais_id
+        description: País (clave hacia slv_maestros__paises).
+      - name: es_principal
+        description: Verdadero para la primera nacionalidad que figura en RRHH.
+
+  - name: slv_rrhh__contratos
+    description: >
+      Contratos y renovaciones. Una renovación es una fila nueva (la anterior queda como "Renovado"),
+      de modo que se conserva el histórico de salarios.
+    columns:
+      - name: contrato_id
+        description: Identificador del contrato en RRHH.
+      - name: jugador_id
+        description: Jugador (clave hacia slv_rrhh__jugadores).
+      - name: club_id
+        description: Club con el que tiene el contrato (clave hacia slv_maestros__clubes).
+      - name: club_propietario_id
+        description: Solo en cesiones, el club propietario del jugador (puede ser extranjero).
+      - name: fecha_baja
+        description: Fecha en que terminó el contrato. Vacía si sigue vigente.
+      - name: salario_bruto_anual_eur
+        description: Salario bruto anual en euros.

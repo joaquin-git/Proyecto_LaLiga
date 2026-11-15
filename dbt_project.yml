@@ -40,6 +40,10 @@ models:
         +schema: maestros
       api_laliga:
         +schema: api_laliga
+      rrhh:
+        +schema: rrhh
+
+  
 
 seeds:
   proyecto_laliga:
