@@ -6,6 +6,12 @@ models:
     columns:
       - name: temporada_id
         description: Temporada en formato corto (2024/25), unificada desde dos formatos de origen.
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['2024/25', '2025/26']
       - name: fecha_inicio
         description: Fecha del primer partido de la temporada.
       - name: fecha_fin
@@ -15,12 +21,20 @@ models:
     description: Estadios donde se juegan los partidos. Uno por fila (en Bronze se repetían en cada partido).
     columns:
       - name: estadio_id
-        description: generada con dbt_utils.generate_surrogate_key a partir de estadio_id
+        description: Clave del estadio, generada con dbt_utils.generate_surrogate_key a partir del nombre.
+        data_tests: [unique, not_null]
+      - name: nombre_estadio
+        description: Nombre del estadio.
+        data_tests: [unique, not_null]
       - name: ciudad
         description: Ciudad del estadio (puede no coincidir con la del club, p. ej. el Estadi Johan Cruyff).
       - name: aforo
         description: Aforo del estadio.
-    
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+
   - name: slv_api_laliga__partidos
     description: >
       Partidos de LaLiga, uno por fila (sin los duplicados de la API).
@@ -28,17 +42,60 @@ models:
     columns:
       - name: partido_id
         description: Identificador del partido en la API. Único tras deduplicar.
+        data_tests: [unique, not_null]
       - name: temporada_id
         description: Temporada (clave hacia slv_api_laliga__temporadas).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_api_laliga__temporadas')
+                field: temporada_id
       - name: club_local_id
         description: Club que juega en casa (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
       - name: club_visitante_id
         description: Club que juega fuera (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
       - name: estadio_id
         description: >
           Estadio donde se jugó (clave hacia slv_api_laliga__estadios). Va en el partido y no en
           el club porque un club puede jugar en varios estadios (el Barça usó tres).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_api_laliga__estadios')
+                field: estadio_id
+      - name: goles_local
+        description: Goles del equipo local.
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+      - name: goles_visitante
+        description: Goles del equipo visitante.
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
       - name: espectadores
-        description: Asistencia. Puede faltar en origen (21 partidos).
+        description: Asistencia. Puede faltar en origen (21 partidos), por eso no lleva not_null.
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
       - name: fecha_extraccion
         description: Fecha de extracción de la versión que nos quedamos (la más reciente).

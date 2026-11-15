@@ -5,17 +5,29 @@ models:
     description: Países que aparecen en cualquier fuente (nacionalidades, traspasos). Uno por fila.
     columns:
       - name: pais_id
-        description: generada con dbt_utils.generate_surrogate_key a partir de pais_id, liga_id, club_id
+        description: Clave del país, generada con dbt_utils.generate_surrogate_key a partir del nombre.
+        data_tests: [unique, not_null]
       - name: nombre_pais
         description: Nombre del país.
+        data_tests: [unique, not_null]
 
   - name: slv_maestros__ligas
     description: Ligas de los clubes de origen y destino de los traspasos. Una por fila.
     columns:
       - name: liga_id
-        description: Clave de la liga, generada con md5 a partir del nombre.
+        description: Clave de la liga, generada con dbt_utils.generate_surrogate_key a partir del nombre.
+        data_tests: [unique, not_null]
+      - name: nombre_liga
+        description: Nombre de la liga.
+        data_tests: [unique, not_null]
       - name: pais_id
         description: País de la liga (clave foránea a slv_maestros__paises).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__paises')
+                field: pais_id
 
   - name: slv_maestros__clubes
     description: >
@@ -23,10 +35,18 @@ models:
       con el seed alias_clubes. Incluye clubes de LaLiga y extranjeros.
     columns:
       - name: club_id
-        description: Clave del club, generada con md5 a partir del nombre oficial.
+        description: Clave del club, generada con dbt_utils.generate_surrogate_key a partir del nombre oficial.
+        data_tests: [unique, not_null]
       - name: nombre_club
         description: Nombre oficial del club.
+        data_tests: [unique, not_null]
       - name: ciudad
         description: Ciudad del club. Solo informada para clubes de LaLiga (la da RRHH).
       - name: liga_id
         description: Liga del club (clave foránea a slv_maestros__ligas). El país se obtiene a través de la liga.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__ligas')
+                field: liga_id
