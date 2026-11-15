@@ -8,13 +8,43 @@ models:
     columns:
       - name: traspaso_id
         description: Identificador de la operación.
+        data_tests: [unique, not_null]
       - name: jugador_id
         description: >
           Jugador (clave hacia slv_rrhh__jugadores). Mercado no tiene la licencia, así que se cruza
           por nombre; se ha comprobado que ningún homónimo aparece en los traspasos.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_rrhh__jugadores')
+                field: jugador_id
       - name: club_origen_id
         description: Club de origen (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
       - name: club_destino_id
         description: Club de destino (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
+      - name: tipo_operacion
+        description: Traspaso, Cesión, Libre o Fin de cesión.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Traspaso', 'Cesión', 'Libre', 'Fin de cesión']
       - name: importe_eur
         description: Importe en euros. Regla de negocio, 0 en libres, cesiones y fines de cesión.
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0

@@ -8,22 +8,48 @@ models:
     columns:
       - name: jugador_id
         description: Código de licencia del jugador. Nunca el nombre (hay homónimos, p. ej. dos "Juan Cruz").
+        data_tests: [unique, not_null]
       - name: jugador_proveedor_id
         description: >
           Identificador del jugador en el proveedor de estadísticas, cruzado por nombre + fecha de
           nacimiento. Vacío si el jugador no disputó ningún minuto (p. ej. Jasper Cillessen).
+        data_tests: [unique]
+      - name: nombre_jugador
+        description: Nombre del jugador. No es único (dos "Juan Cruz"), por eso no lleva test unique.
+        data_tests: [not_null]
       - name: posicion
         description: POR, DEF, MED o DEL (unificado desde los nombres largos de RRHH).
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['POR', 'DEF', 'MED', 'DEL']
 
   - name: slv_rrhh__jugador_nacionalidades
     description: >
       Nacionalidades de cada jugador (relación N:M jugador-país). Separa la celda con varios
       valores de origen ("Marruecos; España") en una fila por país (1FN).
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: ['jugador_id', 'pais_id']
     columns:
       - name: jugador_id
         description: Jugador (clave hacia slv_rrhh__jugadores).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_rrhh__jugadores')
+                field: jugador_id
       - name: pais_id
         description: País (clave hacia slv_maestros__paises).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__paises')
+                field: pais_id
       - name: es_principal
         description: Verdadero para la primera nacionalidad que figura en RRHH.
 
@@ -34,13 +60,49 @@ models:
     columns:
       - name: contrato_id
         description: Identificador del contrato en RRHH.
+        data_tests: [unique, not_null]
       - name: jugador_id
         description: Jugador (clave hacia slv_rrhh__jugadores).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_rrhh__jugadores')
+                field: jugador_id
       - name: club_id
         description: Club con el que tiene el contrato (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
       - name: club_propietario_id
         description: Solo en cesiones, el club propietario del jugador (puede ser extranjero).
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
+      - name: tipo_contrato
+        description: Profesional o Cesión.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Profesional', 'Cesión']
+      - name: estado_contrato
+        description: Situación del contrato en el momento de la extracción.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Vigente', 'Renovado', 'Finalizado', 'Cesión finalizada', 'Rescindido por traspaso', 'Cedido a otro club']
       - name: fecha_baja
         description: Fecha en que terminó el contrato. Vacía si sigue vigente.
       - name: salario_bruto_anual_eur
         description: Salario bruto anual en euros.
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false

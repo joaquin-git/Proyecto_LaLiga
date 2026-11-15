@@ -5,7 +5,11 @@ models:
     description: Ojeadores del club, uno por fila.
     columns:
       - name: ojeador_id
-        description: generada con dbt_utils.generate_surrogate_key a partir de ojeador_id
+        description: Clave del ojeador, generada con dbt_utils.generate_surrogate_key a partir del email (único por persona).
+        data_tests: [unique, not_null]
+      - name: email_ojeador
+        description: Email del ojeador, en minúsculas.
+        data_tests: [unique, not_null]
       - name: zona_ojeador
         description: Zona de España que cubre el ojeador ("Todas" para la ojeadora jefa).
 
@@ -16,23 +20,60 @@ models:
     columns:
       - name: informe_id
         description: Identificador del informe.
+        data_tests: [unique, not_null]
       - name: ojeador_id
         description: Ojeador que lo escribe (clave hacia slv_app_scouting__ojeadores).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_app_scouting__ojeadores')
+                field: ojeador_id
       - name: jugador_id
         description: Jugador observado (clave hacia slv_rrhh__jugadores).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_rrhh__jugadores')
+                field: jugador_id
       - name: partido_id
         description: Partido observado (clave hacia slv_api_laliga__partidos), buscado por fecha y club.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_api_laliga__partidos')
+                field: partido_id
       - name: nota_global
         description: Nota del ojeador, de 0 a 10.
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 10
       - name: texto_informe
         description: Texto libre del informe. Lo clasificará la IA (Cortex) en Gold.
+        data_tests: [not_null]
 
   - name: slv_app_scouting__informe_posiciones
     description: Posiciones en las que el ojeador vio jugar al jugador, una por fila (1FN).
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: ['informe_id', 'posicion_observada']
     columns:
       - name: informe_id
         description: Informe (clave hacia slv_app_scouting__informes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_app_scouting__informes')
+                field: informe_id
       - name: posicion_observada
         description: Posición observada (p. ej. "Lateral derecho").
+        data_tests: [not_null]
       - name: es_principal
         description: True si es la primera posición que anotó el ojeador.

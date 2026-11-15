@@ -5,24 +5,55 @@ models:
     description: Catálogo de tipos de lesión, uno por fila.
     columns:
       - name: tipo_lesion_id
-        description: generada con dbt_utils.generate_surrogate_key a partir de tipo_lesion_id
+        description: Clave del tipo de lesión, generada con dbt_utils.generate_surrogate_key a partir del nombre.
+        data_tests: [unique, not_null]
       - name: nombre_tipo_lesion
         description: Nombre del tipo de lesión (p. ej. "Rotura fibrilar grado I").
+        data_tests: [unique, not_null]
 
   - name: slv_servicios_medicos__lesiones
     description: Lesiones de los jugadores, una por fila. Base para calcular el coste de las lesiones.
     columns:
       - name: lesion_id
         description: Identificador de la lesión.
+        data_tests: [unique, not_null]
       - name: jugador_id
         description: Jugador lesionado (clave hacia slv_rrhh__jugadores).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_rrhh__jugadores')
+                field: jugador_id
       - name: club_id
         description: Club al que pertenecía al lesionarse (clave hacia slv_maestros__clubes).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_maestros__clubes')
+                field: club_id
       - name: tipo_lesion_id
         description: Tipo de lesión (clave hacia slv_servicios_medicos__tipos_lesion).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('slv_servicios_medicos__tipos_lesion')
+                field: tipo_lesion_id
       - name: zona_corporal
         description: Zona del cuerpo, unificada en mayúsculas/minúsculas (35 escrituras -> 13 zonas).
+      - name: fecha_lesion
+        description: Fecha de la lesión.
+        data_tests: [not_null]
       - name: fecha_alta
         description: Fecha del alta. Si faltaba en origen, se calcula como fecha_lesion + días de baja.
+        data_tests: [not_null]
+      - name: partidos_perdidos
+        description: Partidos de liga que se perdió el jugador.
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
       - name: parte_medico
         description: Texto libre del parte médico. Lo leerá la IA (Cortex) en Gold.
