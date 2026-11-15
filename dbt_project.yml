@@ -48,6 +48,8 @@ models:
         +schema: servicios_medicos
       app_scouting:
         +schema: app_scouting
+      proveedor_estadisticas:
+        +schema: proveedor_estadisticas
 
   
 

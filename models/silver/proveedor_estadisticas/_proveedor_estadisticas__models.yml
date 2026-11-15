@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: slv_proveedor_estadisticas__actuaciones
+    description: >
+      Estadísticas de cada jugador en cada partido, una fila por jugador y partido.
+      Modelo incremental (merge): en cada ejecución solo procesa lo cargado en bronze
+      después de la última carga, y actualiza las filas cuya clave ya existe.
+    columns:
+      - name: partido_id
+        description: Partido (clave hacia slv_api_laliga__partidos). Parte de la clave compuesta.
+      - name: jugador_id
+        description: Jugador (clave hacia slv_rrhh__jugadores). Parte de la clave compuesta.
+      - name: club_id
+        description: Club con el que jugó ese partido (clave hacia slv_maestros__clubes).
+      - name: minutos
+        description: Minutos jugados.
+      - name: valoracion
+        description: Nota del proveedor (0-10). NULL si el proveedor no puntuó al jugador.
+      - name: fecha_carga
+        description: Momento de la carga en bronze. Es la columna del filtro incremental.
