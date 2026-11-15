@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: slv_mercado__traspasos
+    description: >
+      Operaciones de mercado (traspasos, cesiones, libres y fines de cesión), una por fila.
+      Los clubes de origen y destino pueden ser de LaLiga o extranjeros.
+    columns:
+      - name: traspaso_id
+        description: Identificador de la operación.
+      - name: jugador_id
+        description: >
+          Jugador (clave hacia slv_rrhh__jugadores). Mercado no tiene la licencia, así que se cruza
+          por nombre; se ha comprobado que ningún homónimo aparece en los traspasos.
+      - name: club_origen_id
+        description: Club de origen (clave hacia slv_maestros__clubes).
+      - name: club_destino_id
+        description: Club de destino (clave hacia slv_maestros__clubes).
+      - name: importe_eur
+        description: Importe en euros. Regla de negocio, 0 en libres, cesiones y fines de cesión.
