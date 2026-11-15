@@ -16,7 +16,7 @@ ojeadores as (
 )
 
 select
-      md5(email_ojeador)                                        as ojeador_id
+      {{ dbt_utils.generate_surrogate_key(['email_ojeador']) }}                                        as ojeador_id
     , nombre_ojeador
     , email_ojeador
     , zona_ojeador

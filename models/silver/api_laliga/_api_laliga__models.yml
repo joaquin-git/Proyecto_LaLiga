@@ -15,7 +15,7 @@ models:
     description: Estadios donde se juegan los partidos. Uno por fila (en Bronze se repetían en cada partido).
     columns:
       - name: estadio_id
-        description: Clave del estadio, generada con md5 a partir del nombre.
+        description: generada con dbt_utils.generate_surrogate_key a partir de estadio_id
       - name: ciudad
         description: Ciudad del estadio (puede no coincidir con la del club, p. ej. el Estadi Johan Cruyff).
       - name: aforo

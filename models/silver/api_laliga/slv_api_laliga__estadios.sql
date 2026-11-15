@@ -17,7 +17,7 @@ estadios as (
 )
 
 select
-      md5(nombre_estadio)                           as estadio_id
+      {{ dbt_utils.generate_surrogate_key(['nombre_estadio']) }}                           as estadio_id
     , nombre_estadio
     , ciudad
     , aforo
