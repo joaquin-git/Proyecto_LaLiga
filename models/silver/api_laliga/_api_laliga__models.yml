@@ -20,3 +20,25 @@ models:
         description: Ciudad del estadio (puede no coincidir con la del club, p. ej. el Estadi Johan Cruyff).
       - name: aforo
         description: Aforo del estadio.
+    
+  - name: slv_api_laliga__partidos
+    description: >
+      Partidos de LaLiga, uno por fila (sin los duplicados de la API).
+      Guarda claves hacia temporada, clubes y estadio en vez de nombres.
+    columns:
+      - name: partido_id
+        description: Identificador del partido en la API. Único tras deduplicar.
+      - name: temporada_id
+        description: Temporada (clave hacia slv_api_laliga__temporadas).
+      - name: club_local_id
+        description: Club que juega en casa (clave hacia slv_maestros__clubes).
+      - name: club_visitante_id
+        description: Club que juega fuera (clave hacia slv_maestros__clubes).
+      - name: estadio_id
+        description: >
+          Estadio donde se jugó (clave hacia slv_api_laliga__estadios). Va en el partido y no en
+          el club porque un club puede jugar en varios estadios (el Barça usó tres).
+      - name: espectadores
+        description: Asistencia. Puede faltar en origen (21 partidos).
+      - name: fecha_extraccion
+        description: Fecha de extracción de la versión que nos quedamos (la más reciente).
