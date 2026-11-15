@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: slv_servicios_medicos__tipos_lesion
+    description: Catálogo de tipos de lesión, uno por fila.
+    columns:
+      - name: tipo_lesion_id
+        description: Clave del tipo de lesión, generada con md5 a partir del nombre.
+      - name: nombre_tipo_lesion
+        description: Nombre del tipo de lesión (p. ej. "Rotura fibrilar grado I").
+
+  - name: slv_servicios_medicos__lesiones
+    description: Lesiones de los jugadores, una por fila. Base para calcular el coste de las lesiones.
+    columns:
+      - name: lesion_id
+        description: Identificador de la lesión.
+      - name: jugador_id
+        description: Jugador lesionado (clave hacia slv_rrhh__jugadores).
+      - name: club_id
+        description: Club al que pertenecía al lesionarse (clave hacia slv_maestros__clubes).
+      - name: tipo_lesion_id
+        description: Tipo de lesión (clave hacia slv_servicios_medicos__tipos_lesion).
+      - name: zona_corporal
+        description: Zona del cuerpo, unificada en mayúsculas/minúsculas (35 escrituras -> 13 zonas).
+      - name: fecha_alta
+        description: Fecha del alta. Si faltaba en origen, se calcula como fecha_lesion + días de baja.
+      - name: parte_medico
+        description: Texto libre del parte médico. Lo leerá la IA (Cortex) en Gold.

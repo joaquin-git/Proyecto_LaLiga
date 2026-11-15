@@ -42,6 +42,10 @@ models:
         +schema: api_laliga
       rrhh:
         +schema: rrhh
+      mercado:
+        +schema: mercado
+      servicios_medicos:
+        +schema: servicios_medicos
 
   
 
