@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: slv_app_scouting__ojeadores
+    description: Ojeadores del club, uno por fila.
+    columns:
+      - name: ojeador_id
+        description: Clave del ojeador, generada con md5 a partir del email (único por persona).
+      - name: zona_ojeador
+        description: Zona de España que cubre el ojeador ("Todas" para la ojeadora jefa).
+
+  - name: slv_app_scouting__informes
+    description: >
+      Informes de scouting, uno por fila. El jugador se identifica por nombre sin tildes + club + fecha
+      del partido (contrato vigente ese día), para resolver nombres sin tildes y homónimos.
+    columns:
+      - name: informe_id
+        description: Identificador del informe.
+      - name: ojeador_id
+        description: Ojeador que lo escribe (clave hacia slv_app_scouting__ojeadores).
+      - name: jugador_id
+        description: Jugador observado (clave hacia slv_rrhh__jugadores).
+      - name: partido_id
+        description: Partido observado (clave hacia slv_api_laliga__partidos), buscado por fecha y club.
+      - name: nota_global
+        description: Nota del ojeador, de 0 a 10.
+      - name: texto_informe
+        description: Texto libre del informe. Lo clasificará la IA (Cortex) en Gold.
+
+  - name: slv_app_scouting__informe_posiciones
+    description: Posiciones en las que el ojeador vio jugar al jugador, una por fila (1FN).
+    columns:
+      - name: informe_id
+        description: Informe (clave hacia slv_app_scouting__informes).
+      - name: posicion_observada
+        description: Posición observada (p. ej. "Lateral derecho").
+      - name: es_principal
+        description: True si es la primera posición que anotó el ojeador.

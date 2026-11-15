@@ -46,6 +46,8 @@ models:
         +schema: mercado
       servicios_medicos:
         +schema: servicios_medicos
+      app_scouting:
+        +schema: app_scouting
 
   
 
