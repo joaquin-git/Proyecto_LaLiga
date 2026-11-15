@@ -5,7 +5,7 @@ models:
     description: Países que aparecen en cualquier fuente (nacionalidades, traspasos). Uno por fila.
     columns:
       - name: pais_id
-        description: Clave del país, generada con md5 a partir del nombre.
+        description: generada con dbt_utils.generate_surrogate_key a partir de pais_id, liga_id, club_id
       - name: nombre_pais
         description: Nombre del país.
 

@@ -5,7 +5,7 @@ models:
     description: Catálogo de tipos de lesión, uno por fila.
     columns:
       - name: tipo_lesion_id
-        description: Clave del tipo de lesión, generada con md5 a partir del nombre.
+        description: generada con dbt_utils.generate_surrogate_key a partir de tipo_lesion_id
       - name: nombre_tipo_lesion
         description: Nombre del tipo de lesión (p. ej. "Rotura fibrilar grado I").
 

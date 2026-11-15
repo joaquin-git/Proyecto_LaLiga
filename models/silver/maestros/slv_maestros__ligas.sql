@@ -20,7 +20,7 @@ ligas as (
 )
 
 select
-      md5(l.nombre_liga)                            as liga_id
+      {{ dbt_utils.generate_surrogate_key(['l.nombre_liga']) }}                            as liga_id
     , l.nombre_liga
     , p.pais_id
 from ligas l

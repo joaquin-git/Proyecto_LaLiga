@@ -80,7 +80,7 @@ clubes as (
 )
 
 select
-      md5(cl.nombre_club)                           as club_id
+     {{ dbt_utils.generate_surrogate_key(['cl.nombre_club']) }}                           as club_id
     , cl.nombre_club
     , cl.ciudad
     , lg.liga_id

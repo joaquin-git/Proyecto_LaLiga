@@ -12,6 +12,6 @@ tipos as (
 )
 
 select
-      md5(nombre_tipo_lesion)                                   as tipo_lesion_id
+      {{ dbt_utils.generate_surrogate_key(['nombre_tipo_lesion']) }}                                   as tipo_lesion_id
     , nombre_tipo_lesion
 from tipos

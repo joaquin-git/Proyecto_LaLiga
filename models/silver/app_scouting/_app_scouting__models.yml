@@ -5,7 +5,7 @@ models:
     description: Ojeadores del club, uno por fila.
     columns:
       - name: ojeador_id
-        description: Clave del ojeador, generada con md5 a partir del email (único por persona).
+        description: generada con dbt_utils.generate_surrogate_key a partir de ojeador_id
       - name: zona_ojeador
         description: Zona de España que cubre el ojeador ("Todas" para la ojeadora jefa).
 

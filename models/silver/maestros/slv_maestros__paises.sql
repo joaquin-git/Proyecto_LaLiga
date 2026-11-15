@@ -31,7 +31,7 @@ nombres as (
 )
 
 select
-      md5(nombre_pais)                              as pais_id
+      {{ dbt_utils.generate_surrogate_key(['nombre_pais']) }}                              as pais_id
     , nombre_pais
 from nombres
 where nombre_pais is not null
