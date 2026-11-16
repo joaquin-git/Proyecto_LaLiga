@@ -99,3 +99,21 @@ models:
                 min_value: 0
       - name: fecha_extraccion
         description: Fecha de extracción de la versión que nos quedamos (la más reciente).
+
+
+unit_tests:
+  - name: test_temporadas_unifica_formato
+    description: >
+      La API escribe la temporada como '2024/25' o '2024-2025'. El modelo debe unificarlas
+      en '2024/25' y calcular el primer y el último partido de cada temporada.
+    model: slv_api_laliga__temporadas
+    given:
+      - input: ref('stg_api_laliga__partidos')
+        rows:
+          - {temporada_origen: '2024/25',   fecha_partido: '2024-08-15'}
+          - {temporada_origen: '2024-2025', fecha_partido: '2025-05-25'}
+          - {temporada_origen: '2025-2026', fecha_partido: '2025-08-15'}
+    expect:
+      rows:
+        - {temporada_id: '2024/25', fecha_inicio: '2024-08-15', fecha_fin: '2025-05-25'}
+        - {temporada_id: '2025/26', fecha_inicio: '2025-08-15', fecha_fin: '2025-08-15'}

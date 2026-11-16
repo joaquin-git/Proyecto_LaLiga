@@ -18,7 +18,7 @@ models:
         description: Nombre del jugador. No es único (dos "Juan Cruz"), por eso no lleva test unique.
         data_tests: [not_null]
       - name: posicion
-        description: POR, DEF, MED o DEL (unificado desde los nombres largos de RRHH).
+        description: '{{ doc("posicion") }}'
         data_tests:
           - not_null
           - accepted_values:
