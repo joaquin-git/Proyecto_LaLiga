@@ -10,20 +10,14 @@ renombrado as (
           id_contrato                                           as contrato_id
         , codigo_licencia
         , trim(jugador)                                         as nombre_jugador
-        , coalesce(
-              try_to_date(fecha_nacimiento, 'YYYY-MM-DD')
-            , try_to_date(fecha_nacimiento, 'DD/MM/YYYY')
-          )                                                     as fecha_nacimiento
+        , {{ limpiar_fecha('fecha_nacimiento') }}               as fecha_nacimiento
         , nacionalidades
         , posicion
         , trim(equipo)                                          as equipo
         , ciudad_equipo
         , tipo_contrato
         , trim(club_propietario)                                as club_propietario
-        , coalesce(
-              try_to_date(fecha_inicio, 'YYYY-MM-DD')
-            , try_to_date(fecha_inicio, 'DD/MM/YYYY')
-          )                                                     as fecha_inicio
+        , {{ limpiar_fecha('fecha_inicio') }}                   as fecha_inicio
         , try_to_date(fecha_fin_prevista, 'YYYY-MM-DD')         as fecha_fin_prevista
         , try_to_date(fecha_baja, 'YYYY-MM-DD')                 as fecha_baja
         , estado_contrato

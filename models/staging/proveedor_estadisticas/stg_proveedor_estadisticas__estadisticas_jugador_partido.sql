@@ -10,15 +10,9 @@ renombrado as (
           id_partido                                            as partido_id
         , id_jugador_proveedor                                  as jugador_proveedor_id
         , temporada                                             as temporada_origen
-        , coalesce(
-              try_to_date(fecha_partido, 'YYYY-MM-DD')
-            , try_to_date(fecha_partido, 'DD/MM/YYYY')
-          )                                                     as fecha_partido
+        , {{ limpiar_fecha('fecha_partido') }}                  as fecha_partido
         , trim(jugador)                                         as nombre_jugador
-        , coalesce(
-              try_to_date(fecha_nacimiento, 'YYYY-MM-DD')
-            , try_to_date(fecha_nacimiento, 'DD/MM/YYYY')
-          )                                                     as fecha_nacimiento
+        , {{ limpiar_fecha('fecha_nacimiento') }}               as fecha_nacimiento
         , trim(nacionalidad)                                    as nacionalidad
         , trim(equipo)                                          as equipo
         , trim(rival)                                           as rival

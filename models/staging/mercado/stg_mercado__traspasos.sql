@@ -8,10 +8,7 @@ renombrado as (
 
     select
           id_operacion                                          as traspaso_id
-        , coalesce(
-              try_to_date(fecha_operacion, 'YYYY-MM-DD')
-            , try_to_date(fecha_operacion, 'DD/MM/YYYY')
-          )                                                     as fecha_operacion
+        , {{ limpiar_fecha('fecha_operacion') }}                as fecha_operacion
         , ventana
         , trim(jugador)                                         as nombre_jugador
         , nacionalidad
