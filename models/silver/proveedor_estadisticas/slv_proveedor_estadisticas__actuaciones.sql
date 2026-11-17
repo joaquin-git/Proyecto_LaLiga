@@ -1,7 +1,8 @@
 {{ config(
     materialized='incremental',
     incremental_strategy='merge',
-    unique_key=['partido_id', 'jugador_id']
+    unique_key=['partido_id', 'jugador_id'],
+    on_schema_change='append_new_columns'
 ) }}
 
 with estadisticas as (
