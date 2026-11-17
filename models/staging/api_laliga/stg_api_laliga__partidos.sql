@@ -10,10 +10,7 @@ renombrado as (
           id_partido                                            as partido_id
         , temporada                                             as temporada_origen
         , try_to_number(jornada)                                as jornada
-        , coalesce(
-              try_to_date(fecha_partido, 'YYYY-MM-DD')
-            , try_to_date(fecha_partido, 'DD/MM/YYYY')
-          )                                                     as fecha_partido
+        , {{ limpiar_fecha('fecha_partido') }}                  as fecha_partido
         , try_to_time(hora)                                     as hora_inicio
         , trim(equipo_local)                                    as equipo_local
         , trim(equipo_visitante)                                as equipo_visitante

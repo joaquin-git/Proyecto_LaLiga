@@ -47,9 +47,7 @@ normalizado as (
         , i.fecha_informe
         , lower(trim(i.email_ojeador))                          as email_ojeador
         -- La app escribe a veces sin tildes ("Brahim Diaz"): las quitamos para comparar
-        , translate(upper(i.nombre_jugador),
-                    'ÀÁÃÉÍÏÑÓÖØÚÜĆČĞŘŠȚ',
-                    'AAAEIINOOOUUCCGRST')                       as nombre_normalizado
+        , {{ normalizar_nombre('i.nombre_jugador') }}           as nombre_normalizado
         , coalesce(a.nombre_oficial_club, i.equipo_jugador)     as nombre_club
         , i.fecha_partido
         , i.nota_global
@@ -65,9 +63,7 @@ candidatos as (
     -- Cada jugador con cada uno de sus contratos: nombre (sin tildes), club y fechas
     select
           j.jugador_id
-        , translate(upper(j.nombre_jugador),
-                    'ÀÁÃÉÍÏÑÓÖØÚÜĆČĞŘŠȚ',
-                    'AAAEIINOOOUUCCGRST')                       as nombre_normalizado
+        , {{ normalizar_nombre('j.nombre_jugador') }}           as nombre_normalizado
         , c.club_id
         , c.fecha_inicio
         , coalesce(c.fecha_baja, c.fecha_fin_prevista)          as fecha_fin
