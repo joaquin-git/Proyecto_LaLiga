@@ -42,9 +42,13 @@ App scouting      ─┘
 | `data/validacion/` | "Verdad" oculta para medir la precisión de la IA en gold (no se carga en bronze) |
 | `scripts/` | Generador del dataset (`generar_bronze.py`) y datos maestros |
 | `snowflake/` | Scripts de entorno (01), carga de bronze (02) y clones PRE/PRO (03) |
-| `models/staging/<sistema>/` | Declaración de las 6 fuentes de bronze (sources + freshness) |
+| `seeds/` | `alias_clubes`: tabla de equivalencias entre los nombres de club de cada fuente y el oficial |
+| `models/staging/<sistema>/` | Fuentes de bronze (sources + freshness) y una vista por tabla: renombrar y castear |
+| `models/silver/<sistema>/` | Modelo entidad-relación normalizado (16 tablas), con sus tests y documentación |
+| `macros/` | `limpiar_fecha` y `normalizar_nombre` |
+| `tests/singular/` | Test de negocio: los goles de los jugadores cuadran con el marcador |
 | `dbt_project.yml`, `packages.yml` | Configuración del proyecto dbt y paquetes (dbt_utils) |
-| `docs/` | Documentación técnica: configuración y capa bronze |
+| `docs/` | Documentación técnica de cada capa |
 
 ## Estado
 
@@ -53,15 +57,19 @@ App scouting      ─┘
 | Caso de uso y dataset | ✅ |
 | Snowflake: entorno, carga de bronze y clones PRE/PRO | ✅ |
 | dbt: conexión, variables de entorno, sources y freshness | ✅ |
-| Seeds | ⬜ |
-| Staging (renombrar y castear) | ⬜ |
-| Silver (modelo entidad-relación) | ⬜ |
+| Seeds | ✅ |
+| Staging (renombrar y castear) | ✅ |
+| Silver (modelo entidad-relación, 16 tablas, una incremental) | ✅ |
+| Calidad: 119 tests, documentación y macros | ✅ |
 | Gold (modelo dimensional + Cortex AI) | ⬜ |
 | Power BI | ⬜ |
 
 Documentación técnica:
 - Configuración de Snowflake y dbt: [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
 - Capa bronze (tablas, decisiones y problemas de calidad): [`docs/01_bronze.md`](docs/01_bronze.md)
+- Seed y capa staging: [`docs/02_staging.md`](docs/02_staging.md)
+- Capa silver (modelo entidad-relación): [`docs/03_silver.md`](docs/03_silver.md)
+- Calidad (tests), documentación y macros: [`docs/04_calidad_y_macros.md`](docs/04_calidad_y_macros.md)
 
 ## ⚠️ Aviso sobre los datos
 
