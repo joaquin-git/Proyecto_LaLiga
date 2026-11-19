@@ -12,6 +12,11 @@ sobre la liga española de fútbol masculino, temporadas **2024/25 y 2025/26**.
 (7.º en masa salarial de LaLiga) con el límite de coste de plantilla ajustado: no puede gastar
 mucho, así que tiene que gastar bien.
 
+**Por qué es un problema de negocio real:** LaLiga fija a cada club un *límite de coste de plantilla
+deportiva*. Cada euro de salario mal invertido (un jugador caro que no juega, o que se pasa media
+temporada en la enfermería) es un euro que no se puede usar para fichar. El director deportivo
+necesita datos, no intuición, para decidir a quién renovar, vender o fichar.
+
 **Por qué usa los datos de toda la liga:** para comparar a sus jugadores con el precio de mercado
 del rendimiento (P1), para comparar su coste de lesiones con el resto de clubes (P2) y porque los
 fichajes que recomiendan sus ojeadores están en otros clubes (P3). El modelo sirve igual para
