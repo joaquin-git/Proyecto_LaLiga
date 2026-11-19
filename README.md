@@ -8,19 +8,22 @@ sobre la liga española de fútbol masculino, temporadas **2024/25 y 2025/26**.
 > **"¿Qué jugadores rinden más por cada euro que cobran, cuánto dinero perdemos con los lesionados
 > y a quién deberíamos fichar?"**
 
-**Cliente:** la Dirección Deportiva de un club de LaLiga.
-**Por qué es un problema de negocio real:** LaLiga fija a cada club un *límite de coste de plantilla
-deportiva*. Cada euro de salario mal invertido (un jugador caro que no juega, o que se pasa media
-temporada en la enfermería) es un euro que no se puede usar para fichar. El director deportivo
-necesita datos, no intuición, para decidir a quién renovar, vender o fichar.
+**Cliente:** la Dirección Deportiva del **Real Betis Balompié**. Es un club de presupuesto medio
+(7.º en masa salarial de LaLiga) con el límite de coste de plantilla ajustado: no puede gastar
+mucho, así que tiene que gastar bien.
+
+**Por qué usa los datos de toda la liga:** para comparar a sus jugadores con el precio de mercado
+del rendimiento (P1), para comparar su coste de lesiones con el resto de clubes (P2) y porque los
+fichajes que recomiendan sus ojeadores están en otros clubes (P3). El modelo sirve igual para
+cualquier club: el club se elige con un filtro en Power BI.
 
 ### Preguntas de negocio que el modelo debe responder
 
-| # | Pregunta | Ejemplo de respuesta |
-|---|----------|----------------------|
-| P1 | ¿Cuánto nos cuesta cada minuto jugado, cada gol y cada asistencia de cada jugador? ¿Quién rinde por encima / por debajo de lo que cobra? | "El jugador X cuesta 410 € por minuto; el jugador Y, 35 €" |
-| P2 | ¿Cuánto salario pagamos a jugadores lesionados (coste de enfermería) por club, tipo de lesión y mes? | "Este club pagó 6,2 M€ a lesionados en 2024/25; el 40 % por roturas fibrilares" |
-| P3 | ¿Qué jugadores recomiendan fichar los ojeadores y qué encaje económico tienen? | IA (Cortex) clasifica 1.000+ informes en *Fichar / Seguir / Descartar* y resume cada jugador |
+| # | Pregunta | Ejemplo de respuesta (datos del proyecto) |
+|---|----------|-------------------------------------------|
+| P1 | ¿Cuánto nos cuesta cada minuto jugado, cada gol y cada asistencia de cada jugador? ¿Quién rinde por encima o por debajo de lo que cobra, comparado con la mediana de la liga en su posición? | "Sergi Altimira cuesta ≈ 323 € por minuto, la mitad que un centrocampista medio de LaLiga (≈ 692 €); Isco, ≈ 3.369 €, casi cinco veces más" |
+| P2 | ¿Cuánto salario pagamos a jugadores lesionados (coste de enfermería) por tipo de lesión y mes, y cómo estamos frente al resto de clubes? | "El Betis pagó 4,68 M€ a lesionados en dos temporadas (4,4 % de su masa salarial, frente al 5,7 % de la liga); la lesión más cara, la rotura fibrilar de grado I (1,65 M€)" |
+| P3 | ¿Qué jugadores de otros clubes recomiendan fichar nuestros ojeadores, y caben en nuestro presupuesto (salario actual y último traspaso)? | "La IA (Cortex) clasifica los 1.056 informes en Fichar / Seguir observando / Descartar, resume a cada candidato y muestra su salario y su último traspaso" |
 
 ## Arquitectura (medallion)
 
