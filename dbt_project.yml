@@ -32,7 +32,7 @@ models:
         +schema: servicios_medicos
       app_scouting:
         +schema: app_scouting
-    
+
     silver:
       +database: "{{ env_var('DBT_SILVER_DB') }}"
       +materialized: table
@@ -51,14 +51,13 @@ models:
       proveedor_estadisticas:
         +schema: proveedor_estadisticas
 
+    # Gold: modelo dimensional. Power BI lo lee con LALIGA_REPORTING_ROLE (solo lectura).
     gold:
       +database: "{{ env_var('DBT_GOLD_DB') }}"
       +schema: gold
       +materialized: table
-      +grants: 
-        SELECT: ['LALIGA_REPORTING_ROLE']
-
-  
+      +grants:
+        select: ['LALIGA_REPORTING_ROLE']
 
 seeds:
   proyecto_laliga:
