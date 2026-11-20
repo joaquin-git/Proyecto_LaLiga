@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: dim_jugadores
+    description: >
+      Dimensión de jugadores. Una fila por jugador, con su posición y su nacionalidad principal.
+      Desnormaliza lo que en silver estaba en tres tablas (jugadores, nacionalidades y países).
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: jugador_id
+        data_type: varchar
+        description: Código de licencia del jugador (clave de la dimensión).
+        constraints:
+          - type: not_null
+        data_tests: [unique, not_null]
+      - name: nombre_jugador
+        data_type: varchar
+        description: Nombre del jugador. No es único (hay homónimos, como los dos Juan Cruz).
+      - name: posicion
+        data_type: varchar
+        description: '{{ doc("posicion") }}'
+      - name: fecha_nacimiento
+        data_type: date
+        description: Fecha de nacimiento del jugador.
+      - name: nacionalidad_principal
+        data_type: varchar
+        description: País de la primera nacionalidad que figura en RRHH.
+        data_tests: [not_null]
+
+  - name: dim_clubes
+    description: >
+      Dimensión de clubes (LaLiga y extranjeros), con su liga y su país. Aplana en una tabla
+      la cadena club -> liga -> país de silver (esquema en estrella).
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: club_id
+        data_type: varchar
+        description: Clave del club.
+        constraints:
+          - type: not_null
+        data_tests: [unique, not_null]
+      - name: nombre_club
+        data_type: varchar
+        description: Nombre oficial del club.
+      - name: ciudad
+        data_type: varchar
+        description: Ciudad del club. Solo informada para los clubes de LaLiga.
+      - name: nombre_liga
+        data_type: varchar
+        description: Liga en la que juega el club.
+      - name: nombre_pais
+        data_type: varchar
+        description: País de la liga.
+      - name: es_laliga
+        data_type: boolean
+        description: Verdadero para los clubes de LaLiga. Sirve para filtrar en Power BI.
+
+  - name: dim_fechas
+    description: >
+      Calendario: un día por fila, del 1 de julio de 2024 al 30 de junio de 2026, generado con
+      dbt_utils.date_spine. Permite agrupar los hechos por mes y por temporada.
+    columns:
+      - name: fecha
+        description: El día (clave de la dimensión).
+        data_tests: [unique, not_null]
+      - name: anio
+        description: Año natural.
+      - name: mes
+        description: Mes (1 a 12).
+      - name: anio_mes
+        description: Año y mes en formato YYYY-MM, para agrupar por mes sin mezclar años.
+      - name: temporada
+        description: Temporada de fútbol (de julio a junio), en el mismo formato que silver (2024/25).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['2024/25', '2025/26']
