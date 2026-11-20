@@ -51,6 +51,13 @@ models:
       proveedor_estadisticas:
         +schema: proveedor_estadisticas
 
+    gold:
+      +database: "{{ env_var('DBT_GOLD_DB') }}"
+      +schema: gold
+      +materialized: table
+      +grants: 
+        SELECT: ['LALIGA_REPORTING_ROLE']
+
   
 
 seeds:
@@ -61,3 +68,6 @@ seeds:
       +column_types:
         alias_club: varchar(50)
         nombre_oficial_club: varchar(50)
+
+vars:
+  minutos_minimos: 900
