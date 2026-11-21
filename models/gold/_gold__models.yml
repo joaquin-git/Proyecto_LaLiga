@@ -79,3 +79,34 @@ models:
           - accepted_values:
               arguments:
                 values: ['2024/25', '2025/26']
+  
+  - name: fct_rendimiento_temporada
+    description: >
+      P1. Una fila por jugador, club y temporada: lo que jugó, lo que cobró ese club esa temporada
+      (prorrateado por días de contrato), su coste por minuto, gol y contribución, y la comparación
+      con la mediana del coste por minuto de su posición en LaLiga.
+    columns:
+      - name: rendimiento_id
+        description: Clave de la fila (jugador + club + temporada).
+        data_tests: [unique, not_null]
+      - name: jugador_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_jugadores')
+                field: jugador_id
+      - name: club_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clubes')
+                field: club_id
+      - name: salario_temporada_eur
+        description: Salario cobrado en esa temporada con ese club, prorrateado por días de contrato.
+        data_tests: [not_null]
+      - name: coste_por_minuto_eur
+        description: Solo si el jugador llega a los minutos mínimos (var minutos_minimos).
+      - name: indice_coste_vs_mediana
+        description: Coste por minuto dividido entre la mediana de su posición. Menor que 1 = rinde por encima de lo que cobra.
