@@ -128,7 +128,7 @@ A producción solo se llega por merge a `main` y jobs encadenados DEV → PRE �
 | Silver (modelo entidad-relación, 16 tablas, una incremental) | ✅ |
 | Calidad: 119 tests, documentación y macros | ✅ |
 | Despliegue DEV → PRE → PRO con jobs | ✅ |
-| Gold (modelo dimensional) | 🔄 En construcción |
+| Gold (modelo dimensional, 7 tablas) | ✅ |
 | Power BI | ⬜ |
 
 **Documentación técnica:**
@@ -137,6 +137,7 @@ A producción solo se llega por merge a `main` y jobs encadenados DEV → PRE �
 - Seed y capa staging: [`docs/02_staging.md`](docs/02_staging.md)
 - Capa silver: [`docs/03_silver.md`](docs/03_silver.md)
 - Calidad, documentación y macros: [`docs/04_calidad_y_macros.md`](docs/04_calidad_y_macros.md)
+- Capa gold (modelo dimensional): [`docs/05_gold.md`](docs/05_gold.md)
 
 ## 9. Limitaciones y mejoras futuras
 
