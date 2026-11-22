@@ -1,0 +1,22 @@
+version: 2
+
+exposures:
+  - name: informe_moneyball_laliga
+    label: Informe Moneyball LaLiga (Power BI)
+    type: dashboard
+    maturity: medium
+    description: >
+      Informe de Power BI para la Dirección Deportiva del Real Betis. Responde a P1 (coste por minuto
+      frente a la mediana de su posición), P2 (coste de las lesiones frente a la liga) y P3
+      (candidatos a fichar con su encaje económico).
+    depends_on:
+      - ref('fct_rendimiento_temporada')
+      - ref('fct_lesiones')
+      - ref('fct_informes_scouting')
+      - ref('agg_shortlist_fichajes')
+      - ref('dim_jugadores')
+      - ref('dim_clubes')
+      - ref('dim_fechas')
+    owner:
+      name: Dirección Deportiva
+      email: direccion.deportiva@ejemplo.com
