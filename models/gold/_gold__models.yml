@@ -110,3 +110,40 @@ models:
         description: Solo si el jugador llega a los minutos mínimos (var minutos_minimos).
       - name: indice_coste_vs_mediana
         description: Coste por minuto dividido entre la mediana de su posición. Menor que 1 = rinde por encima de lo que cobra.
+
+  - name: fct_lesiones
+    description: >
+      P2. Una fila por lesión, con lo que costó: el salario pagado al jugador durante la baja,
+      según el contrato vigente ese día en ese club. El tipo de lesión y la zona van en la propia
+      tabla (dimensión degenerada).
+    columns:
+      - name: lesion_id
+        description: Identificador de la lesión.
+        data_tests: [unique, not_null]
+      - name: jugador_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_jugadores')
+                field: jugador_id
+      - name: club_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clubes')
+                field: club_id
+      - name: fecha_lesion
+        description: Día de la lesión (clave hacia dim_fechas, para agrupar por mes y temporada).
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fechas')
+                field: fecha
+      - name: dias_baja
+        description: Días entre la lesión y el alta.
+      - name: coste_lesion_eur
+        description: Salario anual / 365 x días de baja. Lo que el club paga sin que el jugador pueda jugar.
+        data_tests: [not_null]
