@@ -129,7 +129,7 @@ A producción solo se llega por merge a `main` y jobs encadenados DEV → PRE �
 | Calidad: 119 tests, documentación y macros | ✅ |
 | Despliegue DEV → PRE → PRO con jobs | ✅ |
 | Gold (modelo dimensional, 7 tablas) | ✅ |
-| Power BI | ⬜ |
+| Power BI (informe de una página: P1, P2 y P3 para el Betis) | ✅ |
 
 **Documentación técnica:**
 - Configuración de Snowflake y dbt: [`docs/00_configuracion_dbt_snowflake.md`](docs/00_configuracion_dbt_snowflake.md)
