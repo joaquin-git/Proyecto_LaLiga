@@ -147,3 +147,53 @@ models:
       - name: coste_lesion_eur
         description: Salario anual / 365 x días de baja. Lo que el club paga sin que el jugador pueda jugar.
         data_tests: [not_null]
+
+  - name: fct_informes_scouting
+    description: >
+      P3. Una fila por informe de scouting, con la recomendación del ojeador extraída del texto
+      libre mediante una regla de negocio (las frases con las que cierra el informe).
+    columns:
+      - name: informe_id
+        description: Identificador del informe.
+        data_tests: [unique, not_null]
+      - name: jugador_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_jugadores')
+                field: jugador_id
+      - name: fecha_partido
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_fechas')
+                field: fecha
+      - name: recomendacion
+        description: Fichar, Seguir observando o Descartar, según el final del texto del informe.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Fichar', 'Seguir observando', 'Descartar']
+
+  - name: agg_shortlist_fichajes
+    description: >
+      P3. Jugadores con al menos un informe de "Fichar", con su encaje económico (club y salario
+      actuales, último traspaso) y la posición en la que los ven los ojeadores.
+    columns:
+      - name: jugador_id
+        description: Candidato (clave hacia dim_jugadores).
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_jugadores')
+                field: jugador_id
+      - name: club_actual
+        description: Club del contrato vigente. Vacío si el jugador ya no tiene contrato en LaLiga.
+      - name: salario_actual_eur
+        description: Salario bruto anual del contrato vigente.
+      - name: ultimo_traspaso_eur
+        description: Importe del último traspaso pagado por el jugador. Vacío si nunca fue traspasado.
