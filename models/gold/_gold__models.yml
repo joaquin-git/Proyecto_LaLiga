@@ -110,6 +110,10 @@ models:
         description: Solo si el jugador llega a los minutos mínimos (var minutos_minimos).
       - name: indice_coste_vs_mediana
         description: Coste por minuto dividido entre la mediana de su posición. Menor que 1 = rinde por encima de lo que cobra.
+      - name: fecha_ultima_carga
+        description: Última carga de actuaciones que entró en la fila. Es la columna del filtro incremental.
+      - name: indice_coste_vs_mediana
+        description: Coste por minuto dividido entre la mediana de su posición en esa temporada. Menor que 1 = rinde por encima de lo que cobra.
 
   - name: fct_lesiones
     description: >

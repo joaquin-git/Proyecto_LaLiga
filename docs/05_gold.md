@@ -8,7 +8,8 @@ Silver está normalizado para que cada dato viva en un único sitio. Gold reorga
 
 Método seguido para cada pregunta de negocio: **grano → medidas → dimensiones**.
 
-- Modelos en `models/gold/`, materializados como `table`.
+- Modelos en `models/gold/`, materializados como `table`, salvo `fct_rendimiento_temporada`, que es
+  `incremental` (ver P1).
 - Database `{ENV}_LALIGA_GOLD_DB`, esquema `gold` (`dbt_<usuario>_gold` en desarrollo).
 - Power BI lee con `LALIGA_REPORTING_ROLE` (solo lectura).
 
@@ -55,9 +56,18 @@ Método seguido para cada pregunta de negocio: **grano → medidas → dimension
 - **Coste por minuto** solo con un mínimo de minutos: `var('minutos_minimos')` = 900 (se cambia con
   `--vars` sin tocar código). Además, coste por gol y por contribución (goles + asistencias), con
   `nullif` para no dividir entre cero.
-- **Referencia:** la mediana del coste por minuto de su posición en LaLiga (función de ventana
-  `median(...) over (partition by posicion)`). `indice_coste_vs_mediana` < 1 = rinde por encima de lo
-  que cobra. Mediana y no media, para que unos pocos sueldos enormes no distorsionen.
+- **Referencia:** la mediana del coste por minuto de su posición en LaLiga **esa temporada** (función de
+  ventana `median(...) over (partition by posicion, temporada_id)`), porque los sueldos suben de un año a
+  otro. `indice_coste_vs_mediana` < 1 = rinde por encima de lo que cobra. Mediana y no media, para que
+  unos pocos sueldos enormes no distorsionen.
+- **Incremental en cadena:** `merge` por `rendimiento_id`. Si llegan actuaciones con `fecha_carga`
+  posterior a la última ejecución (`fecha_ultima_carga`), recalcula **la temporada entera** afectada: la
+  mediana necesita a todos los jugadores de la temporada. No detecta borrados ni cambios de contratos:
+  para eso, `--full-refresh`.
+- Medianas (€/min), 2024/25 → 2025/26: MED 674,55 → 749,37 · DEF 767,14 → 928,72 ·
+  POR 908,73 → 778,89 · DEL 1.038,53 → 1.221,35.
+- Betis 2025/26: Altimira 0,43 (renovar) · Isco 4,50 · Sabaly 2,99 (revisar). 9 de 33 temporadas de
+  jugadores del Betis por debajo de la mediana.
 - Comprobado: mismos minutos (1.504.710) y goles (1.975) que silver; ninguna fila sin salario.
 
 ### P2 · `fct_lesiones`
