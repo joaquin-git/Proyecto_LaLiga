@@ -31,7 +31,7 @@ cargando la temporada en curso (modelo incremental y despliegue con jobs).
 
 | # | Pregunta | Ejemplo de respuesta (datos del proyecto) |
 |---|----------|-------------------------------------------|
-| P1 | ¿Cuánto nos cuesta cada minuto jugado, cada gol y cada asistencia de cada jugador? ¿Quién rinde por encima o por debajo de lo que cobra, comparado con la mediana de la liga en su posición? | "Sergi Altimira cuesta ≈ 323 € por minuto, la mitad que un centrocampista medio de LaLiga (≈ 692 €); Isco, ≈ 3.369 €, casi cinco veces más" |
+| P1 | ¿Cuánto nos cuesta cada minuto jugado, cada gol y cada asistencia de cada jugador? ¿Quién rinde por encima o por debajo de lo que cobra, comparado con la mediana de la liga en su posición? | "En la 2025/26, Sergi Altimira cuesta ≈ 323 € por minuto, menos de la mitad que un centrocampista medio de LaLiga (≈ 749 €); Isco, ≈ 3.369 €, cuatro veces y media más" |
 | P2 | ¿Cuánto salario pagamos a jugadores lesionados (coste de enfermería) por tipo de lesión y mes, y cómo estamos frente al resto de clubes? | "El Betis pagó 4,68 M€ a lesionados en dos temporadas (4,4 % de su masa salarial, frente al 5,7 % de la liga); la lesión más cara, la rotura fibrilar de grado I (1,65 M€)" |
 | P3 | ¿Qué jugadores de otros clubes recomiendan fichar nuestros ojeadores, y caben en nuestro presupuesto? | "De 1.056 informes, 185 recomiendan fichar: una lista de candidatos con su club y salario actuales, su último traspaso y la posición en la que los ven los ojeadores" |
 
@@ -66,7 +66,8 @@ App scouting    ─┘                               └────────
 - **Silver:** limpia y normaliza. Dato maestro de clubes, países y ligas (seed `alias_clubes`);
   la licencia como clave del jugador (hay homónimos); deduplicado con `qualify`; la tabla de
   estadísticas es **incremental** (`merge`).
-- **Gold:** una tabla de hechos por pregunta, con dimensiones de jugador, club y fecha.
+- **Gold:** una tabla de hechos por pregunta, con dimensiones de jugador, club y fecha. El hecho de
+  rendimiento también es **incremental**: recalcula solo la temporada con actuaciones nuevas.
 
 **Entornos:** DEV, PRE y PRO, cada uno con sus bases de datos (`{ENV}_LALIGA_{BRONZE|SILVER|GOLD}_DB`)
 y su rol, que solo escribe en su entorno. Bronze se carga en DEV y se clona (zero-copy) a PRE y PRO.
@@ -128,7 +129,7 @@ A producción solo se llega por merge a `main` y jobs encadenados DEV → PRE �
 | Silver (modelo entidad-relación, 16 tablas, una incremental) | ✅ |
 | Calidad: 119 tests, documentación y macros | ✅ |
 | Despliegue DEV → PRE → PRO con jobs | ✅ |
-| Gold (modelo dimensional, 7 tablas) | ✅ |
+| Gold (modelo dimensional, 7 tablas, una incremental) | ✅ |
 | Power BI (informe de una página: P1, P2 y P3 para el Betis) | ✅ |
 
 **Documentación técnica:**

@@ -1,3 +1,10 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='rendimiento_id',
+    on_schema_change='append_new_columns'
+) }}
+
 with actuaciones as (
 
     select * from {{ ref('slv_proveedor_estadisticas__actuaciones') }}
@@ -9,6 +16,19 @@ partidos as (
     select * from {{ ref('slv_api_laliga__partidos') }}
 
 ),
+
+{% if is_incremental() %}
+temporadas_afectadas as (
+
+    -- Solo las temporadas con actuaciones cargadas después de la última ejecución.
+    -- Se recalcula la temporada entera porque la mediana necesita a todos sus jugadores.
+    select distinct p.temporada_id
+    from actuaciones a
+    join partidos p on a.partido_id = p.partido_id
+    where a.fecha_carga > (select max(fecha_ultima_carga) from {{ this }})
+
+),
+{% endif %}
 
 contratos as (
 
@@ -44,8 +64,12 @@ rendimiento as (
         , sum(a.minutos)                    as minutos
         , sum(a.goles)                      as goles
         , sum(a.asistencias)                as asistencias
+        , max(a.fecha_carga)                as fecha_ultima_carga
     from actuaciones a
     join partidos p on a.partido_id = p.partido_id
+    {% if is_incremental() %}
+    where p.temporada_id in (select temporada_id from temporadas_afectadas)
+    {% endif %}
     group by a.jugador_id, a.club_id, p.temporada_id
 
 ),
@@ -84,6 +108,7 @@ costes as (
         , r.minutos
         , r.goles
         , r.asistencias
+        , r.fecha_ultima_carga
         , round(s.salario_temporada_eur, 2)                         as salario_temporada_eur
         -- Con pocos minutos el coste por minuto no es comparable
         , r.minutos >= {{ var('minutos_minimos') }}                 as cumple_minutos_minimos
@@ -118,11 +143,13 @@ select
     , coste_por_minuto_eur
     , coste_por_gol_eur
     , coste_por_contribucion_eur
-    -- La referencia de P1: el coste por minuto "normal" de su posición en LaLiga
-    , round(median(coste_por_minuto_eur) over (partition by posicion), 2)
+    -- Columna del filtro incremental
+    , fecha_ultima_carga
+    -- La referencia de P1: el coste por minuto "normal" de su posición en LaLiga esa temporada
+    , round(median(coste_por_minuto_eur) over (partition by posicion, temporada_id), 2)
                                                                     as mediana_posicion_eur
     -- < 1: rinde por encima de lo que cobra · > 1: por debajo
     , round(coste_por_minuto_eur
-            / median(coste_por_minuto_eur) over (partition by posicion), 2)
+            / median(coste_por_minuto_eur) over (partition by posicion, temporada_id), 2)
                                                                     as indice_coste_vs_mediana
 from costes

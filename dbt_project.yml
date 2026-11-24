@@ -59,6 +59,8 @@ models:
       +grants:
         select: ['LALIGA_REPORTING_ROLE']
 
+        
+
 seeds:
   proyecto_laliga:
     +database: "{{ env_var('DBT_SILVER_DB') }}"
