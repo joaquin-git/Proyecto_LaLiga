@@ -15,7 +15,7 @@ select
     , a.asistencias
     , a.fecha_extraccion::varchar                       as ultima_extraccion_o_carga
     , (select count(*)
-       from {{ ref('slv_proveedor_estadisticas__actuaciones') }}) as filas_silver
+       from {{ ref('slv_proveedor_estadisticas__actuaciones') }}) as filas_tabla
 from {{ ref('slv_proveedor_estadisticas__actuaciones') }} a
 where a.partido_id = 'LL-00680'
   and a.jugador_id in (select jugador_id from altimira)
@@ -26,7 +26,8 @@ select
       'gold · temporada 2025/26'
     , r.asistencias
     , r.fecha_ultima_carga::varchar
-    , null
+    , (select count(*)
+       from {{ ref('fct_rendimiento_temporada') }})
 from {{ ref('fct_rendimiento_temporada') }} r
 where r.temporada_id = '2025/26'
   and r.jugador_id in (select jugador_id from altimira)
